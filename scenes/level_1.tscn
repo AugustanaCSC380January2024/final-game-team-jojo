@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cec0ulayjuvx0"]
+[gd_scene load_steps=15 format=3 uid="uid://cec0ulayjuvx0"]
 
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_iwehf"]
 [ext_resource type="Texture2D" uid="uid://b8ritmjukms23" path="res://assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_pcv8v"]
 [ext_resource type="Texture2D" uid="uid://cgplqduahbkkt" path="res://assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_n4afl"]
 [ext_resource type="Texture2D" uid="uid://iqtma27xp0d6" path="res://assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 01.png" id="3_g1ck6"]
@@ -891,7 +892,11 @@ pattern_1 = SubResource("TileMapPattern_hfcu0")
 pattern_2 = SubResource("TileMapPattern_bsbeu")
 pattern_3 = SubResource("TileMapPattern_m554w")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xt05"]
+size = Vector2(24112, 728)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_iwehf")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_66vgk")
@@ -901,3 +906,11 @@ layer_0/tile_data = PackedInt32Array(1835008, 262144, 3, 1900544, 262144, 4, 196
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_xvwex")]
 position = Vector2(178, 399)
+
+[node name="Death Zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Zone"]
+position = Vector2(4336, 876)
+shape = SubResource("RectangleShape2D_5xt05")
+
+[connection signal="body_entered" from="Death Zone" to="." method="_on_death_zone_body_entered"]
