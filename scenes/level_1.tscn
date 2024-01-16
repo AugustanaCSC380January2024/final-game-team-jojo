@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b8ritmjukms23" path="res://assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_pcv8v"]
 [ext_resource type="Texture2D" uid="uid://cgplqduahbkkt" path="res://assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_n4afl"]
 [ext_resource type="Texture2D" uid="uid://iqtma27xp0d6" path="res://assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 01.png" id="3_g1ck6"]
-[ext_resource type="PackedScene" uid="uid://2jo13kgs0omt" path="res://player.tscn" id="4_xvwex"]
+[ext_resource type="PackedScene" uid="uid://2jo13kgs0omt" path="res://scenes/player.tscn" id="4_xvwex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lhcb8"]
 texture = ExtResource("1_pcv8v")

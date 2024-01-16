@@ -1,6 +1,7 @@
-[gd_scene load_steps=84 format=3 uid="uid://2jo13kgs0omt"]
+[gd_scene load_steps=85 format=3 uid="uid://2jo13kgs0omt"]
 
 [ext_resource type="Texture2D" uid="uid://ccdsytnskf401" path="res://assets/player pirate/idle.png" id="1_0o4xg"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_fr7ef"]
 [ext_resource type="Texture2D" uid="uid://pn18fu6posxo" path="res://assets/player pirate/die.png" id="1_tclea"]
 [ext_resource type="Texture2D" uid="uid://d4meork0bgw16" path="res://assets/player pirate/gun.png" id="2_y7fwl"]
 [ext_resource type="Texture2D" uid="uid://ckdylcfndxffs" path="res://assets/player pirate/jump.png" id="4_23kgr"]
@@ -568,12 +569,13 @@ radius = 11.0
 height = 44.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_fr7ef")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b8nrj")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.898547
+frame_progress = 0.648361
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 7)
