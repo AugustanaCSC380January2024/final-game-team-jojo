@@ -652,3 +652,8 @@ shape = SubResource("CapsuleShape2D_elc7d")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
 position_smoothing_speed = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+offset = Vector2(640, 372)
+transform = Transform2D(1, 0, 0, 1, 640, 372)
