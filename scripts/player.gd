@@ -11,6 +11,8 @@ extends CharacterBody2D
 var alive = true
 var attackShoot = false
 var attackMelee = false
+var facing = 0
+var currently_facing = 1
 
 func _physics_process(delta):
 	if !is_on_floor():
@@ -51,11 +53,11 @@ func _physics_process(delta):
 		melee()
 	idle()
 	
-	var facing = 0
 	if alive:
 		facing = Input.get_axis("move_left","move_right")
 	if facing != 0:
 		animated_sprite.flip_h = (facing == -1)
+		currently_facing = facing
 		velocity.x += facing * acceleration * delta
 	else:
 		if velocity.x > 0:
@@ -113,9 +115,10 @@ func shoot():
 			
 		var shot = shoot_particles.instantiate()
 		add_child(shot)
+		shot.face_shot(shot, currently_facing)
 		await get_tree().create_timer(0.216).timeout
 		shot.emitting = true
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(.5).timeout
 		shot.emitting = false
 		shot.queue_free()
 		attackShoot = false
