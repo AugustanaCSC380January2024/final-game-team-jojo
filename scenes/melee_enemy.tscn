@@ -352,6 +352,7 @@ position = Vector2(-3, 4)
 shape = SubResource("CapsuleShape2D_7to6c")
 
 [node name="sight_radius" type="Area2D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
 position = Vector2(-3, -42.625)

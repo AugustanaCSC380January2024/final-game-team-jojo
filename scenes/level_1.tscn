@@ -915,6 +915,6 @@ position = Vector2(4336, 876)
 shape = SubResource("RectangleShape2D_5xt05")
 
 [node name="enemy_1" parent="." instance=ExtResource("6_m736d")]
-position = Vector2(278, 399)
+position = Vector2(592, 352)
 
 [connection signal="body_entered" from="Death Zone" to="." method="_on_death_zone_body_entered"]
