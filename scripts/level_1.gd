@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var respawnTimer = $RespawnTimer
 
+func _ready():
+	$enemy_1.attack()
+
 func _on_death_zone_body_entered(body):
 	body.die()
 	await get_tree().create_timer(1.5).timeout
