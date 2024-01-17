@@ -12,7 +12,6 @@ func _physics_process(delta):
 		if velocity.y > 1000:
 			velocity.y = 1000
 	if following:
-		print(player.global_position.x)
 		if global_position.x - player.global_position.x > 20:
 			animated_sprite.flip_h = -1
 			velocity.x = -50
@@ -28,7 +27,7 @@ func attack():
 	await get_tree().create_timer(.3).timeout
 	var attack_hitbox = hitbox.instantiate()
 	add_child(attack_hitbox)
-	await get_tree().create_timer(.3).timeout
+	await get_tree().create_timer(.2).timeout
 	attack_hitbox.queue_free()
 
 

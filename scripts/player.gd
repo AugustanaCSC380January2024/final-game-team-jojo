@@ -43,7 +43,7 @@ func _physics_process(delta):
 			#else:
 				#animated_sprite.play("idle")
 	
-	if Input.is_action_just_pressed("jump") && is_on_floor()==true:
+	if Input.is_action_just_pressed("jump") && is_on_floor()==true && alive:
 		jump(jump_height)
 	if Input.is_action_just_pressed("move_down") && is_on_floor()==false:
 		velocity.y += 500
@@ -126,6 +126,10 @@ func shoot():
 func die():
 	alive = false
 	animated_sprite.play("die")
+	await get_tree().create_timer(2).timeout
+	velocity = Vector2.ZERO
+	global_position = Vector2(178, 390)
+	alive = true
 
 func respawn():
 	alive = true
