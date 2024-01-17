@@ -907,11 +907,6 @@ layer_0/tile_data = PackedInt32Array(1835008, 262144, 3, 1900544, 262144, 4, 196
 
 [node name="player" parent="." instance=ExtResource("4_xvwex")]
 position = Vector2(178, 399)
-acceleration = 2000
-max_speed = 500
-jump_height = 600
-gravity_strength = 980
-friction = 1500
 
 [node name="Death Zone" type="Area2D" parent="."]
 
