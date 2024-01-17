@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var respawnTimer = $RespawnTimer
-
 func _ready():
 	$enemy_1.attack()
 

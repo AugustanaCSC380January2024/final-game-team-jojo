@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf6q23a14acym"]
+
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1_wx4x4"]
+[ext_resource type="PackedScene" uid="uid://2jo13kgs0omt" path="res://scenes/player.tscn" id="3_qhoma"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_wx4x4")
+
+[node name="Player" parent="." instance=ExtResource("3_qhoma")]
+wall_min_slide_angle = 0.0
+floor_max_angle = 0.0
+floor_snap_length = 0.0
