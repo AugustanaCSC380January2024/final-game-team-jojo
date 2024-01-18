@@ -59,7 +59,7 @@ func _physics_process(delta):
 	
 	if alive:
 		facing = Input.get_axis("move_left","move_right")
-	if facing != 0:
+	if facing != 0 and alive:
 		animated_sprite.flip_h = (facing == -1)
 		currently_facing = facing
 		velocity.x += facing * acceleration * delta
@@ -180,9 +180,9 @@ func flip():
 	
 func die():
 	alive = false
+	velocity = Vector2.ZERO
 	animated_sprite.play("die")
 	await get_tree().create_timer(2).timeout
-	velocity = Vector2.ZERO
 	global_position = Vector2(178, 390)
 	alive = true
 
