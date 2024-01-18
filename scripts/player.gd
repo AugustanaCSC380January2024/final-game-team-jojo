@@ -14,7 +14,8 @@ extends CharacterBody2D
 @export var jump_height = 600
 @export var gravity_strength = 980
 @export var friction = 2500
-var jump_buffer = 0
+var coyote_time = 0.0
+var jump_buffer = 0.0
 var alive = true
 var attackShoot = false
 var attackMelee = false
@@ -23,17 +24,21 @@ var currently_facing = 1
 var shot_type = "blunderbuss"
 
 func _physics_process(delta):
+	coyote_time -= delta
 	jump_buffer -= delta
 	if !is_on_floor():
 		velocity.y += gravity_strength * delta
 		if velocity.y > 2000:
 			velocity.y = 2000
-	if (Input.is_action_just_pressed("jump") || jump_buffer > 0) && alive:
-		if(is_on_floor()):
+	else:
+		coyote_time = 0.1
+	if Input.is_action_just_pressed("jump") && alive:
+		if(is_on_floor() || coyote_time > 0):
 			jump(jump_height)
-			jump_buffer = 0
+			jump_buffer = 0.0
+			coyote_time = 0.0
 		else:
-			jump_buffer = .1
+			jump_buffer = 0.1
 	if Input.is_action_just_pressed("move_down") && is_on_floor()==false:
 		velocity.y += 500
 	if Input.is_action_just_pressed("shoot"):
