@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmegkumva28t7"]
+
+[ext_resource type="Texture2D" uid="uid://xrf6fb84c8vv" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="1_71g1l"]
+[ext_resource type="Script" path="res://scripts/coin_shot.gd" id="1_vxrt3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1auk3"]
+
+[node name="coin_shot" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 128
+collision_mask = 34
+script = ExtResource("1_vxrt3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_71g1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 0)
+scale = Vector2(3, 1.141)
+shape = SubResource("CircleShape2D_1auk3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

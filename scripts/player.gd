@@ -3,6 +3,10 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var canvas_layer = $CanvasLayer
 @onready var shoot_particles = preload("res://scenes/shoot_particles.tscn")
+@onready var coin_shot = preload("res://scenes/coin_shot.tscn")
+@onready var gunshot_sound = $flintlock_audio
+@onready var cannon_sound = $cannon_audio
+@onready var shots = $shot_container
 
 @export var coin_count = 0
 @export var acceleration = 2000
@@ -15,6 +19,7 @@ var attackShoot = false
 var attackMelee = false
 var facing = 0
 var currently_facing = 1
+var shot_type = "blunderbuss"
 
 func _physics_process(delta):
 	if !is_on_floor():
@@ -96,6 +101,51 @@ func shoot():
 		canvas_layer.add_child(shot)
 		await get_tree().create_timer(0.216).timeout
 		shot.emitting = true
+		if shot_type == "flintlock":
+			gunshot_sound.play()
+			var gunshot = coin_shot.instantiate()
+			shots.add_child(gunshot)
+			gunshot.send_facing(currently_facing)
+			gunshot.global_position = global_position
+			gunshot.global_position.x += 35 * currently_facing
+			gunshot.global_position.y += 8
+		elif shot_type == "blunderbuss":
+			#I will come back and make this code dry, I will do it, yes I will
+			gunshot_sound.play()
+			var gunshot = coin_shot.instantiate()
+			var gunshot2 = coin_shot.instantiate()
+			var gunshot3 = coin_shot.instantiate()
+			var gunshot4 = coin_shot.instantiate()
+			var gunshot5 = coin_shot.instantiate()
+			add_child(gunshot)
+			add_child(gunshot2)
+			add_child(gunshot3)
+			add_child(gunshot4)
+			add_child(gunshot5)
+			gunshot.send_facing(currently_facing)
+			gunshot2.send_facing(currently_facing)
+			gunshot3.send_facing(currently_facing)
+			gunshot4.send_facing(currently_facing)
+			gunshot5.send_facing(currently_facing)
+			gunshot.global_position = global_position
+			gunshot2.global_position = global_position
+			gunshot3.global_position = global_position
+			gunshot4.global_position = global_position
+			gunshot5.global_position = global_position
+			gunshot.global_position.x += 35 * currently_facing
+			gunshot.global_position.y += 8
+			gunshot2.global_position.x += 35 * currently_facing
+			gunshot2.global_position.y += 8
+			gunshot3.global_position.x += 35 * currently_facing
+			gunshot3.global_position.y += 8
+			gunshot4.global_position.x += 35 * currently_facing
+			gunshot4.global_position.y += 8
+			gunshot5.global_position.x += 35 * currently_facing
+			gunshot5.global_position.y += 8
+			gunshot2.set_change_y(2)
+			gunshot3.set_change_y(4)
+			gunshot4.set_change_y(-4)
+			gunshot5.set_change_y(-2)
 		await get_tree().create_timer(.5).timeout
 		shot.emitting = false
 		shot.queue_free()

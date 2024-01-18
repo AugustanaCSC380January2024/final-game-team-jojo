@@ -914,49 +914,63 @@ shape = SubResource("RectangleShape2D_5xt05")
 [node name="enemy_1" parent="." instance=ExtResource("6_m736d")]
 position = Vector2(592, 352)
 
+[node name="enemy_2" parent="." instance=ExtResource("6_m736d")]
+position = Vector2(842, 335)
+
+[node name="enemy_3" parent="." instance=ExtResource("6_m736d")]
+position = Vector2(9, 399)
+
+[node name="enemy_4" parent="." instance=ExtResource("6_m736d")]
+position = Vector2(1256, 398)
+
+[node name="enemy_5" parent="." instance=ExtResource("6_m736d")]
+position = Vector2(1493, 397)
+
 [node name="start_position" type="Marker2D" parent="."]
 position = Vector2(178, 399)
 
-[node name="Coin" parent="." instance=ExtResource("6_6cgca")]
+[node name="coins_container" type="Node" parent="."]
+
+[node name="Coin" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(324, 362)
 
-[node name="Coin2" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin2" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(345, 333)
 
-[node name="Coin3" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin3" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(303, 327)
 
-[node name="Coin4" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin4" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(329, 300)
 
-[node name="Coin5" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin5" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(365, 298)
 
-[node name="Coin6" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin6" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(275, 362)
 
-[node name="Coin7" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin7" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(292, 283)
 
-[node name="Coin8" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin8" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(330, 263)
 
-[node name="Coin9" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin9" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(368, 260)
 
-[node name="Coin10" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin10" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(262, 315)
 
-[node name="Coin11" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin11" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(366, 364)
 
-[node name="Coin12" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin12" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(387, 326)
 
-[node name="Coin13" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin13" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(247, 275)
 
-[node name="Coin14" parent="." instance=ExtResource("6_6cgca")]
+[node name="Coin14" parent="coins_container" instance=ExtResource("6_6cgca")]
 position = Vector2(279, 245)
 
 [connection signal="body_entered" from="Death Zone" to="." method="_on_death_zone_body_entered"]
