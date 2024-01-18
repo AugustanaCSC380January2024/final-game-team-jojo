@@ -7,6 +7,8 @@ var following = false
 var player = null
 
 func _physics_process(delta):
+	if global_position.y >= 700:
+		queue_free()
 	if !is_on_floor():
 		velocity.y += gravity_strength * delta
 		if velocity.y > 1000:
