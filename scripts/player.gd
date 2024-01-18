@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var canvas_layer = $CanvasLayer
 @onready var shoot_particles = preload("res://scenes/shoot_particles.tscn")
 
+@export var coin_count = 0
 @export var acceleration = 2000
 @export var max_speed = 500
 @export var jump_height = 600

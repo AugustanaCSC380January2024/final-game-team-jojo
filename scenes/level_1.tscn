@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cec0ulayjuvx0"]
+[gd_scene load_steps=16 format=3 uid="uid://cec0ulayjuvx0"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_iwehf"]
 [ext_resource type="Texture2D" uid="uid://b8ritmjukms23" path="res://assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_pcv8v"]
 [ext_resource type="Texture2D" uid="uid://cgplqduahbkkt" path="res://assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_n4afl"]
 [ext_resource type="Texture2D" uid="uid://iqtma27xp0d6" path="res://assets/Treasure Hunters/Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 01.png" id="3_g1ck6"]
+[ext_resource type="PackedScene" uid="uid://y7pr7c5j5rfk" path="res://scenes/coin.tscn" id="6_6cgca"]
 [ext_resource type="PackedScene" uid="uid://b0bp1ewjw1sut" path="res://scenes/melee_enemy.tscn" id="6_m736d"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_y50jd"]
@@ -915,5 +916,47 @@ position = Vector2(592, 352)
 
 [node name="start_position" type="Marker2D" parent="."]
 position = Vector2(178, 399)
+
+[node name="Coin" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(324, 362)
+
+[node name="Coin2" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(345, 333)
+
+[node name="Coin3" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(303, 327)
+
+[node name="Coin4" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(329, 300)
+
+[node name="Coin5" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(365, 298)
+
+[node name="Coin6" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(275, 362)
+
+[node name="Coin7" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(292, 283)
+
+[node name="Coin8" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(330, 263)
+
+[node name="Coin9" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(368, 260)
+
+[node name="Coin10" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(262, 315)
+
+[node name="Coin11" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(366, 364)
+
+[node name="Coin12" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(387, 326)
+
+[node name="Coin13" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(247, 275)
+
+[node name="Coin14" parent="." instance=ExtResource("6_6cgca")]
+position = Vector2(279, 245)
 
 [connection signal="body_entered" from="Death Zone" to="." method="_on_death_zone_body_entered"]
