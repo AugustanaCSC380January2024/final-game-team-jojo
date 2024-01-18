@@ -30,18 +30,18 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 10.0,
 "texture": ExtResource("6_53qna")
 }, {
-"duration": 1.0,
+"duration": 10.0,
 "texture": ExtResource("7_6ivjj")
 }, {
-"duration": 1.0,
+"duration": 10.0,
 "texture": ExtResource("8_8dnt6")
 }],
 "loop": false,
 "name": &"coin_collected",
-"speed": 5.0
+"speed": 60.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sqb2q"]

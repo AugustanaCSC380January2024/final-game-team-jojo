@@ -636,8 +636,7 @@ height = 44.0
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 2
 floor_max_angle = 1.20428
-floor_snap_length = 10.0
-safe_margin = 2.0
+floor_snap_length = 32.0
 script = ExtResource("1_fr7ef")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
