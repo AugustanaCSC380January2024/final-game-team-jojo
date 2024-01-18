@@ -24,8 +24,8 @@ var shot_type = "blunderbuss"
 func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += gravity_strength * delta
-		if velocity.y > 1000:
-			velocity.y = 1000
+		if velocity.y > 2000:
+			velocity.y = 2000
 	if Input.is_action_just_pressed("jump") && is_on_floor()==true && alive:
 		jump(jump_height)
 	if Input.is_action_just_pressed("move_down") && is_on_floor()==false:
