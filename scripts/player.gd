@@ -34,6 +34,10 @@ func _physics_process(delta):
 		shoot()
 	if Input.is_action_just_pressed("melee"):
 		melee()
+	if Input.is_action_just_pressed("select_flintlock"):
+		shot_type = "flintlock"
+	if Input.is_action_just_pressed("select_blunderbuss"):
+		shot_type = "blunderbuss"
 	idle()
 	
 	if alive:
