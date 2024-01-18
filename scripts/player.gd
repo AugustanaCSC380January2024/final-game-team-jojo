@@ -13,7 +13,7 @@ extends CharacterBody2D
 @export var max_speed = 500
 @export var jump_height = 600
 @export var gravity_strength = 980
-@export var friction = 1500
+@export var friction = 2500
 var alive = true
 var attackShoot = false
 var attackMelee = false
