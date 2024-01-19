@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://bj11kenidi2p7"]
+[gd_scene load_steps=80 format=3 uid="uid://c3bdqqyex61sc"]
 
 [ext_resource type="Script" path="res://scripts/nuclear_enemy.gd" id="1_63w0a"]
 [ext_resource type="Texture2D" uid="uid://bixxs8afudb4c" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/7-Hit/8.png" id="2_31upc"]
@@ -332,9 +332,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7to6c"]
-radius = 18.0
-height = 58.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt768"]
+size = Vector2(0.375, 50.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gqtq"]
 size = Vector2(61, 27)
@@ -361,8 +360,8 @@ animation = &"none"
 autoplay = "none"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 4)
-shape = SubResource("CapsuleShape2D_7to6c")
+position = Vector2(-0.3125, 3.125)
+shape = SubResource("RectangleShape2D_mt768")
 
 [node name="wall_collision_detector" type="Area2D" parent="."]
 collision_layer = 0
