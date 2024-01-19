@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci073odq1se3j"]
+[gd_scene load_steps=6 format=3 uid="uid://ci073odq1se3j"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_01bsa"]
 [ext_resource type="Texture2D" uid="uid://bpri2nyxr1d4o" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/07.png" id="2_ikd1g"]
+[ext_resource type="Texture2D" uid="uid://xrf6fb84c8vv" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="3_akkc6"]
+[ext_resource type="FontFile" uid="uid://duga6k6ga873j" path="res://assets/bones.ttf" id="4_udv1y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yj7tu"]
+font = ExtResource("4_udv1y")
+font_size = 30
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -65,3 +73,21 @@ offset_top = 20.0
 offset_right = 260.0
 offset_bottom = 60.0
 texture = ExtResource("2_ikd1g")
+
+[node name="coin" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 60.0
+offset_right = 58.0
+offset_bottom = 100.0
+texture = ExtResource("3_akkc6")
+
+[node name="coin_counter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 65.0
+offset_right = 122.0
+offset_bottom = 100.0
+text = "0"
+label_settings = SubResource("LabelSettings_yj7tu")

@@ -185,6 +185,9 @@ func flip():
 	else:
 		canvas_layer.rotation = 3.14
 	
+func add_coin():
+	coin_count += 1
+	hud.set_coin_counter(coin_count)
 
 func hurt():
 	lives -= 1

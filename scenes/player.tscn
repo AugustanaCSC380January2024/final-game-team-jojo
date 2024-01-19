@@ -670,6 +670,7 @@ stream = ExtResource("13_uks4w")
 [node name="shot_container" type="Node" parent="."]
 
 [node name="HUD" parent="." instance=ExtResource("14_tnde2")]
+z_index = 1000
 offset_left = -439.0
 offset_top = -258.0
 offset_right = -439.0

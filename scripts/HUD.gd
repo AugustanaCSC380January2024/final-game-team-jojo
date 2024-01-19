@@ -8,6 +8,7 @@ extends Control
 @onready var rum6 = $rum6
 @onready var empty_rum = preload("res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/03.png")
 @onready var full_rum = preload("res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/07.png")
+@onready var coin_count = $coin_counter
 
 func _ready():
 	rum4.visible = false
@@ -51,3 +52,7 @@ func lives_gained(lives):
 		rum5.set_texture(full_rum)
 	if lives_gained == 6:
 		rum6.set_texture(full_rum)
+		
+func set_coin_counter(player_coin_count):
+	coin_count.text = str(player_coin_count)
+	

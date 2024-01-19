@@ -8,7 +8,7 @@ var is_collectable = true
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		if is_collectable:
-			body.coin_count += 1
+			body.add_coin()
 			coin_noise.play()
 		is_collectable = false
 		print(body.coin_count)
