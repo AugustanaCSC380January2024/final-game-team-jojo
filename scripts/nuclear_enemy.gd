@@ -45,15 +45,12 @@ func attack():
 
 
 func _on_sight_radius_body_entered(body):
-	print("entered")
 	if body.is_in_group("Player"):
 		following = true
 		player = body
-		print("player entered")
 
 
 func _on_wall_collision_detector_body_entered(body):
-	print(body)
 	if !body.is_in_group("enemy") && !body.is_in_group("Player"):
 		velocity.y = -300
 		animated_sprite.play("jump")

@@ -17,6 +17,10 @@ boot_splash/image="res://assets/Booty Haul.png"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=2000
 
+[autoload]
+
+GlobalValues="*res://scripts/global_values.gd"
+
 [display]
 
 window/size/viewport_width=1280
@@ -88,3 +92,7 @@ select_cannon={
 2d_physics/layer_6="enemy"
 2d_physics/layer_7="pickups"
 2d_physics/layer_8="player_projectiles"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

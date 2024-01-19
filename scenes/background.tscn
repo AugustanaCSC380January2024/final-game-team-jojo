@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8qu34o0vohuy"]
+
+[ext_resource type="Texture2D" uid="uid://cg326ocovh7fb" path="res://assets/Sky.jpg" id="1_6bhje"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_kltyx"]
+[ext_resource type="Texture2D" uid="uid://bhrmc77k2o27y" path="res://assets/Water.png" id="2_ofb7s"]
+[ext_resource type="Texture2D" uid="uid://cvvwx0hdevod" path="res://assets/Sand.png" id="3_gpp0i"]
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource("1_kltyx")
+
+[node name="SkyLayer" type="ParallaxLayer" parent="."]
+texture_repeat = 3
+motion_mirroring = Vector2(1366, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="SkyLayer"]
+position = Vector2(0, -900)
+texture = ExtResource("1_6bhje")
+centered = false
+
+[node name="OceanLayer" type="ParallaxLayer" parent="."]
+texture_repeat = 3
+motion_mirroring = Vector2(2045, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="OceanLayer"]
+position = Vector2(0, -350)
+texture = ExtResource("2_ofb7s")
+centered = false
+
+[node name="SandLayer" type="ParallaxLayer" parent="."]
+texture_repeat = 3
+motion_mirroring = Vector2(2047, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="SandLayer"]
+position = Vector2(0, -850)
+texture = ExtResource("3_gpp0i")
+centered = false

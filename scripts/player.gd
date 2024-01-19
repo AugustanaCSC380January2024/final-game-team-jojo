@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var cannon_sound = $cannon_audio
 @onready var shots = $shot_container
 @onready var hud = $HUD
+@onready var camera = $Camera2D
 
 @export var hurt_i_frames = 0
 @export var max_lives = 3
@@ -36,9 +37,10 @@ func _physics_process(delta):
 		#print("Wall")
 	#if(is_on_ceiling()):
 		#print("Ceiling")
+	changeCamera()
 	if hurt_i_frames > 0:
 		hurt_i_frames -= delta
-		print(hurt_i_frames)
+		#print(hurt_i_frames)
 	coyote_time -= delta
 	jump_buffer -= delta
 	if !is_on_floor():
@@ -89,7 +91,7 @@ func _physics_process(delta):
 	elif velocity.x < -max_speed:
 		velocity.x = -max_speed
 	flip()
-	
+	GlobalValues.playerPosition = global_position
 	move_and_slide()
 
 func jump(jump_height):
@@ -197,6 +199,60 @@ func add_coin():
 func change_weight():
 	jump_height = original_jump_height - (original_jump_height * (coin_count / 5) * .025)
 	max_speed = original_max_speed - (original_max_speed * (coin_count / 5) * .025)
+
+func changeCamera():
+	var xBounds = 150
+	var yBounds = 100
+	var xPixels = pow(2, abs(camera.offset.x / 100))
+	var yPixels = pow(2, abs(camera.offset.x / 100))
+	
+	if velocity.x > 0:
+		if camera.offset.x > 0:
+			camera.offset.x += xPixels
+		else:
+			camera.offset.x += xPixels * 2
+		if camera.offset.x > xBounds:
+			camera.offset.x = xBounds
+	elif velocity.x < 0:
+		if camera.offset.x < 0:
+			camera.offset.x -= xPixels
+		else:
+			camera.offset.x -= xPixels * 2
+		if camera.offset.x < -xBounds:
+			camera.offset.x = -xBounds
+	else:
+		if camera.offset.x > 0:
+			camera.offset.x -= xPixels * 2
+			if camera.offset.x < 0:
+				camera.offset.x = 0
+		else:
+			camera.offset.x += xPixels * 2
+			if camera.offset.x > 0:
+				camera.offset.x = 0
+				
+	if velocity.y > 0:
+		if camera.offset.y > 0:
+			camera.offset.y += yPixels
+		else:
+			camera.offset.y += yPixels * 2
+		if camera.offset.y > yBounds:
+			camera.offset.y = yBounds
+	elif velocity.y < 0:
+		if camera.offset.y < 0:
+			camera.offset.y -= yPixels
+		else:
+			camera.offset.y -= yPixels * 2
+		if camera.offset.y < -yBounds:
+			camera.offset.y = -yBounds
+	else:
+		if camera.offset.y > 0:
+			camera.offset.y -= yPixels * 2
+			if camera.offset.y < 0:
+				camera.offset.y = 0
+		else:
+			camera.offset.y += yPixels * 2
+			if camera.offset.y > 0:
+				camera.offset.y = 0
 
 func hurt():
 	lives -= 1

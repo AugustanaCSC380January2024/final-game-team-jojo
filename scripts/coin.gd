@@ -11,7 +11,6 @@ func _on_body_entered(body):
 			body.add_coin()
 			coin_noise.play()
 		is_collectable = false
-		print(body.coin_count)
 		animated_sprite.play("coin_collected")
 		await get_tree().create_timer(0.5).timeout
 		queue_free()
