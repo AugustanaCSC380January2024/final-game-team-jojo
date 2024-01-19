@@ -24,12 +24,12 @@ var currently_facing = 1
 var shot_type = "blunderbuss"
 
 func _physics_process(delta):
-	if(is_on_floor()):
-		print("Floor")
-	if(is_on_wall()):
-		print("Wall")
-	if(is_on_ceiling()):
-		print("Ceiling")
+	#if(is_on_floor()):
+		#print("Floor")
+	#if(is_on_wall()):
+		#print("Wall")
+	#if(is_on_ceiling()):
+		#print("Ceiling")
 	coyote_time -= delta
 	jump_buffer -= delta
 	if !is_on_floor():

@@ -16,12 +16,13 @@ func _physics_process(delta):
 	if following:
 		if global_position.x - player.global_position.x > 20:
 			animated_sprite.flip_h = -1
-			velocity.x = -50
+			velocity.x = -100
 			move_and_slide()
 		elif global_position.x - player.global_position.x < -20:
 			animated_sprite.flip_h = 1
-			velocity.x = 50
+			velocity.x = 100
 			move_and_slide()
+			#await get_tree().create_timer(.3).timeout
 		else: attack()
 
 func attack():
@@ -39,3 +40,12 @@ func _on_sight_radius_body_entered(body):
 		following = true
 		player = body
 		print("player entered")
+
+
+func _on_wall_collision_detector_body_entered(body):
+	print(body)
+	if !body.is_in_group("enemy") && !body.is_in_group("Player"):
+		velocity.y = -300
+		print("goin up")
+		await get_tree().create_timer(1).timeout
+		velocity.y = 0

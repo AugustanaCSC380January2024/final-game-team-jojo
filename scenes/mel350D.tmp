@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://b0bp1ewjw1sut"]
+[gd_scene load_steps=80 format=3 uid="uid://b0bp1ewjw1sut"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_gnt2q"]
 [ext_resource type="Texture2D" uid="uid://cclr3cs4h52xe" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/7-Attack/1.png" id="2_ygsso"]
@@ -334,14 +334,11 @@ animations = [{
 radius = 18.0
 height = 58.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gqtq"]
-size = Vector2(61, 27)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20kn2"]
 size = Vector2(362, 152.75)
 
 [node name="melee_enemy" type="CharacterBody2D" groups=["enemy"]]
-collision_layer = 32
+collision_layer = 36
 collision_mask = 3
 script = ExtResource("1_gnt2q")
 
@@ -354,21 +351,11 @@ autoplay = "idle"
 position = Vector2(-3, 4)
 shape = SubResource("CapsuleShape2D_7to6c")
 
-[node name="wall_collision_detector" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_collision_detector"]
-position = Vector2(-0.5, 16.5)
-shape = SubResource("RectangleShape2D_6gqtq")
-
 [node name="sight_radius" type="Area2D" parent="."]
-position = Vector2(-9, 5)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
 position = Vector2(-3, -42.625)
 shape = SubResource("RectangleShape2D_20kn2")
 
-[connection signal="body_entered" from="wall_collision_detector" to="." method="_on_wall_collision_detector_body_entered"]
 [connection signal="body_entered" from="sight_radius" to="." method="_on_sight_radius_body_entered"]

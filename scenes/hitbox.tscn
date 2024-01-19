@@ -5,7 +5,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adknm"]
 size = Vector2(46.4414, 20)
 
-[node name="Area2D" type="Area2D"]
+[node name="melee_hitbox" type="Area2D"]
+collision_layer = 4
 script = ExtResource("1_lem7p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
