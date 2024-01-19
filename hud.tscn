@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci073odq1se3j"]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_01bsa"]
+[ext_resource type="Texture2D" uid="uid://bpri2nyxr1d4o" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/07.png" id="2_ikd1g"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_01bsa")
+
+[node name="rum" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("2_ikd1g")
+
+[node name="rum2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 60.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 60.0
+texture = ExtResource("2_ikd1g")
+
+[node name="rum3" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 100.0
+offset_top = 20.0
+offset_right = 140.0
+offset_bottom = 60.0
+texture = ExtResource("2_ikd1g")
+
+[node name="rum4" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 140.0
+offset_top = 20.0
+offset_right = 180.0
+offset_bottom = 60.0
+texture = ExtResource("2_ikd1g")
+
+[node name="rum5" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 180.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 60.0
+texture = ExtResource("2_ikd1g")
+
+[node name="rum6" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 220.0
+offset_top = 20.0
+offset_right = 260.0
+offset_bottom = 60.0
+texture = ExtResource("2_ikd1g")

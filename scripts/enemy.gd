@@ -26,7 +26,7 @@ func _physics_process(delta):
 			velocity.x = 100
 			move_and_slide()
 			#await get_tree().create_timer(.3).timeout
-		else: attack()
+		if global_position.x - 30 < player.global_position.x || global_position.x + 30 > player.global_position.x: attack()
 
 func attack():
 	animated_sprite.play("attack")

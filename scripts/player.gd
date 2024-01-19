@@ -7,7 +7,11 @@ extends CharacterBody2D
 @onready var gunshot_sound = $flintlock_audio
 @onready var cannon_sound = $cannon_audio
 @onready var shots = $shot_container
+@onready var hud = $HUD
 
+@export var hurt_i_frames = 0
+@export var max_lives = 3
+@export var lives = 3
 @export var coin_count = 0
 @export var acceleration = 2000
 @export var max_speed = 500
@@ -30,6 +34,9 @@ func _physics_process(delta):
 		#print("Wall")
 	#if(is_on_ceiling()):
 		#print("Ceiling")
+	if hurt_i_frames > 0:
+		hurt_i_frames -= delta
+		print(hurt_i_frames)
 	coyote_time -= delta
 	jump_buffer -= delta
 	if !is_on_floor():
@@ -178,6 +185,14 @@ func flip():
 	else:
 		canvas_layer.rotation = 3.14
 	
+
+func hurt():
+	lives -= 1
+	hud.life_lost(lives)
+	hurt_i_frames = 1
+	if lives == 0:
+		die()
+
 func die():
 	alive = false
 	velocity = Vector2.ZERO
@@ -185,6 +200,8 @@ func die():
 	await get_tree().create_timer(2).timeout
 	global_position = Vector2(178, 390)
 	alive = true
+	lives = 3
+	hud.lives_gained(max_lives)
 
 func respawn():
 	alive = true

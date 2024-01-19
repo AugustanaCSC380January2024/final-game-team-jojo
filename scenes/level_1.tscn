@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b0bp1ewjw1sut" path="res://scenes/melee_enemy.tscn" id="6_m736d"]
 [ext_resource type="PackedScene" uid="uid://chd6a2qto6fw6" path="res://scenes/bomb_enemy.tscn" id="7_50pp8"]
 [ext_resource type="PackedScene" uid="uid://bj11kenidi2p7" path="res://scenes/nuke_enemy.tscn" id="8_cfgj1"]
-[ext_resource type="Texture2D" uid="uid://c0coyrd6b7mm1" path="res://assets/sunset-675847_1280.jpg" id="8_cy7ts"]
+[ext_resource type="Texture2D" uid="uid://cvvwx0hdevod" path="res://assets/Sand3.png" id="10_4lckp"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_y50jd"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1, 1, 65538, 0, 65537, 65538, 1)
@@ -2093,8 +2093,9 @@ position = Vector2(178, 399)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1000
-position = Vector2(5326, -148)
-scale = Vector2(8.52016, 2.06287)
-texture = ExtResource("8_cy7ts")
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(883, -291)
+texture = ExtResource("10_4lckp")
 
 [connection signal="body_entered" from="Death Zone" to="." method="_on_death_zone_body_entered"]
