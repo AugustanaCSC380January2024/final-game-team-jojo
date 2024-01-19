@@ -11,9 +11,13 @@ func _physics_process(delta):
 	if global_position.y >= 700:
 		queue_free()
 	if !is_on_floor():
+		if velocity.y > 0:
+			gravity_strength = 1000
 		velocity.y += gravity_strength * delta
-		if velocity.y > 1000:
-			velocity.y = 1000
+		if velocity.y > 3000:
+			velocity.y = 3000
+	else: gravity_strength = 500
+	
 	if following:
 		if global_position.x - player.global_position.x > 20:
 			animated_sprite.play("run")
@@ -38,15 +42,12 @@ func attack():
 
 
 func _on_sight_radius_body_entered(body):
-	print("entered")
 	if body.is_in_group("Player"):
 		following = true
 		player = body
-		print("player entered")
 
 
 func _on_wall_collision_detector_body_entered(body):
-	print(body)
 	if !body.is_in_group("enemy") && !body.is_in_group("Player"):
 		velocity.y = -300
 		animated_sprite.play("jump")

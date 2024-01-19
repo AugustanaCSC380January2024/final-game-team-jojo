@@ -14,6 +14,8 @@ extends CharacterBody2D
 @export var lives = 3
 @export var coin_count = 0
 @export var acceleration = 2000
+@export var original_jump_height = 600
+@export var original_max_speed = 500
 @export var max_speed = 500
 @export var jump_height = 600
 @export var gravity_strength = 980
@@ -40,6 +42,8 @@ func _physics_process(delta):
 	coyote_time -= delta
 	jump_buffer -= delta
 	if !is_on_floor():
+		if velocity.y > 0:
+			velocity.y += 8
 		velocity.y += gravity_strength * delta
 		if velocity.y > 2000:
 			velocity.y = 2000
@@ -188,6 +192,11 @@ func flip():
 func add_coin():
 	coin_count += 1
 	hud.set_coin_counter(coin_count)
+	change_weight()
+
+func change_weight():
+	jump_height = original_jump_height - (original_jump_height * (coin_count / 5) * .025)
+	max_speed = original_max_speed - (original_max_speed * (coin_count / 5) * .025)
 
 func hurt():
 	lives -= 1
