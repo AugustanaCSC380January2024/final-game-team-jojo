@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 @onready var explosion_hitbox = preload("res://scenes/normal_explosion_hitbox.tscn")
+@onready var explosion_sfx = $explosion_sound
 @onready var animated_sprite = $enemy_animation
 @onready var explosion_sprite = $explosion_animation
 @export var gravity_strength = 500
+var is_exploding = false
+var alive = true
 var following = false
 var player = null
 
@@ -14,7 +17,7 @@ func _physics_process(delta):
 		velocity.y += gravity_strength * delta
 		if velocity.y > 1000:
 			velocity.y = 1000
-	if following:
+	if following && alive:
 		if global_position.x - player.global_position.x > 20:
 			animated_sprite.play("run")
 			animated_sprite.flip_h = 1
@@ -29,12 +32,15 @@ func _physics_process(delta):
 		else: attack()
 
 func attack():
-	explosion_sprite.play("explode")
-	await get_tree().create_timer(.3).timeout
+	alive = false
+	await get_tree().create_timer(.5).timeout
+	is_exploding = true
+	explosion_sprite.play("explosion")
+	explosion_sfx.play()
 	var attack_hitbox = explosion_hitbox.instantiate()
 	add_child(attack_hitbox)
 	animated_sprite.play("explode")
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(1).timeout
 	attack_hitbox.queue_free()
 	queue_free()
 

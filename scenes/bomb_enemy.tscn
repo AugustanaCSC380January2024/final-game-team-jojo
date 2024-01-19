@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://chd6a2qto6fw6"]
+[gd_scene load_steps=80 format=3 uid="uid://chd6a2qto6fw6"]
 
 [ext_resource type="Script" path="res://scripts/bomb_enemy.gd" id="1_4w1fg"]
 [ext_resource type="Texture2D" uid="uid://dube6ysse1lex" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="2_cprjp"]
@@ -53,16 +53,27 @@
 [ext_resource type="Texture2D" uid="uid://c8ljqj18k60le" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/2-Run/12.png" id="51_jk8fq"]
 [ext_resource type="Texture2D" uid="uid://bwkrvywcdgd02" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/2-Run/13.png" id="52_ymshx"]
 [ext_resource type="Texture2D" uid="uid://d2r4leon5udvr" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/2-Run/14.png" id="53_lbu0t"]
+[ext_resource type="Texture2D" uid="uid://bfv16gte3ryrl" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion1.png" id="54_qkxun"]
 [ext_resource type="Texture2D" uid="uid://13fdhwhh4i2i" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion1.png" id="54_vnp88"]
+[ext_resource type="Texture2D" uid="uid://cdifw2ex4p8sp" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion2.png" id="55_c0vnh"]
 [ext_resource type="Texture2D" uid="uid://hx6v5xsd8tmw" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion2.png" id="55_q540y"]
+[ext_resource type="Texture2D" uid="uid://coudhylc105xt" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion3.png" id="56_p7btr"]
 [ext_resource type="Texture2D" uid="uid://by5m8vpwwojtj" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion3.png" id="56_w2krd"]
+[ext_resource type="Texture2D" uid="uid://bqewe4o2j72wk" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion4.png" id="57_ig004"]
 [ext_resource type="Texture2D" uid="uid://c4635rwdwq5u4" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion4.png" id="57_pawd0"]
 [ext_resource type="Texture2D" uid="uid://bdhhjsgmba1k" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion5.png" id="58_3q6l5"]
+[ext_resource type="Texture2D" uid="uid://0mviocufqmvo" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion5.png" id="58_netgt"]
 [ext_resource type="Texture2D" uid="uid://ce2ojqry6n0ry" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion6.png" id="59_0fbfd"]
+[ext_resource type="Texture2D" uid="uid://w0vvkwm872qd" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion6.png" id="59_syo3n"]
+[ext_resource type="Texture2D" uid="uid://fehiff8jfem4" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion7.png" id="60_4wjvp"]
 [ext_resource type="Texture2D" uid="uid://c4015wmknne0a" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion7.png" id="60_ixhca"]
+[ext_resource type="Texture2D" uid="uid://dwtvpyt8lmil3" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion8.png" id="61_ejbcw"]
 [ext_resource type="Texture2D" uid="uid://csm32w3uw70y5" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion8.png" id="61_ycum0"]
 [ext_resource type="Texture2D" uid="uid://dcdrt2kn818yq" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion9.png" id="62_bvxkk"]
+[ext_resource type="Texture2D" uid="uid://cwbiiopfasix" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion9.png" id="62_yessh"]
+[ext_resource type="Texture2D" uid="uid://bpw1vnf8mhoph" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion10.png" id="63_3qffy"]
 [ext_resource type="Texture2D" uid="uid://bqmq3mg4xuswu" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion10.png" id="63_duw5q"]
+[ext_resource type="AudioStream" uid="uid://fyid6nw4qsi" path="res://assets/sounds/medium-explosion-40472.mp3" id="64_kkvt5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mupp2"]
 animations = [{
@@ -276,13 +287,48 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("63_duw5q")
 }],
-"loop": false,
-"name": &"explode",
-"speed": 15.0
+"loop": true,
+"name": &"explosion",
+"speed": 5.0
 }, {
 "frames": [],
 "loop": true,
 "name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_qkxun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_c0vnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_p7btr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ig004")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_netgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_syo3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_4wjvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ejbcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_yessh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_3qffy")
+}],
+"loop": false,
+"name": &"nuclear_explosion",
 "speed": 5.0
 }]
 
@@ -332,6 +378,9 @@ collision_layer = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
 position = Vector2(10, -43)
 shape = SubResource("RectangleShape2D_20kn2")
+
+[node name="explosion_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("64_kkvt5")
 
 [connection signal="body_entered" from="wall_collision_detector" to="." method="_on_wall_collision_detector_body_entered"]
 [connection signal="body_entered" from="sight_radius" to="." method="_on_sight_radius_body_entered"]
