@@ -3,11 +3,14 @@ extends CharacterBody2D
 @onready var hitbox = preload("res://scenes/hitbox.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
 @export var gravity_strength = 500
+var attack_timer = 0
 var is_exploding = false
 var following = false
 var player = null
 
 func _physics_process(delta):
+	if attack_timer >= 0:
+		attack_timer -= delta
 	if global_position.y >= 700:
 		queue_free()
 	if !is_on_floor():
@@ -30,11 +33,12 @@ func _physics_process(delta):
 			velocity.x = 100
 			move_and_slide()
 			#await get_tree().create_timer(.3).timeout
-		if global_position.x - 30 < player.global_position.x || global_position.x + 30 > player.global_position.x: attack()
+		if (global_position.x - 20 < player.global_position.x || global_position.x + 20 > player.global_position.x) && attack_timer <= 0: attack()
 
 func attack():
+	attack_timer = 2
 	animated_sprite.play("attack")
-	await get_tree().create_timer(.7).timeout
+	await get_tree().create_timer(.5).timeout
 	var attack_hitbox = hitbox.instantiate()
 	add_child(attack_hitbox)
 	await get_tree().create_timer(.2).timeout

@@ -18,12 +18,12 @@ func _physics_process(delta):
 		if velocity.y > 1000:
 			velocity.y = 1000
 	if following && alive:
-		if global_position.x - player.global_position.x > 20:
+		if global_position.x - player.global_position.x > 50:
 			animated_sprite.play("run")
 			animated_sprite.flip_h = 1
 			velocity.x = -100
 			move_and_slide()
-		elif global_position.x - player.global_position.x < -20:
+		elif global_position.x - player.global_position.x < -50:
 			animated_sprite.play("run")
 			animated_sprite.flip_h = 0
 			velocity.x = 100
