@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqstlsmurhm3y"]
+
+[ext_resource type="Script" path="res://scripts/ship_boss.gd" id="1_sjcb7"]
+[ext_resource type="Texture2D" uid="uid://cx0iq5yfp8ye" path="res://assets/pixel ship.png" id="2_00dw2"]
+
+[node name="ship_boss" type="CharacterBody2D" groups=["boss", "enemy"]]
+collision_layer = 32
+script = ExtResource("1_sjcb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(267, 304)
+texture = ExtResource("2_00dw2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-3, 307, 148, 394, 132, 277, 190, 103, 194, 34, 279, -54, 363, 12, 389, 67, 489, 140, 533, 287, 479, 449, 489, 529, 452, 618, 183, 636, -17, 342)

@@ -8,8 +8,10 @@ var attack_timer = 0
 var is_exploding = false
 var following = false
 var player = null
+var player_location = GlobalValues.playerPosition
 
 func _physics_process(delta):
+	player_location = GlobalValues.playerPosition
 	if attack_timer >= 0:
 		attack_timer -= delta
 	if global_position.y >= 700:
@@ -23,18 +25,18 @@ func _physics_process(delta):
 	else: gravity_strength = 500
 	
 	if following:
-		if global_position.x - player.global_position.x > 20:
+		if global_position.x - player_location.x > 20:
 			animated_sprite.play("run")
 			animated_sprite.flip_h = 1
 			velocity.x = -100
 			move_and_slide()
-		elif global_position.x - player.global_position.x < -20:
+		elif global_position.x - player_location.x < -20:
 			animated_sprite.play("run")
 			animated_sprite.flip_h = 0
 			velocity.x = 100
 			move_and_slide()
 			#await get_tree().create_timer(.3).timeout
-		if (global_position.x - 20 < player.global_position.x || global_position.x + 20 > player.global_position.x) && attack_timer <= 0: attack()
+		if (global_position.x - 20 < player_location.x || global_position.x + 20 > player_location.x) && attack_timer <= 0: attack()
 
 func attack():
 	attack_timer = 2

@@ -1,0 +1,107 @@
+[gd_scene load_steps=23 format=3 uid="uid://d3uvp445uupge"]
+
+[ext_resource type="Texture2D" uid="uid://bt51dfhr8xabg" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/01.png" id="1_arl5b"]
+[ext_resource type="Script" path="res://scripts/nuclear_boss_cannonball.gd" id="1_ngtm6"]
+[ext_resource type="Texture2D" uid="uid://de4jjvjn6nqft" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/02.png" id="2_188jy"]
+[ext_resource type="Texture2D" uid="uid://bywnhw4p0ckjl" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/03.png" id="3_8tu5s"]
+[ext_resource type="Texture2D" uid="uid://dspmwb54uil55" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/04.png" id="4_pqnft"]
+[ext_resource type="Texture2D" uid="uid://finapql65vrr" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/05.png" id="5_v5vl2"]
+[ext_resource type="Texture2D" uid="uid://pwekitk21fmb" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/06.png" id="6_36kd2"]
+[ext_resource type="Texture2D" uid="uid://ctv8ew6o4c11j" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/07.png" id="7_howa2"]
+[ext_resource type="Texture2D" uid="uid://bcjstr6oxct6x" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/08.png" id="8_qhx0v"]
+[ext_resource type="Texture2D" uid="uid://bfv16gte3ryrl" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion1.png" id="9_8y273"]
+[ext_resource type="Texture2D" uid="uid://cdifw2ex4p8sp" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion2.png" id="10_4xtda"]
+[ext_resource type="Texture2D" uid="uid://coudhylc105xt" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion3.png" id="11_s4kur"]
+[ext_resource type="Texture2D" uid="uid://bqewe4o2j72wk" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion4.png" id="12_yb5ej"]
+[ext_resource type="Texture2D" uid="uid://0mviocufqmvo" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion5.png" id="13_2qdy0"]
+[ext_resource type="Texture2D" uid="uid://w0vvkwm872qd" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion6.png" id="14_hcrqc"]
+[ext_resource type="Texture2D" uid="uid://fehiff8jfem4" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion7.png" id="15_82nrd"]
+[ext_resource type="Texture2D" uid="uid://dwtvpyt8lmil3" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion8.png" id="16_0igvm"]
+[ext_resource type="Texture2D" uid="uid://cwbiiopfasix" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion9.png" id="17_yj5gb"]
+[ext_resource type="Texture2D" uid="uid://bpw1vnf8mhoph" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion10.png" id="18_vme7i"]
+[ext_resource type="AudioStream" uid="uid://ffi8pwlushdj" path="res://assets/sounds/explosion-42132.mp3" id="20_y1f1w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6ma7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_arl5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_188jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8tu5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pqnft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v5vl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_36kd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_howa2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qhx0v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8y273")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4xtda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s4kur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yb5ej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2qdy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hcrqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_82nrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0igvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yj5gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vme7i")
+}],
+"loop": false,
+"name": &"nuke",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v3kd6"]
+
+[node name="nuclear_boss_cannonball" type="Area2D"]
+script = ExtResource("1_ngtm6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_k6ma7")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 26)
+scale = Vector2(3.84642, 3.64056)
+shape = SubResource("CircleShape2D_v3kd6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_y1f1w")
