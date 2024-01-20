@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var crewmate = preload("res://scenes/melee_enemy.tscn")
 @onready var nuke = preload("res://scenes/nuclear_boss_cannonball.tscn")
 var attack_timer = 3
+var health = 50
 
 func _physics_process(delta):
 	if attack_timer > 0:
@@ -64,9 +65,9 @@ func bomb_wave():
 	fired_bomb4.bomb_speed = -150
 	fired_bomb5.bomb_speed = -150
 	fired_bomb.global_position = global_position
-	fired_bomb.global_position.y = global_position.y + 450
+	fired_bomb.global_position.y = global_position.y + 600
 	fired_bomb2.global_position = global_position
-	fired_bomb2.global_position.y = global_position.y + 475
+	fired_bomb2.global_position.y = global_position.y + 575
 	fired_bomb3.global_position = global_position
 	fired_bomb3.global_position.y = global_position.y + 500
 	fired_bomb4.global_position = global_position
@@ -95,3 +96,8 @@ func nuclear_cannon():
 	var fired_nuke = nuke.instantiate()
 	add_child(fired_nuke)
 	fired_nuke.global_position.y += 500
+	
+func damage(damage_num):
+	health -= damage_num
+	if health <= 0:
+		queue_free()
