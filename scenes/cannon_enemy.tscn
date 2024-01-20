@@ -60,7 +60,8 @@ size = Vector2(61, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0bb3"]
 size = Vector2(137.878, 152.75)
 
-[node name="cannon_enemy" type="CharacterBody2D"]
+[node name="cannon_enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 32
 script = ExtResource("1_0avgj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
