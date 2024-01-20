@@ -22,6 +22,7 @@ extends CharacterBody2D
 @export var max_fall_speed = 2000
 @export var gravity_strength = 980
 @export var friction = 2500
+@export var attack_timer = 0
 var coyote_time = 0.0
 var jump_buffer = 0.0
 var alive = true
@@ -32,6 +33,7 @@ var currently_facing = 1
 var shot_type = "blunderbuss"
 var cameraCounterX = 0
 var cameraCounterY = 0
+
 
 func _ready():
 	set_floor_max_angle(PI/3)
@@ -44,6 +46,8 @@ func _physics_process(delta):
 		#print("Wall")
 	#if(is_on_ceiling()):
 		#print("Ceiling")
+	if attack_timer >= 0:
+		attack_timer -= delta
 	changeCamera()
 	if hurt_i_frames > 0:
 		hurt_i_frames -= delta
@@ -128,7 +132,7 @@ func melee():
 		attackMelee = false
 		
 func shoot():
-	if alive && !attackMelee:
+	if alive && !attackMelee && attack_timer <= 0:
 		attackShoot = true
 		if is_on_floor():
 			if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
@@ -140,6 +144,7 @@ func shoot():
 			
 		var shot = shoot_particles.instantiate()
 		canvas_layer.add_child(shot)
+		attack_timer = 1
 		await get_tree().create_timer(0.216).timeout
 		shot.emitting = true
 		if shot_type == "flintlock":
