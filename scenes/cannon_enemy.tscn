@@ -1,0 +1,94 @@
+[gd_scene load_steps=15 format=3 uid="uid://23vqvx2uhql4"]
+
+[ext_resource type="Script" path="res://scripts/cannon_enemy.gd" id="1_0avgj"]
+[ext_resource type="Texture2D" uid="uid://bnbyaodmy7m0" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/1.png" id="1_oq81e"]
+[ext_resource type="Texture2D" uid="uid://d2g5mg0hn6610" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/2.png" id="2_7j01g"]
+[ext_resource type="Texture2D" uid="uid://534h0uja0hpw" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/3.png" id="3_l7msr"]
+[ext_resource type="Texture2D" uid="uid://d3o6th6tpfags" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/4.png" id="4_mq4vg"]
+[ext_resource type="Texture2D" uid="uid://dvu5owvgstav3" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/5.png" id="5_1b11c"]
+[ext_resource type="Texture2D" uid="uid://onwi6acouij1" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/6.png" id="6_v5ucv"]
+[ext_resource type="Texture2D" uid="uid://4mstit3csflb" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/7.png" id="7_i378b"]
+[ext_resource type="Texture2D" uid="uid://c0ojyrkiyfs3j" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/8.png" id="8_ks4wt"]
+[ext_resource type="Texture2D" uid="uid://bae6daphthj52" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/9.png" id="9_wvluq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmke7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oq81e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7j01g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l7msr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mq4vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1b11c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v5ucv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i378b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ks4wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wvluq")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jkgb"]
+size = Vector2(21.9979, 19.3317)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa6wp"]
+size = Vector2(61, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0bb3"]
+size = Vector2(137.878, 152.75)
+
+[node name="cannon_enemy" type="CharacterBody2D"]
+script = ExtResource("1_0avgj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nmke7")
+animation = &"attack"
+autoplay = "idle"
+frame = 8
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.752, 1.752)
+scale = Vector2(2.2504, 2.2504)
+shape = SubResource("RectangleShape2D_4jkgb")
+
+[node name="wall_collision_detector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_collision_detector"]
+position = Vector2(-0.5, 16.5)
+shape = SubResource("RectangleShape2D_aa6wp")
+
+[node name="sight_radius" type="Area2D" parent="."]
+position = Vector2(-29, 194)
+scale = Vector2(2.83449, 17.4471)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
+position = Vector2(10, -11)
+scale = Vector2(3.59447, 0.636726)
+shape = SubResource("RectangleShape2D_b0bb3")

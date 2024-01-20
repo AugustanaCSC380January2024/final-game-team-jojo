@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://u1y3fn3wcuqg"]
+
+[ext_resource type="Script" path="res://scripts/cannonball.gd" id="1_ck6f2"]
+[ext_resource type="Texture2D" uid="uid://88ool0k5dfgh" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/3-Cannon Ball/1.png" id="1_lgabm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fy24n"]
+
+[node name="cannonball" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_ck6f2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lgabm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.96046e-08, 0)
+scale = Vector2(1.41818, 1.4)
+shape = SubResource("CircleShape2D_fy24n")
