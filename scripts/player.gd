@@ -128,7 +128,7 @@ func idle():
 
 func melee():
 	if alive && !attackShoot && melee_attack_timer <= 0:
-		melee_attack_timer = .5
+		melee_attack_timer = .7
 		attackMelee = true
 		if is_on_floor():
 			if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
@@ -137,6 +137,7 @@ func melee():
 				animated_sprite.play("melee")
 		else:
 			animated_sprite.play("jump_melee")
+		await get_tree().create_timer(0.1).timeout
 		var attack_hitbox = melee_hitbox.instantiate()
 		add_child(attack_hitbox)
 		await get_tree().create_timer(0.3).timeout
