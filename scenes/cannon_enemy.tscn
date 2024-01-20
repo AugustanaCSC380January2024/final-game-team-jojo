@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://23vqvx2uhql4"]
+[gd_scene load_steps=15 format=3 uid="uid://ctjbm82nkg1av"]
 
 [ext_resource type="Script" path="res://scripts/cannon_enemy.gd" id="1_0avgj"]
 [ext_resource type="Texture2D" uid="uid://bnbyaodmy7m0" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/1.png" id="1_oq81e"]

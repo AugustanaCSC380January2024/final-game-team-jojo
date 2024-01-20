@@ -292,9 +292,9 @@ func hurt():
 
 func die():
 	alive = false
-	velocity = Vector2.ZERO
 	animated_sprite.play("die")
 	await get_tree().create_timer(2).timeout
+	velocity = Vector2.ZERO
 	global_position = Vector2(178, 390)
 	alive = true
 	lives = 3
