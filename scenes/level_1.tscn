@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dmg2mtenvht2f" path="res://assets/tf_beach_tileset/beach_tileset.png" id="3_okc5p"]
 [ext_resource type="PackedScene" uid="uid://y7pr7c5j5rfk" path="res://scenes/coin.tscn" id="6_6cgca"]
 [ext_resource type="PackedScene" uid="uid://b0bp1ewjw1sut" path="res://scenes/melee_enemy.tscn" id="6_m736d"]
-[ext_resource type="PackedScene" path="res://scenes/bomb_enemy.tscn" id="7_50pp8"]
+[ext_resource type="PackedScene" uid="uid://4jcdem4c4t14" path="res://scenes/bomb_enemy.tscn" id="7_50pp8"]
 [ext_resource type="PackedScene" uid="uid://c3bdqqyex61sc" path="res://scenes/nuke_enemy.tscn" id="8_cfgj1"]
-[ext_resource type="PackedScene" path="res://scenes/cannon_enemy.tscn" id="9_85chk"]
+[ext_resource type="PackedScene" uid="uid://ctjbm82nkg1av" path="res://scenes/cannon_enemy.tscn" id="9_85chk"]
 [ext_resource type="PackedScene" uid="uid://b8qu34o0vohuy" path="res://scenes/background.tscn" id="10_j2grw"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_y50jd"]
@@ -29,755 +29,567 @@ texture = ExtResource("1_pcv8v")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:0/0/physics_layer_0/angular_velocity = 0.0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:0/0 = 0
 8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:0/0/physics_layer_0/angular_velocity = 0.0
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:0/0 = 0
 9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:0/0/physics_layer_0/angular_velocity = 0.0
-9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:0/0 = 0
 12:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:0/0/physics_layer_0/angular_velocity = 0.0
-12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:0/0 = 0
 13:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:0/0/physics_layer_0/angular_velocity = 0.0
-13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:0/0 = 0
 14:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:0/0/physics_layer_0/angular_velocity = 0.0
-14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:0/0 = 0
 15:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:0/0/physics_layer_0/angular_velocity = 0.0
-15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:0/0 = 0
 18:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:0/0/physics_layer_0/angular_velocity = 0.0
-18:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:0/0 = 0
 19:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:0/0/physics_layer_0/angular_velocity = 0.0
-19:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:0/0 = 0
 20:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:0/0/physics_layer_0/angular_velocity = 0.0
-20:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:0/0 = 0
 21:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:0/0/physics_layer_0/angular_velocity = 0.0
-21:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:0/0 = 0
 24:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:0/0/physics_layer_0/angular_velocity = 0.0
-24:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:0/0 = 0
 25:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:0/0/physics_layer_0/angular_velocity = 0.0
-25:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:0/0 = 0
 26:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:0/0/physics_layer_0/angular_velocity = 0.0
-26:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:0/0 = 0
 27:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:0/0/physics_layer_0/angular_velocity = 0.0
-27:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 30:0/0 = 0
 30:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:0/0/physics_layer_0/angular_velocity = 0.0
-30:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 31:0/0 = 0
 31:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 31:0/0/physics_layer_0/angular_velocity = 0.0
-31:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
 4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:1/0/physics_layer_0/angular_velocity = 0.0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:1/0 = 0
 5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_0/angular_velocity = 0.0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:1/0 = 0
 8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:1/0/physics_layer_0/angular_velocity = 0.0
-8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:1/0 = 0
 9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:1/0/physics_layer_0/angular_velocity = 0.0
-9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:1/0 = 0
 12:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:1/0/physics_layer_0/angular_velocity = 0.0
-12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:1/0 = 0
 13:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:1/0/physics_layer_0/angular_velocity = 0.0
-13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:1/0 = 0
 14:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:1/0/physics_layer_0/angular_velocity = 0.0
-14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:1/0 = 0
 15:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:1/0/physics_layer_0/angular_velocity = 0.0
-15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:1/0 = 0
 18:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:1/0/physics_layer_0/angular_velocity = 0.0
-18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:1/0 = 0
 19:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:1/0/physics_layer_0/angular_velocity = 0.0
-19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:1/0 = 0
 20:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:1/0/physics_layer_0/angular_velocity = 0.0
-20:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:1/0 = 0
 21:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:1/0/physics_layer_0/angular_velocity = 0.0
-21:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:1/0 = 0
 24:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:1/0/physics_layer_0/angular_velocity = 0.0
-24:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:1/0 = 0
 25:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:1/0/physics_layer_0/angular_velocity = 0.0
-25:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:1/0 = 0
 26:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:1/0/physics_layer_0/angular_velocity = 0.0
-26:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:1/0 = 0
 27:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:1/0/physics_layer_0/angular_velocity = 0.0
-27:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 30:1/0 = 0
 30:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:1/0/physics_layer_0/angular_velocity = 0.0
-30:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 31:1/0 = 0
 31:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 31:1/0/physics_layer_0/angular_velocity = 0.0
-31:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:2/0 = 0
 3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:2/0/physics_layer_0/angular_velocity = 0.0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:2/0 = 0
 4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:2/0/physics_layer_0/angular_velocity = 0.0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:2/0 = 0
 5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:2/0/physics_layer_0/angular_velocity = 0.0
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:2/0 = 0
 8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:2/0/physics_layer_0/angular_velocity = 0.0
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:2/0 = 0
 9:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:2/0/physics_layer_0/angular_velocity = 0.0
-9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:2/0 = 0
 12:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:2/0/physics_layer_0/angular_velocity = 0.0
-12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:2/0 = 0
 13:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:2/0/physics_layer_0/angular_velocity = 0.0
-13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:2/0 = 0
 14:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:2/0/physics_layer_0/angular_velocity = 0.0
-14:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:2/0 = 0
 15:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:2/0/physics_layer_0/angular_velocity = 0.0
-15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:2/0 = 0
 18:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:2/0/physics_layer_0/angular_velocity = 0.0
-18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:2/0 = 0
 19:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:2/0/physics_layer_0/angular_velocity = 0.0
-19:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:2/0 = 0
 20:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:2/0/physics_layer_0/angular_velocity = 0.0
-20:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:2/0 = 0
 21:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:2/0/physics_layer_0/angular_velocity = 0.0
-21:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:2/0 = 0
 24:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:2/0/physics_layer_0/angular_velocity = 0.0
-24:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:2/0 = 0
 25:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:2/0/physics_layer_0/angular_velocity = 0.0
-25:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:2/0 = 0
 26:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:2/0/physics_layer_0/angular_velocity = 0.0
-26:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:2/0 = 0
 27:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:2/0/physics_layer_0/angular_velocity = 0.0
-27:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 30:2/0 = 0
 30:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:2/0/physics_layer_0/angular_velocity = 0.0
-30:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 31:2/0 = 0
 31:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 31:2/0/physics_layer_0/angular_velocity = 0.0
-31:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 32:2/0 = 0
 32:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:2/0/physics_layer_0/angular_velocity = 0.0
-32:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 33:2/0 = 0
 33:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 33:2/0/physics_layer_0/angular_velocity = 0.0
-33:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:3/0 = 0
 0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:3/0/physics_layer_0/angular_velocity = 0.0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:3/0 = 0
 1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/0/physics_layer_0/angular_velocity = 0.0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:3/0 = 0
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:3/0/physics_layer_0/angular_velocity = 0.0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:3/0 = 0
 4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:3/0/physics_layer_0/angular_velocity = 0.0
-4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
 5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:3/0/physics_layer_0/angular_velocity = 0.0
-5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:3/0 = 0
 8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:3/0/physics_layer_0/angular_velocity = 0.0
-8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:3/0 = 0
 9:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:3/0/physics_layer_0/angular_velocity = 0.0
-9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:3/0 = 0
 12:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:3/0/physics_layer_0/angular_velocity = 0.0
-12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:3/0 = 0
 13:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:3/0/physics_layer_0/angular_velocity = 0.0
-13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:3/0 = 0
 14:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:3/0/physics_layer_0/angular_velocity = 0.0
-14:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:3/0 = 0
 15:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:3/0/physics_layer_0/angular_velocity = 0.0
-15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:3/0 = 0
 18:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:3/0/physics_layer_0/angular_velocity = 0.0
-18:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:3/0 = 0
 19:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:3/0/physics_layer_0/angular_velocity = 0.0
-19:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:3/0 = 0
 20:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:3/0/physics_layer_0/angular_velocity = 0.0
-20:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:3/0 = 0
 21:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:3/0/physics_layer_0/angular_velocity = 0.0
-21:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:3/0 = 0
 24:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:3/0/physics_layer_0/angular_velocity = 0.0
-24:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:3/0 = 0
 25:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:3/0/physics_layer_0/angular_velocity = 0.0
-25:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:3/0 = 0
 26:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:3/0/physics_layer_0/angular_velocity = 0.0
-26:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:3/0 = 0
 27:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:3/0/physics_layer_0/angular_velocity = 0.0
-27:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 30:3/0 = 0
 30:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:3/0/physics_layer_0/angular_velocity = 0.0
-30:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 31:3/0 = 0
 31:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 31:3/0/physics_layer_0/angular_velocity = 0.0
-31:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 32:3/0 = 0
 32:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:3/0/physics_layer_0/angular_velocity = 0.0
-32:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 33:3/0 = 0
 33:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 33:3/0/physics_layer_0/angular_velocity = 0.0
-33:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:4/0 = 0
 0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:4/0/physics_layer_0/angular_velocity = 0.0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:4/0 = 0
 1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:4/0/physics_layer_0/angular_velocity = 0.0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:4/0 = 0
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:4/0/physics_layer_0/angular_velocity = 0.0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:4/0 = 0
 3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:4/0/physics_layer_0/angular_velocity = 0.0
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:4/0 = 0
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:4/0 = 0
 5:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:4/0/physics_layer_0/angular_velocity = 0.0
-5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:4/0 = 0
 8:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:4/0/physics_layer_0/angular_velocity = 0.0
-8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:4/0 = 0
 9:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:4/0/physics_layer_0/angular_velocity = 0.0
-9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:5/0 = 0
 0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:5/0/physics_layer_0/angular_velocity = 0.0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:5/0 = 0
 1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:5/0/physics_layer_0/angular_velocity = 0.0
-1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:5/0 = 0
 2:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:5/0/physics_layer_0/angular_velocity = 0.0
-2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:5/0 = 0
 3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:5/0/physics_layer_0/angular_velocity = 0.0
-3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:5/0 = 0
 4:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:5/0/physics_layer_0/angular_velocity = 0.0
-4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:5/0 = 0
 5:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:5/0/physics_layer_0/angular_velocity = 0.0
-5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:5/0 = 0
 8:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:5/0/physics_layer_0/angular_velocity = 0.0
-8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:5/0 = 0
 9:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:5/0/physics_layer_0/angular_velocity = 0.0
-9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:6/0 = 0
 12:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:6/0/physics_layer_0/angular_velocity = 0.0
-12:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:6/0 = 0
 13:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:6/0/physics_layer_0/angular_velocity = 0.0
-13:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:6/0 = 0
 14:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:6/0/physics_layer_0/angular_velocity = 0.0
-14:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:6/0 = 0
 15:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:6/0/physics_layer_0/angular_velocity = 0.0
-15:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:6/0 = 0
 18:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:6/0/physics_layer_0/angular_velocity = 0.0
-18:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:6/0 = 0
 19:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:6/0/physics_layer_0/angular_velocity = 0.0
-19:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:6/0 = 0
 20:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:6/0/physics_layer_0/angular_velocity = 0.0
-20:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:6/0 = 0
 21:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:6/0/physics_layer_0/angular_velocity = 0.0
-21:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:6/0 = 0
 24:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:6/0/physics_layer_0/angular_velocity = 0.0
-24:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:6/0 = 0
 25:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:6/0/physics_layer_0/angular_velocity = 0.0
-25:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:6/0 = 0
 26:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:6/0/physics_layer_0/angular_velocity = 0.0
-26:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:6/0 = 0
 27:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:6/0/physics_layer_0/angular_velocity = 0.0
-27:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 30:6/0 = 0
 30:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:6/0/physics_layer_0/angular_velocity = 0.0
-30:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 31:6/0 = 0
 31:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 31:6/0/physics_layer_0/angular_velocity = 0.0
-31:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 32:6/0 = 0
 32:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:6/0/physics_layer_0/angular_velocity = 0.0
-32:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 33:6/0 = 0
 33:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 33:6/0/physics_layer_0/angular_velocity = 0.0
-33:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:7/0 = 0
 12:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:7/0/physics_layer_0/angular_velocity = 0.0
-12:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:7/0 = 0
 13:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:7/0/physics_layer_0/angular_velocity = 0.0
-13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:7/0 = 0
 14:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:7/0/physics_layer_0/angular_velocity = 0.0
-14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:7/0 = 0
 15:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:7/0/physics_layer_0/angular_velocity = 0.0
-15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:7/0 = 0
 18:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:7/0/physics_layer_0/angular_velocity = 0.0
-18:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:7/0 = 0
 19:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:7/0/physics_layer_0/angular_velocity = 0.0
-19:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:7/0 = 0
 20:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:7/0/physics_layer_0/angular_velocity = 0.0
-20:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:7/0 = 0
 21:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:7/0/physics_layer_0/angular_velocity = 0.0
-21:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:7/0 = 0
 24:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:7/0/physics_layer_0/angular_velocity = 0.0
-24:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:7/0 = 0
 25:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:7/0/physics_layer_0/angular_velocity = 0.0
-25:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:7/0 = 0
 26:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:7/0/physics_layer_0/angular_velocity = 0.0
-26:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:7/0 = 0
 27:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:7/0/physics_layer_0/angular_velocity = 0.0
-27:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 30:7/0 = 0
 30:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:7/0/physics_layer_0/angular_velocity = 0.0
-30:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 31:7/0 = 0
 31:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 31:7/0/physics_layer_0/angular_velocity = 0.0
-31:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 32:7/0 = 0
 32:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:7/0/physics_layer_0/angular_velocity = 0.0
-32:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 33:7/0 = 0
 33:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 33:7/0/physics_layer_0/angular_velocity = 0.0
-33:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:8/0 = 0
 0:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:8/0/physics_layer_0/angular_velocity = 0.0
-0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:8/0 = 0
 1:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:8/0/physics_layer_0/angular_velocity = 0.0
-1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:8/0 = 0
 2:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:8/0/physics_layer_0/angular_velocity = 0.0
-2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:8/0 = 0
 3:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:8/0/physics_layer_0/angular_velocity = 0.0
-3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:8/0 = 0
 4:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:8/0/physics_layer_0/angular_velocity = 0.0
-4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:8/0 = 0
 5:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:8/0/physics_layer_0/angular_velocity = 0.0
-5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:8/0 = 0
 8:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:8/0/physics_layer_0/angular_velocity = 0.0
-8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:8/0 = 0
 9:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:8/0/physics_layer_0/angular_velocity = 0.0
-9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:8/0 = 0
 12:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:8/0/physics_layer_0/angular_velocity = 0.0
-12:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:8/0 = 0
 13:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:8/0/physics_layer_0/angular_velocity = 0.0
-13:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:8/0 = 0
 14:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:8/0/physics_layer_0/angular_velocity = 0.0
-14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:8/0 = 0
 15:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:8/0/physics_layer_0/angular_velocity = 0.0
-15:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:8/0 = 0
 18:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:8/0/physics_layer_0/angular_velocity = 0.0
-18:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:8/0 = 0
 19:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:8/0/physics_layer_0/angular_velocity = 0.0
-19:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:8/0 = 0
 20:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:8/0/physics_layer_0/angular_velocity = 0.0
-20:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:8/0 = 0
 21:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:8/0/physics_layer_0/angular_velocity = 0.0
-21:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:8/0 = 0
 24:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:8/0/physics_layer_0/angular_velocity = 0.0
-24:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:8/0 = 0
 25:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:8/0/physics_layer_0/angular_velocity = 0.0
-25:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:8/0 = 0
 26:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:8/0/physics_layer_0/angular_velocity = 0.0
-26:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:8/0 = 0
 27:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:8/0/physics_layer_0/angular_velocity = 0.0
-27:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 30:8/0 = 0
 30:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:8/0/physics_layer_0/angular_velocity = 0.0
-30:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 31:8/0 = 0
 31:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 31:8/0/physics_layer_0/angular_velocity = 0.0
-31:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 32:8/0 = 0
 32:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:8/0/physics_layer_0/angular_velocity = 0.0
-32:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 33:8/0 = 0
 33:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 33:8/0/physics_layer_0/angular_velocity = 0.0
-33:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:9/0 = 0
 0:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:9/0/physics_layer_0/angular_velocity = 0.0
-0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:9/0 = 0
 1:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:9/0/physics_layer_0/angular_velocity = 0.0
-1:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:9/0 = 0
 2:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:9/0/physics_layer_0/angular_velocity = 0.0
-2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:9/0 = 0
 3:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:9/0/physics_layer_0/angular_velocity = 0.0
-3:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:9/0 = 0
 4:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:9/0/physics_layer_0/angular_velocity = 0.0
-4:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:9/0 = 0
 5:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:9/0/physics_layer_0/angular_velocity = 0.0
-5:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:9/0 = 0
 8:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:9/0/physics_layer_0/angular_velocity = 0.0
-8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:9/0 = 0
 9:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:9/0/physics_layer_0/angular_velocity = 0.0
-9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:9/0 = 0
 12:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:9/0/physics_layer_0/angular_velocity = 0.0
-12:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:9/0 = 0
 13:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:9/0/physics_layer_0/angular_velocity = 0.0
-13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:9/0 = 0
 14:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:9/0/physics_layer_0/angular_velocity = 0.0
-14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:9/0 = 0
 15:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:9/0/physics_layer_0/angular_velocity = 0.0
-15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:9/0 = 0
 18:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:9/0/physics_layer_0/angular_velocity = 0.0
-18:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:9/0 = 0
 19:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:9/0/physics_layer_0/angular_velocity = 0.0
-19:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:9/0 = 0
 20:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:9/0/physics_layer_0/angular_velocity = 0.0
-20:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:9/0 = 0
 21:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:9/0/physics_layer_0/angular_velocity = 0.0
-21:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:9/0 = 0
 24:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:9/0/physics_layer_0/angular_velocity = 0.0
-24:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:9/0 = 0
 25:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:9/0/physics_layer_0/angular_velocity = 0.0
-25:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:9/0 = 0
 26:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 26:9/0/physics_layer_0/angular_velocity = 0.0
-26:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 27:9/0 = 0
 27:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 27:9/0/physics_layer_0/angular_velocity = 0.0
-27:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 30:9/0 = 0
 30:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 30:9/0/physics_layer_0/angular_velocity = 0.0
-30:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 31:9/0 = 0
 31:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 31:9/0/physics_layer_0/angular_velocity = 0.0
-31:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 32:9/0 = 0
 32:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 32:9/0/physics_layer_0/angular_velocity = 0.0
-32:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 33:9/0 = 0
 33:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 33:9/0/physics_layer_0/angular_velocity = 0.0
-33:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:3/0 = 0
 6:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:3/0/physics_layer_0/angular_velocity = 0.0
@@ -1186,14 +998,12 @@ texture = ExtResource("3_okc5p")
 1:7/0 = 0
 1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:7/0/physics_layer_0/angular_velocity = 0.0
-1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8, 8)
 2:7/0 = 0
 2:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:7/0/physics_layer_0/angular_velocity = 0.0
 3:7/0 = 0
 3:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:7/0/physics_layer_0/angular_velocity = 0.0
-3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, 8, 8, 8)
 4:7/0 = 0
 4:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:7/0/physics_layer_0/angular_velocity = 0.0
@@ -1284,31 +1094,24 @@ texture = ExtResource("3_okc5p")
 8:9/0 = 0
 8:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:9/0/physics_layer_0/angular_velocity = 0.0
-8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:9/0 = 0
 9:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:9/0/physics_layer_0/angular_velocity = 0.0
-9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:9/0 = 0
 10:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:9/0/physics_layer_0/angular_velocity = 0.0
-10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:9/0 = 0
 11:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:9/0/physics_layer_0/angular_velocity = 0.0
-11:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:9/0 = 0
 12:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:9/0/physics_layer_0/angular_velocity = 0.0
-12:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:9/0 = 0
 13:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:9/0/physics_layer_0/angular_velocity = 0.0
-13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:9/0 = 0
 14:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:9/0/physics_layer_0/angular_velocity = 0.0
-14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:9/0 = 0
 15:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:9/0/physics_layer_0/angular_velocity = 0.0
@@ -1321,28 +1124,18 @@ texture = ExtResource("3_okc5p")
 18:9/0 = 0
 18:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:9/0/physics_layer_0/angular_velocity = 0.0
-18:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, 8, -3, 1, 8, 1, 8, 8)
-18:9/0/physics_layer_0/polygon_0/one_way = true
 19:9/0 = 0
 19:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:9/0/physics_layer_0/angular_velocity = 0.0
-19:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, -8, 8, 8, 8, 8, 1)
-19:9/0/physics_layer_0/polygon_0/one_way = true
 20:9/0 = 0
 20:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:9/0/physics_layer_0/angular_velocity = 0.0
-20:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, -8, 8, 8, 8, 8, 1)
-20:9/0/physics_layer_0/polygon_0/one_way = true
 21:9/0 = 0
 21:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:9/0/physics_layer_0/angular_velocity = 0.0
-21:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, -8, 8, 8, 8, 8, 1)
-21:9/0/physics_layer_0/polygon_0/one_way = true
 22:9/0 = 0
 22:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 22:9/0/physics_layer_0/angular_velocity = 0.0
-22:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, -8, 8, 6, 8, 6, 1)
-22:9/0/physics_layer_0/polygon_0/one_way = true
 1:10/0 = 0
 1:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:10/0/physics_layer_0/angular_velocity = 0.0
@@ -1358,35 +1151,27 @@ texture = ExtResource("3_okc5p")
 7:10/0 = 0
 7:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:10/0/physics_layer_0/angular_velocity = 0.0
-7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:10/0 = 0
 8:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:10/0/physics_layer_0/angular_velocity = 0.0
-8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:10/0 = 0
 9:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:10/0/physics_layer_0/angular_velocity = 0.0
-9:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:10/0 = 0
 10:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:10/0/physics_layer_0/angular_velocity = 0.0
-10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:10/0 = 0
 11:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:10/0/physics_layer_0/angular_velocity = 0.0
-11:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:10/0 = 0
 12:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:10/0/physics_layer_0/angular_velocity = 0.0
-12:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:10/0 = 0
 13:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:10/0/physics_layer_0/angular_velocity = 0.0
-13:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:10/0 = 0
 14:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:10/0/physics_layer_0/angular_velocity = 0.0
-14:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:10/0 = 0
 15:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:10/0/physics_layer_0/angular_velocity = 0.0
@@ -1426,23 +1211,18 @@ texture = ExtResource("3_okc5p")
 7:11/0 = 0
 7:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:11/0/physics_layer_0/angular_velocity = 0.0
-7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:11/0 = 0
 8:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:11/0/physics_layer_0/angular_velocity = 0.0
-8:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:11/0 = 0
 9:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:11/0/physics_layer_0/angular_velocity = 0.0
-9:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:11/0 = 0
 10:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:11/0/physics_layer_0/angular_velocity = 0.0
-10:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:11/0 = 0
 11:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:11/0/physics_layer_0/angular_velocity = 0.0
-11:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:11/0 = 0
 12:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:11/0/physics_layer_0/angular_velocity = 0.0
@@ -1545,23 +1325,18 @@ texture = ExtResource("3_okc5p")
 10:13/0 = 0
 10:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:13/0/physics_layer_0/angular_velocity = 0.0
-10:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:13/0 = 0
 11:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:13/0/physics_layer_0/angular_velocity = 0.0
-11:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:13/0 = 0
 12:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:13/0/physics_layer_0/angular_velocity = 0.0
-12:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:13/0 = 0
 13:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:13/0/physics_layer_0/angular_velocity = 0.0
-13:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:13/0 = 0
 14:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:13/0/physics_layer_0/angular_velocity = 0.0
-14:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:13/0 = 0
 15:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:13/0/physics_layer_0/angular_velocity = 0.0
@@ -1604,23 +1379,18 @@ texture = ExtResource("3_okc5p")
 10:14/0 = 0
 10:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:14/0/physics_layer_0/angular_velocity = 0.0
-10:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:14/0 = 0
 11:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:14/0/physics_layer_0/angular_velocity = 0.0
-11:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:14/0 = 0
 12:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:14/0/physics_layer_0/angular_velocity = 0.0
-12:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:14/0 = 0
 13:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:14/0/physics_layer_0/angular_velocity = 0.0
-13:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:14/0 = 0
 14:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:14/0/physics_layer_0/angular_velocity = 0.0
-14:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:14/0 = 0
 15:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:14/0/physics_layer_0/angular_velocity = 0.0
@@ -1678,15 +1448,12 @@ texture = ExtResource("3_okc5p")
 15:15/0 = 0
 15:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:15/0/physics_layer_0/angular_velocity = 0.0
-15:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:15/0 = 0
 16:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:15/0/physics_layer_0/angular_velocity = 0.0
-16:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:15/0 = 0
 17:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:15/0/physics_layer_0/angular_velocity = 0.0
-17:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:15/0 = 0
 18:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:15/0/physics_layer_0/angular_velocity = 0.0
@@ -1780,31 +1547,24 @@ texture = ExtResource("3_okc5p")
 16:17/0 = 0
 16:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:17/0/physics_layer_0/angular_velocity = 0.0
-16:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:17/0 = 0
 17:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:17/0/physics_layer_0/angular_velocity = 0.0
-17:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:17/0 = 0
 18:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:17/0/physics_layer_0/angular_velocity = 0.0
-18:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:17/0 = 0
 19:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 19:17/0/physics_layer_0/angular_velocity = 0.0
-19:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:17/0 = 0
 20:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 20:17/0/physics_layer_0/angular_velocity = 0.0
-20:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:17/0 = 0
 21:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:17/0/physics_layer_0/angular_velocity = 0.0
-21:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 22:17/0 = 0
 22:17/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 22:17/0/physics_layer_0/angular_velocity = 0.0
-22:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:18/0 = 0
 7:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:18/0/physics_layer_0/angular_velocity = 0.0
@@ -2097,481 +1857,17 @@ position = Vector2(178, 399)
 offset = Vector2(0, -100)
 transform = Transform2D(1, 0, 0, 1, 0, -100)
 
-[connection signal="body_entered" from="TileMap/Coin" to="TileMap/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24075" to="TileMap/@Area2D@24075" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24076" to="TileMap/@Area2D@24076" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24077" to="TileMap/@Area2D@24077" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24078" to="TileMap/@Area2D@24078" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24079" to="TileMap/@Area2D@24079" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24080" to="TileMap/@Area2D@24080" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24081" to="TileMap/@Area2D@24081" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24082" to="TileMap/@Area2D@24082" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24083" to="TileMap/@Area2D@24083" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24084" to="TileMap/@Area2D@24084" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24085" to="TileMap/@Area2D@24085" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24086" to="TileMap/@Area2D@24086" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24087" to="TileMap/@Area2D@24087" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24088" to="TileMap/@Area2D@24088" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24089" to="TileMap/@Area2D@24089" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24090" to="TileMap/@Area2D@24090" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24091" to="TileMap/@Area2D@24091" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24092" to="TileMap/@Area2D@24092" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24093" to="TileMap/@Area2D@24093" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24094" to="TileMap/@Area2D@24094" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24095" to="TileMap/@Area2D@24095" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24096" to="TileMap/@Area2D@24096" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24097" to="TileMap/@Area2D@24097" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24117" to="TileMap/@Area2D@24117" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24118" to="TileMap/@Area2D@24118" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24119" to="TileMap/@Area2D@24119" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24120" to="TileMap/@Area2D@24120" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24121" to="TileMap/@Area2D@24121" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24122" to="TileMap/@Area2D@24122" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24123" to="TileMap/@Area2D@24123" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24124" to="TileMap/@Area2D@24124" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24125" to="TileMap/@Area2D@24125" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24126" to="TileMap/@Area2D@24126" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24127" to="TileMap/@Area2D@24127" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24128" to="TileMap/@Area2D@24128" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24129" to="TileMap/@Area2D@24129" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24130" to="TileMap/@Area2D@24130" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24131" to="TileMap/@Area2D@24131" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24132" to="TileMap/@Area2D@24132" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24133" to="TileMap/@Area2D@24133" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24134" to="TileMap/@Area2D@24134" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24135" to="TileMap/@Area2D@24135" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24136" to="TileMap/@Area2D@24136" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24137" to="TileMap/@Area2D@24137" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24138" to="TileMap/@Area2D@24138" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24139" to="TileMap/@Area2D@24139" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24140" to="TileMap/@Area2D@24140" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24141" to="TileMap/@Area2D@24141" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24142" to="TileMap/@Area2D@24142" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24143" to="TileMap/@Area2D@24143" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24144" to="TileMap/@Area2D@24144" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24145" to="TileMap/@Area2D@24145" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24146" to="TileMap/@Area2D@24146" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24147" to="TileMap/@Area2D@24147" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24148" to="TileMap/@Area2D@24148" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24149" to="TileMap/@Area2D@24149" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24150" to="TileMap/@Area2D@24150" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24151" to="TileMap/@Area2D@24151" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24152" to="TileMap/@Area2D@24152" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24153" to="TileMap/@Area2D@24153" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24154" to="TileMap/@Area2D@24154" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24155" to="TileMap/@Area2D@24155" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24156" to="TileMap/@Area2D@24156" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24157" to="TileMap/@Area2D@24157" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24158" to="TileMap/@Area2D@24158" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24159" to="TileMap/@Area2D@24159" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24162" to="TileMap/@Area2D@24162" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24163" to="TileMap/@Area2D@24163" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24164" to="TileMap/@Area2D@24164" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24165" to="TileMap/@Area2D@24165" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24166" to="TileMap/@Area2D@24166" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24167" to="TileMap/@Area2D@24167" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24168" to="TileMap/@Area2D@24168" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24169" to="TileMap/@Area2D@24169" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24170" to="TileMap/@Area2D@24170" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24171" to="TileMap/@Area2D@24171" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24172" to="TileMap/@Area2D@24172" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24173" to="TileMap/@Area2D@24173" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24174" to="TileMap/@Area2D@24174" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24175" to="TileMap/@Area2D@24175" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24176" to="TileMap/@Area2D@24176" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24177" to="TileMap/@Area2D@24177" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24178" to="TileMap/@Area2D@24178" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24179" to="TileMap/@Area2D@24179" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24180" to="TileMap/@Area2D@24180" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24181" to="TileMap/@Area2D@24181" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24182" to="TileMap/@Area2D@24182" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24183" to="TileMap/@Area2D@24183" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24184" to="TileMap/@Area2D@24184" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24185" to="TileMap/@Area2D@24185" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24186" to="TileMap/@Area2D@24186" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24187" to="TileMap/@Area2D@24187" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24188" to="TileMap/@Area2D@24188" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24189" to="TileMap/@Area2D@24189" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24190" to="TileMap/@Area2D@24190" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24191" to="TileMap/@Area2D@24191" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24192" to="TileMap/@Area2D@24192" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24193" to="TileMap/@Area2D@24193" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24194" to="TileMap/@Area2D@24194" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24195" to="TileMap/@Area2D@24195" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24196" to="TileMap/@Area2D@24196" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24197" to="TileMap/@Area2D@24197" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24198" to="TileMap/@Area2D@24198" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24199" to="TileMap/@Area2D@24199" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24200" to="TileMap/@Area2D@24200" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24201" to="TileMap/@Area2D@24201" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24202" to="TileMap/@Area2D@24202" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24203" to="TileMap/@Area2D@24203" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24204" to="TileMap/@Area2D@24204" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24205" to="TileMap/@Area2D@24205" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24206" to="TileMap/@Area2D@24206" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24207" to="TileMap/@Area2D@24207" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24208" to="TileMap/@Area2D@24208" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24209" to="TileMap/@Area2D@24209" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24210" to="TileMap/@Area2D@24210" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24211" to="TileMap/@Area2D@24211" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24212" to="TileMap/@Area2D@24212" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24213" to="TileMap/@Area2D@24213" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24214" to="TileMap/@Area2D@24214" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24215" to="TileMap/@Area2D@24215" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24216" to="TileMap/@Area2D@24216" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24217" to="TileMap/@Area2D@24217" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24218" to="TileMap/@Area2D@24218" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24219" to="TileMap/@Area2D@24219" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24220" to="TileMap/@Area2D@24220" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24221" to="TileMap/@Area2D@24221" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24222" to="TileMap/@Area2D@24222" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24223" to="TileMap/@Area2D@24223" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24224" to="TileMap/@Area2D@24224" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24225" to="TileMap/@Area2D@24225" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24226" to="TileMap/@Area2D@24226" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24227" to="TileMap/@Area2D@24227" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24228" to="TileMap/@Area2D@24228" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24229" to="TileMap/@Area2D@24229" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24230" to="TileMap/@Area2D@24230" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24231" to="TileMap/@Area2D@24231" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24232" to="TileMap/@Area2D@24232" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24233" to="TileMap/@Area2D@24233" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24234" to="TileMap/@Area2D@24234" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24235" to="TileMap/@Area2D@24235" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24236" to="TileMap/@Area2D@24236" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24237" to="TileMap/@Area2D@24237" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24238" to="TileMap/@Area2D@24238" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24239" to="TileMap/@Area2D@24239" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24240" to="TileMap/@Area2D@24240" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24241" to="TileMap/@Area2D@24241" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24242" to="TileMap/@Area2D@24242" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24243" to="TileMap/@Area2D@24243" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24244" to="TileMap/@Area2D@24244" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24245" to="TileMap/@Area2D@24245" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24246" to="TileMap/@Area2D@24246" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24247" to="TileMap/@Area2D@24247" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24248" to="TileMap/@Area2D@24248" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24249" to="TileMap/@Area2D@24249" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24250" to="TileMap/@Area2D@24250" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24251" to="TileMap/@Area2D@24251" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24252" to="TileMap/@Area2D@24252" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24253" to="TileMap/@Area2D@24253" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24254" to="TileMap/@Area2D@24254" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24255" to="TileMap/@Area2D@24255" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24256" to="TileMap/@Area2D@24256" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24257" to="TileMap/@Area2D@24257" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24258" to="TileMap/@Area2D@24258" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24259" to="TileMap/@Area2D@24259" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24260" to="TileMap/@Area2D@24260" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24261" to="TileMap/@Area2D@24261" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24262" to="TileMap/@Area2D@24262" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24263" to="TileMap/@Area2D@24263" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24264" to="TileMap/@Area2D@24264" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24265" to="TileMap/@Area2D@24265" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24266" to="TileMap/@Area2D@24266" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24267" to="TileMap/@Area2D@24267" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24268" to="TileMap/@Area2D@24268" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24269" to="TileMap/@Area2D@24269" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24270" to="TileMap/@Area2D@24270" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24271" to="TileMap/@Area2D@24271" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24272" to="TileMap/@Area2D@24272" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24273" to="TileMap/@Area2D@24273" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24274" to="TileMap/@Area2D@24274" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24275" to="TileMap/@Area2D@24275" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24276" to="TileMap/@Area2D@24276" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24277" to="TileMap/@Area2D@24277" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24278" to="TileMap/@Area2D@24278" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24279" to="TileMap/@Area2D@24279" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24280" to="TileMap/@Area2D@24280" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24281" to="TileMap/@Area2D@24281" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24282" to="TileMap/@Area2D@24282" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24283" to="TileMap/@Area2D@24283" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24284" to="TileMap/@Area2D@24284" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24285" to="TileMap/@Area2D@24285" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24286" to="TileMap/@Area2D@24286" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24287" to="TileMap/@Area2D@24287" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24288" to="TileMap/@Area2D@24288" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24289" to="TileMap/@Area2D@24289" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24290" to="TileMap/@Area2D@24290" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24291" to="TileMap/@Area2D@24291" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24292" to="TileMap/@Area2D@24292" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24293" to="TileMap/@Area2D@24293" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24294" to="TileMap/@Area2D@24294" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24295" to="TileMap/@Area2D@24295" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24296" to="TileMap/@Area2D@24296" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24297" to="TileMap/@Area2D@24297" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24298" to="TileMap/@Area2D@24298" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24299" to="TileMap/@Area2D@24299" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24300" to="TileMap/@Area2D@24300" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24301" to="TileMap/@Area2D@24301" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24302" to="TileMap/@Area2D@24302" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24303" to="TileMap/@Area2D@24303" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24304" to="TileMap/@Area2D@24304" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24305" to="TileMap/@Area2D@24305" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24306" to="TileMap/@Area2D@24306" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24307" to="TileMap/@Area2D@24307" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24308" to="TileMap/@Area2D@24308" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24309" to="TileMap/@Area2D@24309" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24310" to="TileMap/@Area2D@24310" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24311" to="TileMap/@Area2D@24311" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24312" to="TileMap/@Area2D@24312" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24313" to="TileMap/@Area2D@24313" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24314" to="TileMap/@Area2D@24314" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24315" to="TileMap/@Area2D@24315" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24316" to="TileMap/@Area2D@24316" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24317" to="TileMap/@Area2D@24317" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24318" to="TileMap/@Area2D@24318" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24319" to="TileMap/@Area2D@24319" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24320" to="TileMap/@Area2D@24320" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24321" to="TileMap/@Area2D@24321" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24322" to="TileMap/@Area2D@24322" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24323" to="TileMap/@Area2D@24323" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24324" to="TileMap/@Area2D@24324" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24325" to="TileMap/@Area2D@24325" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24326" to="TileMap/@Area2D@24326" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24327" to="TileMap/@Area2D@24327" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24328" to="TileMap/@Area2D@24328" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24329" to="TileMap/@Area2D@24329" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24330" to="TileMap/@Area2D@24330" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24331" to="TileMap/@Area2D@24331" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24332" to="TileMap/@Area2D@24332" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24333" to="TileMap/@Area2D@24333" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24334" to="TileMap/@Area2D@24334" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24335" to="TileMap/@Area2D@24335" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24336" to="TileMap/@Area2D@24336" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24337" to="TileMap/@Area2D@24337" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24338" to="TileMap/@Area2D@24338" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24339" to="TileMap/@Area2D@24339" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24340" to="TileMap/@Area2D@24340" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24341" to="TileMap/@Area2D@24341" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24342" to="TileMap/@Area2D@24342" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24343" to="TileMap/@Area2D@24343" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24344" to="TileMap/@Area2D@24344" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24345" to="TileMap/@Area2D@24345" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24346" to="TileMap/@Area2D@24346" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24347" to="TileMap/@Area2D@24347" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24348" to="TileMap/@Area2D@24348" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24349" to="TileMap/@Area2D@24349" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24350" to="TileMap/@Area2D@24350" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24351" to="TileMap/@Area2D@24351" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24352" to="TileMap/@Area2D@24352" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24353" to="TileMap/@Area2D@24353" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24354" to="TileMap/@Area2D@24354" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24355" to="TileMap/@Area2D@24355" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24356" to="TileMap/@Area2D@24356" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24357" to="TileMap/@Area2D@24357" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24358" to="TileMap/@Area2D@24358" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24359" to="TileMap/@Area2D@24359" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24360" to="TileMap/@Area2D@24360" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24361" to="TileMap/@Area2D@24361" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24362" to="TileMap/@Area2D@24362" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24363" to="TileMap/@Area2D@24363" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24364" to="TileMap/@Area2D@24364" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24365" to="TileMap/@Area2D@24365" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24366" to="TileMap/@Area2D@24366" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24367" to="TileMap/@Area2D@24367" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24368" to="TileMap/@Area2D@24368" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24369" to="TileMap/@Area2D@24369" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24370" to="TileMap/@Area2D@24370" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24371" to="TileMap/@Area2D@24371" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24372" to="TileMap/@Area2D@24372" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24373" to="TileMap/@Area2D@24373" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24374" to="TileMap/@Area2D@24374" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24375" to="TileMap/@Area2D@24375" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24376" to="TileMap/@Area2D@24376" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24377" to="TileMap/@Area2D@24377" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24378" to="TileMap/@Area2D@24378" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24379" to="TileMap/@Area2D@24379" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24380" to="TileMap/@Area2D@24380" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24381" to="TileMap/@Area2D@24381" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24382" to="TileMap/@Area2D@24382" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24383" to="TileMap/@Area2D@24383" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24384" to="TileMap/@Area2D@24384" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24385" to="TileMap/@Area2D@24385" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24386" to="TileMap/@Area2D@24386" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24387" to="TileMap/@Area2D@24387" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24388" to="TileMap/@Area2D@24388" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24389" to="TileMap/@Area2D@24389" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24390" to="TileMap/@Area2D@24390" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24391" to="TileMap/@Area2D@24391" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24392" to="TileMap/@Area2D@24392" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24393" to="TileMap/@Area2D@24393" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24394" to="TileMap/@Area2D@24394" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24395" to="TileMap/@Area2D@24395" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24396" to="TileMap/@Area2D@24396" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24397" to="TileMap/@Area2D@24397" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24398" to="TileMap/@Area2D@24398" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24399" to="TileMap/@Area2D@24399" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24400" to="TileMap/@Area2D@24400" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24401" to="TileMap/@Area2D@24401" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24402" to="TileMap/@Area2D@24402" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24403" to="TileMap/@Area2D@24403" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24404" to="TileMap/@Area2D@24404" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24405" to="TileMap/@Area2D@24405" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24406" to="TileMap/@Area2D@24406" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24407" to="TileMap/@Area2D@24407" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24408" to="TileMap/@Area2D@24408" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24409" to="TileMap/@Area2D@24409" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24410" to="TileMap/@Area2D@24410" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24411" to="TileMap/@Area2D@24411" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24412" to="TileMap/@Area2D@24412" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24413" to="TileMap/@Area2D@24413" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24414" to="TileMap/@Area2D@24414" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24415" to="TileMap/@Area2D@24415" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24416" to="TileMap/@Area2D@24416" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24417" to="TileMap/@Area2D@24417" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24418" to="TileMap/@Area2D@24418" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24419" to="TileMap/@Area2D@24419" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24420" to="TileMap/@Area2D@24420" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24421" to="TileMap/@Area2D@24421" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24422" to="TileMap/@Area2D@24422" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24423" to="TileMap/@Area2D@24423" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24424" to="TileMap/@Area2D@24424" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24425" to="TileMap/@Area2D@24425" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24426" to="TileMap/@Area2D@24426" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24427" to="TileMap/@Area2D@24427" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24428" to="TileMap/@Area2D@24428" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24429" to="TileMap/@Area2D@24429" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24430" to="TileMap/@Area2D@24430" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24431" to="TileMap/@Area2D@24431" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24432" to="TileMap/@Area2D@24432" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24433" to="TileMap/@Area2D@24433" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24434" to="TileMap/@Area2D@24434" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24435" to="TileMap/@Area2D@24435" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24436" to="TileMap/@Area2D@24436" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24437" to="TileMap/@Area2D@24437" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24438" to="TileMap/@Area2D@24438" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24439" to="TileMap/@Area2D@24439" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24440" to="TileMap/@Area2D@24440" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24441" to="TileMap/@Area2D@24441" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24442" to="TileMap/@Area2D@24442" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24443" to="TileMap/@Area2D@24443" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24444" to="TileMap/@Area2D@24444" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24445" to="TileMap/@Area2D@24445" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24446" to="TileMap/@Area2D@24446" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24447" to="TileMap/@Area2D@24447" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24448" to="TileMap/@Area2D@24448" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24449" to="TileMap/@Area2D@24449" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24450" to="TileMap/@Area2D@24450" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24451" to="TileMap/@Area2D@24451" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24452" to="TileMap/@Area2D@24452" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24453" to="TileMap/@Area2D@24453" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24454" to="TileMap/@Area2D@24454" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24455" to="TileMap/@Area2D@24455" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24456" to="TileMap/@Area2D@24456" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24457" to="TileMap/@Area2D@24457" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24458" to="TileMap/@Area2D@24458" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24459" to="TileMap/@Area2D@24459" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24460" to="TileMap/@Area2D@24460" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24461" to="TileMap/@Area2D@24461" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24462" to="TileMap/@Area2D@24462" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24463" to="TileMap/@Area2D@24463" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24464" to="TileMap/@Area2D@24464" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24465" to="TileMap/@Area2D@24465" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24466" to="TileMap/@Area2D@24466" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24467" to="TileMap/@Area2D@24467" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24468" to="TileMap/@Area2D@24468" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24469" to="TileMap/@Area2D@24469" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24470" to="TileMap/@Area2D@24470" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24471" to="TileMap/@Area2D@24471" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24472" to="TileMap/@Area2D@24472" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24473" to="TileMap/@Area2D@24473" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24474" to="TileMap/@Area2D@24474" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24475" to="TileMap/@Area2D@24475" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24476" to="TileMap/@Area2D@24476" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24477" to="TileMap/@Area2D@24477" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24478" to="TileMap/@Area2D@24478" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24479" to="TileMap/@Area2D@24479" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24480" to="TileMap/@Area2D@24480" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24481" to="TileMap/@Area2D@24481" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24482" to="TileMap/@Area2D@24482" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24483" to="TileMap/@Area2D@24483" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24484" to="TileMap/@Area2D@24484" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24485" to="TileMap/@Area2D@24485" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24486" to="TileMap/@Area2D@24486" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24487" to="TileMap/@Area2D@24487" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24488" to="TileMap/@Area2D@24488" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24489" to="TileMap/@Area2D@24489" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24490" to="TileMap/@Area2D@24490" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24491" to="TileMap/@Area2D@24491" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24492" to="TileMap/@Area2D@24492" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24493" to="TileMap/@Area2D@24493" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24494" to="TileMap/@Area2D@24494" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24495" to="TileMap/@Area2D@24495" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24496" to="TileMap/@Area2D@24496" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24497" to="TileMap/@Area2D@24497" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24498" to="TileMap/@Area2D@24498" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24499" to="TileMap/@Area2D@24499" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24500" to="TileMap/@Area2D@24500" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24501" to="TileMap/@Area2D@24501" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24502" to="TileMap/@Area2D@24502" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24503" to="TileMap/@Area2D@24503" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24504" to="TileMap/@Area2D@24504" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24505" to="TileMap/@Area2D@24505" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24506" to="TileMap/@Area2D@24506" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24507" to="TileMap/@Area2D@24507" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24508" to="TileMap/@Area2D@24508" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24509" to="TileMap/@Area2D@24509" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24510" to="TileMap/@Area2D@24510" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24511" to="TileMap/@Area2D@24511" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24512" to="TileMap/@Area2D@24512" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24513" to="TileMap/@Area2D@24513" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24514" to="TileMap/@Area2D@24514" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24515" to="TileMap/@Area2D@24515" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24516" to="TileMap/@Area2D@24516" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24517" to="TileMap/@Area2D@24517" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24518" to="TileMap/@Area2D@24518" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24519" to="TileMap/@Area2D@24519" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24520" to="TileMap/@Area2D@24520" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24521" to="TileMap/@Area2D@24521" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24522" to="TileMap/@Area2D@24522" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24523" to="TileMap/@Area2D@24523" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24524" to="TileMap/@Area2D@24524" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24525" to="TileMap/@Area2D@24525" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24526" to="TileMap/@Area2D@24526" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24527" to="TileMap/@Area2D@24527" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24528" to="TileMap/@Area2D@24528" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24529" to="TileMap/@Area2D@24529" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24530" to="TileMap/@Area2D@24530" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24531" to="TileMap/@Area2D@24531" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24532" to="TileMap/@Area2D@24532" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24533" to="TileMap/@Area2D@24533" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24534" to="TileMap/@Area2D@24534" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24535" to="TileMap/@Area2D@24535" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24536" to="TileMap/@Area2D@24536" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24537" to="TileMap/@Area2D@24537" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24538" to="TileMap/@Area2D@24538" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24539" to="TileMap/@Area2D@24539" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24540" to="TileMap/@Area2D@24540" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24541" to="TileMap/@Area2D@24541" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24542" to="TileMap/@Area2D@24542" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24543" to="TileMap/@Area2D@24543" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24544" to="TileMap/@Area2D@24544" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24545" to="TileMap/@Area2D@24545" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24546" to="TileMap/@Area2D@24546" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24547" to="TileMap/@Area2D@24547" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24548" to="TileMap/@Area2D@24548" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24549" to="TileMap/@Area2D@24549" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24550" to="TileMap/@Area2D@24550" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24551" to="TileMap/@Area2D@24551" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24552" to="TileMap/@Area2D@24552" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24553" to="TileMap/@Area2D@24553" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24554" to="TileMap/@Area2D@24554" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24555" to="TileMap/@Area2D@24555" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24556" to="TileMap/@Area2D@24556" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24557" to="TileMap/@Area2D@24557" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24558" to="TileMap/@Area2D@24558" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24559" to="TileMap/@Area2D@24559" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24560" to="TileMap/@Area2D@24560" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24561" to="TileMap/@Area2D@24561" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24562" to="TileMap/@Area2D@24562" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24563" to="TileMap/@Area2D@24563" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24564" to="TileMap/@Area2D@24564" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24565" to="TileMap/@Area2D@24565" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24566" to="TileMap/@Area2D@24566" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24567" to="TileMap/@Area2D@24567" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24568" to="TileMap/@Area2D@24568" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24569" to="TileMap/@Area2D@24569" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24570" to="TileMap/@Area2D@24570" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@24571" to="TileMap/@Area2D@24571" method="_on_body_entered"]
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="Sand" type="StaticBody2D" parent="Terrain"]
+collision_layer = 2
+collision_mask = 225
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/Sand"]
+polygon = PackedVector2Array(-152, 432, -32, 432, -16, 416, 296, 416, 312, 432, 408, 432, 424, 416, 496, 416, 512, 400, 800, 400, 816, 416, 832, 416, 848, 400, 904, 400, 904, 768, 952, 768, 952, 384, 976, 384, 992, 400, 1200, 400, 1216, 416, 1536, 416, 1552, 400, 1648, 400, 1664, 384, 1760, 384, 1776, 368, 1792, 368, 1808, 352, 1904, 352, 1920, 368, 2016, 368, 2032, 384, 2296, 384, 2296, 816, 2408, 816, 2408, 384, 2432, 384, 2448, 368, 2544, 368, 2560, 352, 2592, 352, 2608, 336, 2624, 336, 2640, 320, 2672, 320, 2696, 296, 2696, 272, 2736, 272, 2752, 256, 2800, 256, 2816, 240, 2848, 240, 2864, 224, 3112, 224, 3112, 792, 3192, 792, 3192, 224, 3312, 224, 3328, 240, 3424, 240, 3440, 256, 3472, 256, 3488, 272, 3760, 272, 3776, 288, 3824, 288, 3840, 304, 3928, 304, 3928, 336, 3968, 336, 3984, 352, 4048, 352, 4064, 368, 4456, 368, 4456, 768, 4504, 768, 4504, 368, 4680, 368, 4680, 336, 4736, 336, 4752, 320, 4800, 320, 4816, 304, 4912, 304, 4928, 320, 4992, 320, 5008, 336, 5104, 336, 5120, 352, 5392, 352, 5408, 336, 5424, 336, 5440, 320, 5472, 320, 5488, 304, 5528, 304, 5528, 272, 5568, 272, 5584, 256, 5632, 256, 5648, 240, 5696, 240, 5712, 224, 6040, 224, 6040, 768, 6152, 768, 6152, 224, 6528, 224, 6544, 240, 6560, 240, 6592, 272, 6624, 272, 6640, 288, 6816, 288, 6832, 304, 7152, 304, 7168, 320, 7232, 320, 7248, 336, 7344, 336, 7360, 320, 7408, 320, 7424, 304, 7440, 304, 7480, 264, 7480, 240, 7504, 240, 7520, 224, 7584, 224, 7600, 208, 7648, 208, 7664, 224, 7696, 224, 7712, 240, 7760, 240, 7776, 256, 7808, 256, 7824, 272, 7904, 272, 7928, 296, 7928, 768, 7992, 768, 7992, 288, 8224, 288, 8240, 304, 8288, 304, 8304, 320, 8336, 320, 8352, 336, 8400, 336, 8416, 352, 8496, 352, 8512, 368, 8576, 368, 8592, 384, 8672, 384, 8688, 400, 8920, 400, 8920, 768, 8968, 768, 8968, 408, 8992, 384, 9040, 384, 9056, 368, 9184, 368, 9200, 352, 9264, 352, 9280, 368, 9328, 368, 9344, 384, 9408, 384, 9424, 400, 9528, 400, 9528, 976, -248, 976, -248, -624, -152, -624)
+
+[node name="Polygon2D" type="Polygon2D" parent="Terrain/Sand"]
+visible = false
+polygon = PackedVector2Array(-152, 432, -32, 432, -16, 416, 296, 416, 312, 432, 408, 432, 424, 416, 496, 416, 512, 400, 800, 400, 816, 416, 832, 416, 848, 400, 904, 400, 904, 768, 952, 768, 952, 384, 976, 384, 992, 400, 1200, 400, 1216, 416, 1536, 416, 1552, 400, 1648, 400, 1664, 384, 1760, 384, 1776, 368, 1792, 368, 1808, 352, 1904, 352, 1920, 368, 2016, 368, 2032, 384, 2296, 384, 2296, 816, 2408, 816, 2408, 384, 2432, 384, 2448, 368, 2544, 368, 2560, 352, 2592, 352, 2608, 336, 2624, 336, 2640, 320, 2672, 320, 2696, 296, 2696, 272, 2736, 272, 2752, 256, 2800, 256, 2816, 240, 2848, 240, 2864, 224, 3112, 224, 3112, 792, 3192, 792, 3192, 224, 3312, 224, 3328, 240, 3424, 240, 3440, 256, 3472, 256, 3488, 272, 3760, 272, 3776, 288, 3824, 288, 3840, 304, 3928, 304, 3928, 336, 3968, 336, 3984, 352, 4048, 352, 4064, 368, 4456, 368, 4456, 768, 4504, 768, 4504, 368, 4680, 368, 4680, 336, 4736, 336, 4752, 320, 4800, 320, 4816, 304, 4912, 304, 4928, 320, 4992, 320, 5008, 336, 5104, 336, 5120, 352, 5392, 352, 5408, 336, 5424, 336, 5440, 320, 5472, 320, 5488, 304, 5528, 304, 5528, 272, 5568, 272, 5584, 256, 5632, 256, 5648, 240, 5696, 240, 5712, 224, 6040, 224, 6040, 768, 6152, 768, 6152, 224, 6528, 224, 6544, 240, 6560, 240, 6592, 272, 6624, 272, 6640, 288, 6816, 288, 6832, 304, 7152, 304, 7168, 320, 7232, 320, 7248, 336, 7344, 336, 7360, 320, 7408, 320, 7424, 304, 7440, 304, 7480, 264, 7480, 240, 7504, 240, 7520, 224, 7584, 224, 7600, 208, 7648, 208, 7664, 224, 7696, 224, 7712, 240, 7760, 240, 7776, 256, 7808, 256, 7824, 272, 7904, 272, 7928, 296, 7928, 768, 7992, 768, 7992, 288, 8224, 288, 8240, 304, 8288, 304, 8304, 320, 8336, 320, 8352, 336, 8400, 336, 8416, 352, 8496, 352, 8512, 368, 8576, 368, 8592, 384, 8672, 384, 8688, 400, 8920, 400, 8920, 768, 8968, 768, 8968, 408, 8992, 384, 9040, 384, 9056, 368, 9184, 368, 9200, 352, 9264, 352, 9280, 368, 9328, 368, 9344, 384, 9408, 384, 9424, 400, 9528, 400, 9528, 976, -248, 976, -248, -624, -152, -624)
+
 [connection signal="body_entered" from="Death Zone" to="." method="_on_death_zone_body_entered"]

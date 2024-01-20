@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://uiafdvweb3v3"]
+[gd_scene load_steps=55 format=3 uid="uid://dkt7imecatqvb"]
 
 [ext_resource type="Script" path="res://scripts/ranged_enemy.gd" id="1_557cv"]
 [ext_resource type="Texture2D" uid="uid://esrltxr0vktx" path="res://assets/Pirate Bomb/Sprites/4-Enemy-Big Guy/1-Idle/1.png" id="2_a6e5k"]

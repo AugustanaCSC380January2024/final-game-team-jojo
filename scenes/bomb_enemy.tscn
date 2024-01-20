@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://chd6a2qto6fw6"]
+[gd_scene load_steps=80 format=3 uid="uid://4jcdem4c4t14"]
 
 [ext_resource type="Script" path="res://scripts/bomb_enemy.gd" id="1_4w1fg"]
 [ext_resource type="Texture2D" uid="uid://dube6ysse1lex" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="2_cprjp"]

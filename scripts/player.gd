@@ -33,6 +33,10 @@ var shot_type = "blunderbuss"
 var cameraCounterX = 0
 var cameraCounterY = 0
 
+func _ready():
+	set_floor_max_angle(PI/3)
+	
+
 func _physics_process(delta):
 	#if(is_on_floor()):
 		#print("Floor")

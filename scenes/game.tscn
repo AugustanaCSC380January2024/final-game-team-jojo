@@ -7,6 +7,7 @@
 script = ExtResource("1_wx4x4")
 
 [node name="Player" parent="." instance=ExtResource("3_qhoma")]
+z_index = 1
 position = Vector2(121, 163)
 wall_min_slide_angle = 0.0
 floor_max_angle = 0.0
