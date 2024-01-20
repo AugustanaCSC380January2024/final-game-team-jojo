@@ -140,7 +140,7 @@ func melee():
 		await get_tree().create_timer(0.1).timeout
 		var attack_hitbox = melee_hitbox.instantiate()
 		add_child(attack_hitbox)
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.2).timeout
 		attack_hitbox.queue_free()
 		attackMelee = false
 		

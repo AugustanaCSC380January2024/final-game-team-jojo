@@ -333,7 +333,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt768"]
-size = Vector2(0.375, 50.25)
+size = Vector2(0.877809, 50.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gqtq"]
 size = Vector2(61, 27)
@@ -360,7 +360,8 @@ animation = &"none"
 autoplay = "none"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.3125, 3.125)
+position = Vector2(4.125, 1)
+scale = Vector2(35.6, 1)
 shape = SubResource("RectangleShape2D_mt768")
 
 [node name="wall_collision_detector" type="Area2D" parent="."]
