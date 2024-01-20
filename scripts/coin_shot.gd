@@ -20,5 +20,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("enemy"):
+		if (body.health - 1) == 0:
+			GlobalValues.spawnCoinLocation = body.global_position
 		body.damage(1)
 	queue_free()

@@ -29,4 +29,6 @@ func explode():
 func _on_body_entered(body):
 	if body.is_in_group("enemy"):
 		body.damage(5)
+		if (body.health - 5) == 0:
+			GlobalValues.spawnCoinLocation = body.global_position
 	explode()
