@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://b0bp1ewjw1sut"]
+[gd_scene load_steps=80 format=3 uid="uid://b0bp1ewjw1sut"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_gnt2q"]
 [ext_resource type="Texture2D" uid="uid://cclr3cs4h52xe" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/7-Attack/1.png" id="2_ygsso"]
@@ -56,7 +56,6 @@
 [ext_resource type="Texture2D" uid="uid://drw545c1d412x" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/31.png" id="54_747u3"]
 [ext_resource type="Texture2D" uid="uid://dwu6n7x0onv7s" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/32.png" id="55_beqmm"]
 [ext_resource type="Texture2D" uid="uid://c2gwws3wui5ma" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/33.png" id="56_pboeg"]
-[ext_resource type="Texture2D" uid="uid://6uxftcqx8cfa" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/34.png" id="57_i21b3"]
 [ext_resource type="Texture2D" uid="uid://boa00wb6gekqi" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/3-Jump Anticipation/1.png" id="58_ho8kj"]
 [ext_resource type="Texture2D" uid="uid://ysnyasuvojw3" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/4-Jump/1.png" id="59_f2yof"]
 [ext_resource type="Texture2D" uid="uid://c0odshmgxgq6r" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/4-Jump/2.png" id="60_hm5lm"]
@@ -254,9 +253,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("56_pboeg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57_i21b3")
 }],
 "loop": true,
 "name": &"idle",
@@ -367,7 +363,7 @@ position = Vector2(-9, 5)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
-position = Vector2(-3, -42.625)
+position = Vector2(9, -44)
 shape = SubResource("RectangleShape2D_20kn2")
 
 [connection signal="body_entered" from="wall_collision_detector" to="." method="_on_wall_collision_detector_body_entered"]

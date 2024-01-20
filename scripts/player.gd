@@ -237,7 +237,7 @@ func changeCamera():
 		camera.offset.x = -(-cos(cameraCounterX / frames) + 1) * xBounds
 	var zoom = cos(cameraCounterX / frames) / 2 + 1
 	camera.zoom = Vector2(zoom, zoom)
-	print(zoom)
+	#print(zoom)
 	#var yPixels = sin(velocity.y / max_fall_speed) * yBounds
 	
 	#if velocity.x > 0:

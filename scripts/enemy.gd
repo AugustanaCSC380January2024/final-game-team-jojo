@@ -34,7 +34,7 @@ func _physics_process(delta):
 
 func attack():
 	animated_sprite.play("attack")
-	await get_tree().create_timer(.3).timeout
+	await get_tree().create_timer(.7).timeout
 	var attack_hitbox = hitbox.instantiate()
 	add_child(attack_hitbox)
 	await get_tree().create_timer(.2).timeout
