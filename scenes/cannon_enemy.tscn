@@ -92,3 +92,5 @@ collision_layer = 16
 position = Vector2(10, -11)
 scale = Vector2(3.59447, 0.636726)
 shape = SubResource("RectangleShape2D_b0bb3")
+
+[connection signal="body_entered" from="sight_radius" to="." method="_on_sight_radius_body_entered"]

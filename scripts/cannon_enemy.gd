@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var bomb = preload("res://scenes/bomb.tscn")
+@onready var cannonball = preload("res://scenes/cannonball.tscn")
 @export var gravity_strength = 500
 var is_exploding = false
 var attacking = false
@@ -24,19 +24,18 @@ func _physics_process(delta):
 
 func attack():
 	attack_timer = 2
-	animated_sprite.play("throw_bomb")
+	animated_sprite.play("attack")
 	await get_tree().create_timer(.5).timeout
-	var thrown_bomb = bomb.instantiate()
-	add_child(thrown_bomb)
-	thrown_bomb.global_position = global_position
+	var fired_cannonball = cannonball.instantiate()
+	add_child(fired_cannonball)
+	fired_cannonball.global_position = global_position
+	fired_cannonball.global_position.x -= 20
 	await get_tree().create_timer(.5).timeout
 	animated_sprite.play("idle")
 
 
 func _on_sight_radius_body_entered(body):
 	if body.is_in_group("Player"):
-		if body.global_position.x < global_position.x:
-			animated_sprite.flip_h = 1
 		attacking = true
 		print("seen")
 
