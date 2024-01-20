@@ -13,7 +13,7 @@ extends CharacterBody2D
 @export var hurt_i_frames = 0
 @export var max_lives = 3
 @export var lives = 3
-@export var coin_count = 0
+@export var coin_count = 5
 @export var acceleration = 2000
 @export var original_jump_height = 600
 @export var original_max_speed = 500
@@ -37,7 +37,7 @@ var cameraCounterY = 0
 
 func _ready():
 	set_floor_max_angle(PI/3)
-	
+	hud.set_coin_counter(coin_count)
 
 func _physics_process(delta):
 	#if(is_on_floor()):
@@ -133,69 +133,74 @@ func melee():
 		
 func shoot():
 	if alive && !attackMelee && attack_timer <= 0:
-		attackShoot = true
-		if is_on_floor():
-			if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
-				animated_sprite.play("run_n_gun")
+		if (shot_type == "flintlock" && coin_count >= 1) || (shot_type == "blunderbuss" && coin_count >= 2): #add no ammo indicator
+			attackShoot = true
+			if is_on_floor():
+				if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
+					animated_sprite.play("run_n_gun")
+				else:
+					animated_sprite.play("gun")
 			else:
-				animated_sprite.play("gun")
-		else:
-			animated_sprite.play("jump_gun")
-			
-		var shot = shoot_particles.instantiate()
-		canvas_layer.add_child(shot)
-		attack_timer = 1
-		await get_tree().create_timer(0.216).timeout
-		shot.emitting = true
-		if shot_type == "flintlock":
-			gunshot_sound.play()
-			var gunshot = coin_shot.instantiate()
-			shots.add_child(gunshot)
-			gunshot.send_facing(currently_facing)
-			gunshot.global_position = global_position
-			gunshot.global_position.x += 35 * currently_facing
-			gunshot.global_position.y += 8
-		elif shot_type == "blunderbuss":
-			#I will come back and make this code dry, I will do it, yes I will
-			gunshot_sound.play()
-			var gunshot = coin_shot.instantiate()
-			var gunshot2 = coin_shot.instantiate()
-			var gunshot3 = coin_shot.instantiate()
-			var gunshot4 = coin_shot.instantiate()
-			var gunshot5 = coin_shot.instantiate()
-			add_child(gunshot)
-			add_child(gunshot2)
-			add_child(gunshot3)
-			add_child(gunshot4)
-			add_child(gunshot5)
-			gunshot.send_facing(currently_facing)
-			gunshot2.send_facing(currently_facing)
-			gunshot3.send_facing(currently_facing)
-			gunshot4.send_facing(currently_facing)
-			gunshot5.send_facing(currently_facing)
-			gunshot.global_position = global_position
-			gunshot2.global_position = global_position
-			gunshot3.global_position = global_position
-			gunshot4.global_position = global_position
-			gunshot5.global_position = global_position
-			gunshot.global_position.x += 35 * currently_facing
-			gunshot.global_position.y += 8
-			gunshot2.global_position.x += 35 * currently_facing
-			gunshot2.global_position.y += 8
-			gunshot3.global_position.x += 35 * currently_facing
-			gunshot3.global_position.y += 8
-			gunshot4.global_position.x += 35 * currently_facing
-			gunshot4.global_position.y += 8
-			gunshot5.global_position.x += 35 * currently_facing
-			gunshot5.global_position.y += 8
-			gunshot2.set_change_y(2)
-			gunshot3.set_change_y(4)
-			gunshot4.set_change_y(-4)
-			gunshot5.set_change_y(-2)
-		await get_tree().create_timer(.5).timeout
-		shot.emitting = false
-		shot.queue_free()
-		attackShoot = false
+				animated_sprite.play("jump_gun")
+				
+			var shot = shoot_particles.instantiate()
+			canvas_layer.add_child(shot)
+			attack_timer = 1
+			await get_tree().create_timer(0.216).timeout
+			shot.emitting = true
+			if shot_type == "flintlock":
+				coin_count -= 1
+				hud.set_coin_counter(coin_count)
+				gunshot_sound.play()
+				var gunshot = coin_shot.instantiate()
+				shots.add_child(gunshot)
+				gunshot.send_facing(currently_facing)
+				gunshot.global_position = global_position
+				gunshot.global_position.x += 35 * currently_facing
+				gunshot.global_position.y += 8
+			elif shot_type == "blunderbuss":
+				#I will come back and make this code dry, I will do it, yes I will
+				coin_count -= 2
+				hud.set_coin_counter(coin_count)
+				gunshot_sound.play()
+				var gunshot = coin_shot.instantiate()
+				var gunshot2 = coin_shot.instantiate()
+				var gunshot3 = coin_shot.instantiate()
+				var gunshot4 = coin_shot.instantiate()
+				var gunshot5 = coin_shot.instantiate()
+				add_child(gunshot)
+				add_child(gunshot2)
+				add_child(gunshot3)
+				add_child(gunshot4)
+				add_child(gunshot5)
+				gunshot.send_facing(currently_facing)
+				gunshot2.send_facing(currently_facing)
+				gunshot3.send_facing(currently_facing)
+				gunshot4.send_facing(currently_facing)
+				gunshot5.send_facing(currently_facing)
+				gunshot.global_position = global_position
+				gunshot2.global_position = global_position
+				gunshot3.global_position = global_position
+				gunshot4.global_position = global_position
+				gunshot5.global_position = global_position
+				gunshot.global_position.x += 35 * currently_facing
+				gunshot.global_position.y += 8
+				gunshot2.global_position.x += 35 * currently_facing
+				gunshot2.global_position.y += 8
+				gunshot3.global_position.x += 35 * currently_facing
+				gunshot3.global_position.y += 8
+				gunshot4.global_position.x += 35 * currently_facing
+				gunshot4.global_position.y += 8
+				gunshot5.global_position.x += 35 * currently_facing
+				gunshot5.global_position.y += 8
+				gunshot2.set_change_y(2)
+				gunshot3.set_change_y(4)
+				gunshot4.set_change_y(-4)
+				gunshot5.set_change_y(-2)
+			await get_tree().create_timer(.5).timeout
+			shot.emitting = false
+			shot.queue_free()
+			attackShoot = false
 		
 func flip():
 	if currently_facing == 1:
