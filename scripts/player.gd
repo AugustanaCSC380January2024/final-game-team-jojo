@@ -36,6 +36,7 @@ var currently_facing = 1
 var shot_type = "blunderbuss"
 var cameraCounterX = 0
 var cameraCounterY = 0
+var idleTime = 0
 
 
 func _ready():
@@ -246,24 +247,28 @@ func changeCamera():
 	var frames = 60.0
 	
 	if velocity.x > 0:
+		idleTime = 0
 		if cameraCounterX > 0:
 			cameraCounterX += 1
 		else:
 			cameraCounterX += 2
 	elif velocity.x < 0:
+		idleTime = 0
 		if cameraCounterX < 0:
 			cameraCounterX -= 1
 		else:
 			cameraCounterX -= 2
 	else:
-		if cameraCounterX > 0:
-			cameraCounterX -= 2
-			if cameraCounterX < 0:
-				cameraCounterX = 0
-		elif cameraCounterX < 0:
-			cameraCounterX += 2
+		idleTime += 1
+		if idleTime >= 60:
 			if cameraCounterX > 0:
-				cameraCounterX = 0
+				cameraCounterX -= 1
+				if cameraCounterX < 0:
+					cameraCounterX = 0
+			elif cameraCounterX < 0:
+				cameraCounterX += 1
+				if cameraCounterX > 0:
+					cameraCounterX = 0
 	if cameraCounterX > frames:
 		cameraCounterX = frames
 	elif cameraCounterX < -frames:
