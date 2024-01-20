@@ -24,6 +24,7 @@ extends CharacterBody2D
 @export var gravity_strength = 980
 @export var friction = 2500
 @export var attack_timer = 0
+@export var melee_attack_timer = 0
 var coyote_time = 0.0
 var jump_buffer = 0.0
 var alive = true
@@ -49,6 +50,8 @@ func _physics_process(delta):
 		#print("Ceiling")
 	if attack_timer >= 0:
 		attack_timer -= delta
+	if melee_attack_timer >= 0:
+		melee_attack_timer -= delta
 	changeCamera()
 	if hurt_i_frames > 0:
 		hurt_i_frames -= delta
@@ -120,7 +123,8 @@ func idle():
 			animated_sprite.play("jump")
 
 func melee():
-	if alive && !attackShoot:
+	if alive && !attackShoot && melee_attack_timer <= 0:
+		melee_attack_timer = .5
 		attackMelee = true
 		if is_on_floor():
 			if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
