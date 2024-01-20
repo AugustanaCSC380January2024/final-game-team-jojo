@@ -1,10 +1,13 @@
 extends CharacterBody2D
+@onready var animation = $AnimatedSprite2D
+@onready var explosion_sfx = $exploded_ship
+@onready var ship_destroyed_sfx = $ship_destroyed
 @onready var bomb = preload("res://scenes/bomb.tscn")
 @onready var cannonball = preload("res://scenes/cannonball.tscn")
 @onready var crewmate = preload("res://scenes/melee_enemy.tscn")
 @onready var nuke = preload("res://scenes/nuclear_boss_cannonball.tscn")
 var attack_timer = 3
-var health = 50
+var health = 1
 
 func _physics_process(delta):
 	if attack_timer > 0:
@@ -82,9 +85,9 @@ func crew_attack():
 	add_child(attacking_crew)
 	add_child(attacking_crew2)
 	add_child(attacking_crew3)
-	attacking_crew.following = true
-	attacking_crew2.following = true
-	attacking_crew3.following = true
+	attacking_crew.set_following()
+	attacking_crew2.set_following()
+	attacking_crew3.set_following()
 	attacking_crew.global_position.y = global_position.y + 500
 	attacking_crew2.global_position.y = global_position.y + 500
 	attacking_crew3.global_position.y = global_position.y + 500
@@ -100,4 +103,11 @@ func nuclear_cannon():
 func damage(damage_num):
 	health -= damage_num
 	if health <= 0:
+		attack_timer = 100000
+		animation.play("explode")
+		explosion_sfx.play()
+		animation.scale = Vector2(6,6)
+		await get_tree().create_timer(1).timeout
+		ship_destroyed_sfx.play()
+		await get_tree().create_timer(4).timeout
 		queue_free()

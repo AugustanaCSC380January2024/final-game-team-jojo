@@ -1,15 +1,83 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqstlsmurhm3y"]
+[gd_scene load_steps=16 format=3 uid="uid://bqstlsmurhm3y"]
 
 [ext_resource type="Script" path="res://scripts/ship_boss.gd" id="1_sjcb7"]
 [ext_resource type="Texture2D" uid="uid://cx0iq5yfp8ye" path="res://assets/pixel ship.png" id="2_00dw2"]
+[ext_resource type="Texture2D" uid="uid://13fdhwhh4i2i" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion1.png" id="3_to1tb"]
+[ext_resource type="Texture2D" uid="uid://hx6v5xsd8tmw" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion2.png" id="4_wfrev"]
+[ext_resource type="Texture2D" uid="uid://by5m8vpwwojtj" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion3.png" id="5_4a50s"]
+[ext_resource type="Texture2D" uid="uid://c4635rwdwq5u4" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion4.png" id="6_jh4y3"]
+[ext_resource type="Texture2D" uid="uid://bdhhjsgmba1k" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion5.png" id="7_rb8kg"]
+[ext_resource type="Texture2D" uid="uid://ce2ojqry6n0ry" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion6.png" id="8_war8s"]
+[ext_resource type="Texture2D" uid="uid://c4015wmknne0a" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion7.png" id="9_cftvm"]
+[ext_resource type="Texture2D" uid="uid://csm32w3uw70y5" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion8.png" id="10_mbvn4"]
+[ext_resource type="Texture2D" uid="uid://dcdrt2kn818yq" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion9.png" id="11_h4fpp"]
+[ext_resource type="Texture2D" uid="uid://bqmq3mg4xuswu" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion10.png" id="12_sqbii"]
+[ext_resource type="AudioStream" uid="uid://5c311koi5aiq" path="res://assets/sounds/exploding-building-1-185114.mp3" id="13_pjuev"]
+[ext_resource type="AudioStream" uid="uid://ffi8pwlushdj" path="res://assets/sounds/explosion-42132.mp3" id="14_5nhr6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ykkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_00dw2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_to1tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wfrev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4a50s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jh4y3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rb8kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_war8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cftvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mbvn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h4fpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sqbii")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 4.0
+}]
 
 [node name="ship_boss" type="CharacterBody2D" groups=["boss", "enemy"]]
 collision_layer = 32
 script = ExtResource("1_sjcb7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(267, 304)
-texture = ExtResource("2_00dw2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(266, 301)
+sprite_frames = SubResource("SpriteFrames_3ykkx")
+animation = &"explode"
+autoplay = "default"
+frame = 9
+frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-3, 307, 148, 394, 132, 277, 190, 103, 194, 34, 279, -54, 363, 12, 389, 67, 489, 140, 533, 287, 479, 449, 489, 529, 452, 618, 183, 636, -17, 342)
+
+[node name="ship_destroyed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_pjuev")
+
+[node name="exploded_ship" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_5nhr6")
