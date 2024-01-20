@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var hitbox = preload("res://scenes/hitbox.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
 @export var gravity_strength = 500
+@export var health = 1
 var attack_timer = 0
 var is_exploding = false
 var following = false
@@ -44,6 +45,10 @@ func attack():
 	await get_tree().create_timer(.2).timeout
 	attack_hitbox.queue_free()
 
+func damage(damage_num):
+	health -= damage_num
+	if health <= 0:
+		queue_free()
 
 func _on_sight_radius_body_entered(body):
 	if body.is_in_group("Player"):

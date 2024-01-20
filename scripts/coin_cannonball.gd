@@ -1,7 +1,9 @@
 extends Area2D
 
+@onready var coin_explosion = preload("res://scenes/coin_cannon_explosion.tscn")
 var player_facing = 1
 var y_change = 0
+var speed = 20
 
 func send_facing(current_facing):
 	player_facing = current_facing
@@ -11,14 +13,20 @@ func set_change_y(y_amount):
 
 func _physics_process(delta):
 	if global_position.x > GlobalValues.playerPosition.x + 550:
-		queue_free()
+		explode()
 	elif global_position.x < GlobalValues.playerPosition.x - 550:
-		queue_free()
-	global_position.x += 20 * player_facing
+		explode()
+	global_position.x += speed * player_facing
 	global_position.y += y_change
 
+func explode():
+	speed = 0
+	var coin_explosion_instance = coin_explosion.instantiate()
+	add_child(coin_explosion_instance)
+	await get_tree().create_timer(.9).timeout
+	queue_free()
 
 func _on_body_entered(body):
 	if body.is_in_group("enemy"):
-		body.damage(1)
-	queue_free()
+		body.damage(5)
+	explode()

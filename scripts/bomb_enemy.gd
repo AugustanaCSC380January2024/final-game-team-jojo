@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var animated_sprite = $enemy_animation
 @onready var explosion_sprite = $explosion_animation
 @export var gravity_strength = 500
+var health = 1
 var is_exploding = false
 var alive = true
 var following = false
@@ -43,7 +44,11 @@ func attack():
 	await get_tree().create_timer(1).timeout
 	attack_hitbox.queue_free()
 	queue_free()
-
+	
+func damage(damage_num):
+	health -= damage_num
+	if health <= 0:
+		queue_free()
 
 func _on_sight_radius_body_entered(body):
 	print("entered")

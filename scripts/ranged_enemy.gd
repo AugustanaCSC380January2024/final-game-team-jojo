@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var bomb = preload("res://scenes/bomb.tscn")
 @export var gravity_strength = 500
+var health = 1
 var is_exploding = false
 var attacking = false
 var attack_timer = 2
@@ -32,6 +33,10 @@ func attack():
 	await get_tree().create_timer(.5).timeout
 	animated_sprite.play("idle")
 
+func damage(damage_num):
+	health -= damage_num
+	if health <= 0:
+		queue_free()
 
 func _on_sight_radius_body_entered(body):
 	if body.is_in_group("Player"):

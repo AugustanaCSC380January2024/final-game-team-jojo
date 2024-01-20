@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var canvas_layer = $CanvasLayer
 @onready var shoot_particles = preload("res://scenes/shoot_particles.tscn")
 @onready var coin_shot = preload("res://scenes/coin_shot.tscn")
+@onready var coin_cannon_shot = preload("res://scenes/coin_cannonball.tscn")
 @onready var melee_hitbox = preload("res://scenes/player_melee_hitbox.tscn")
 @onready var gunshot_sound = $flintlock_audio
 @onready var cannon_sound = $cannon_audio
@@ -83,6 +84,8 @@ func _physics_process(delta):
 		shot_type = "flintlock"
 	if Input.is_action_just_pressed("select_blunderbuss"):
 		shot_type = "blunderbuss"
+	if Input.is_action_just_pressed("select_cannon"):
+		shot_type = "cannon"
 	idle()
 	
 	if alive:
@@ -142,7 +145,7 @@ func melee():
 		
 func shoot():
 	if alive && !attackMelee && attack_timer <= 0:
-		if (shot_type == "flintlock" && coin_count >= 1) || (shot_type == "blunderbuss" && coin_count >= 2): #add no ammo indicator
+		if (shot_type == "flintlock" && coin_count >= 1) || (shot_type == "blunderbuss" && coin_count >= 2) || (shot_type == "cannon" && coin_count >= 3): #add no ammo indicator
 			attackShoot = true
 			if is_on_floor():
 				if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
@@ -206,6 +209,17 @@ func shoot():
 				gunshot3.set_change_y(4)
 				gunshot4.set_change_y(-4)
 				gunshot5.set_change_y(-2)
+			elif shot_type == "cannon":
+				coin_count -= 3
+				hud.set_coin_counter(coin_count)
+				cannon_sound.play()
+				var cannonshot = coin_cannon_shot.instantiate()
+				shots.add_child(cannonshot)
+				cannonshot.send_facing(currently_facing)
+				cannonshot.global_position = global_position
+				cannonshot.global_position.x += 35 * currently_facing
+				cannonshot.global_position.y += 8
+				attack_timer = 2
 			await get_tree().create_timer(.5).timeout
 			shot.emitting = false
 			shot.queue_free()
