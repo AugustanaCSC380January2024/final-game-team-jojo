@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var canvas_layer = $CanvasLayer
 @onready var shoot_particles = preload("res://scenes/shoot_particles.tscn")
 @onready var coin_shot = preload("res://scenes/coin_shot.tscn")
+@onready var melee_hitbox = preload("res://scenes/player_melee_hitbox.tscn")
 @onready var gunshot_sound = $flintlock_audio
 @onready var cannon_sound = $cannon_audio
 @onready var shots = $shot_container
@@ -128,8 +129,12 @@ func melee():
 				animated_sprite.play("melee")
 		else:
 			animated_sprite.play("jump_melee")
+		var attack_hitbox = melee_hitbox.instantiate()
+		add_child(attack_hitbox)
 		await get_tree().create_timer(0.3).timeout
+		attack_hitbox.queue_free()
 		attackMelee = false
+		
 		
 func shoot():
 	if alive && !attackMelee && attack_timer <= 0:
