@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmai1em5qaiot"]
+
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_2o87i"]
+[ext_resource type="Texture2D" uid="uid://ceqgkp6fnp1ya" path="res://assets/SHOP.png" id="1_rwk8n"]
+[ext_resource type="FontFile" uid="uid://duga6k6ga873j" path="res://assets/bones.ttf" id="2_lxum0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oig5c"]
+size = Vector2(1272.79, 10)
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.597997, 0.597997)
+script = ExtResource("1_2o87i")
+left_limit = 0
+right_limit = 600
+top_limit = 0
+bottom_limit = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 358)
+scale = Vector2(0.657084, 0.641844)
+texture = ExtResource("1_rwk8n")
+
+[node name="shop_buttons" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="buy_rum" type="Button" parent="shop_buttons"]
+texture_filter = 1
+offset_left = 196.143
+offset_top = 167.439
+offset_right = 331.143
+offset_bottom = 194.439
+scale = Vector2(2.05753, 1.67356)
+theme_override_fonts/font = ExtResource("2_lxum0")
+action_mode = 0
+text = "Rum-30-Limit-3"
+
+[node name="buy_spring" type="Button" parent="shop_buttons"]
+texture_filter = 1
+offset_left = 368.366
+offset_top = 167.439
+offset_right = 484.366
+offset_bottom = 194.439
+scale = Vector2(2.05753, 1.67356)
+theme_override_fonts/font = ExtResource("2_lxum0")
+action_mode = 0
+text = "Springleg-80"
+
+[node name="buy_wheels" type="Button" parent="shop_buttons"]
+texture_filter = 1
+offset_left = 521.453
+offset_top = 167.439
+offset_right = 657.453
+offset_bottom = 194.439
+scale = Vector2(2.05753, 1.67356)
+theme_override_fonts/font = ExtResource("2_lxum0")
+action_mode = 0
+text = "Wheelboots-80"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-574.306, 931.306)
+scale = Vector2(2.09906, 20.8636)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(636.393, -5)
+shape = SubResource("RectangleShape2D_oig5c")
+
+[connection signal="pressed" from="shop_buttons/buy_rum" to="." method="_on_buy_rum_pressed"]
+[connection signal="pressed" from="shop_buttons/buy_spring" to="." method="_on_buy_spring_pressed"]
+[connection signal="pressed" from="shop_buttons/buy_wheels" to="." method="_on_buy_wheels_pressed"]

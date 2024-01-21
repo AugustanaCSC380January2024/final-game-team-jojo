@@ -1,0 +1,54 @@
+extends Control
+
+@onready var rum_button = $buy_rum
+@onready var spring_button = $buy_spring
+@onready var wheels_button = $buy_wheels
+@export var left_limit = -10000000
+@export var right_limit = 10000000
+@export var top_limit = -10000000
+@export var bottom_limit = 10000000
+
+func _ready():
+	GlobalValues.player.alive = false
+	GlobalValues.player.camera.limit_left = left_limit
+	GlobalValues.player.camera.limit_right = right_limit
+	GlobalValues.player.camera.limit_top = top_limit
+	GlobalValues.player.camera.limit_bottom = bottom_limit
+	GlobalValues.player.global_position = Vector2(400, 200)
+
+func _on_buy_rum_pressed():
+	print("rum pressed")
+	if GlobalValues.player.coin_count >= 30 && GlobalValues.extra_rum <3:
+		GlobalValues.extra_rum += 1
+		GlobalValues.player.coin_count -= 30
+		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count - 30)
+	elif GlobalValues.extra_rum == 3:
+		rum_button.text = "Out-O-Stock"
+	elif GlobalValues.player.coin_count < 30:
+		rum_button.text = "Not-Enough-Gold"
+		await get_tree().create_timer(.5).timeout
+		rum_button.text = "Rum-30-Limit-3"
+
+func _on_buy_spring_pressed():
+	if GlobalValues.player.coin_count >= 80 && !GlobalValues.spring_leg:
+		GlobalValues.spring_leg = true
+		GlobalValues.player.coin_count -= 80
+		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count - 80)
+	elif GlobalValues.spring_leg:
+		spring_button.text = "Out-O-Stock"
+	elif GlobalValues.player.coin_count < 80:
+		spring_button.text = "Not-Enough-Gold"
+		await get_tree().create_timer(.5).timeout
+		spring_button.text = "Springleg-80"
+
+func _on_buy_wheels_pressed():
+	if GlobalValues.player.coin_count >= 80 && !GlobalValues.wheelboots:
+		GlobalValues.wheelboots = true
+		GlobalValues.player.coin_count -= 80
+		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count - 80)
+	elif GlobalValues.wheelboots:
+		wheels_button.text = "Out-O-Stock"
+	elif GlobalValues.player.coin_count < 80:
+		wheels_button.text = "Not-Enough-Gold"
+		await get_tree().create_timer(.5).timeout
+		wheels_button.text = "Wheelboots-80"
