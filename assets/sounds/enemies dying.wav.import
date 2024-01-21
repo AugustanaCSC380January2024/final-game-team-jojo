@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfvoqwj5gu3yl"
+path="res://.godot/imported/enemies dying.wav-bc6974300181666d511cc6526bc55776.sample"
+
+[deps]
+
+source_file="res://assets/sounds/enemies dying.wav"
+dest_files=["res://.godot/imported/enemies dying.wav-bc6974300181666d511cc6526bc55776.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
