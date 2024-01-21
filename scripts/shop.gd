@@ -10,12 +10,12 @@ extends Control
 @export var bottom_limit = 10000000
 
 func _ready():
+	GlobalValues.player.gravity_strength = 0
 	GlobalValues.player.alive = false
 	GlobalValues.player.camera.limit_left = left_limit
 	GlobalValues.player.camera.limit_right = right_limit
 	GlobalValues.player.camera.limit_top = top_limit
 	GlobalValues.player.camera.limit_bottom = bottom_limit
-	GlobalValues.player.global_position = Vector2(400, 200)
 
 func _on_buy_rum_pressed():
 	if GlobalValues.player.coin_count >= 30 && GlobalValues.extra_rum < 3:
