@@ -90,6 +90,9 @@ texture = ExtResource("1_rwk8n")
 [node name="next_level" parent="." instance=ExtResource("4_03kej")]
 position = Vector2(2715.73, 668.9)
 
+[node name="start_position" type="Marker2D" parent="."]
+position = Vector2(1056.86, 607.026)
+
 [connection signal="pressed" from="shop_buttons/buy_rum" to="." method="_on_buy_rum_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_spring" to="." method="_on_buy_spring_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_wheels" to="." method="_on_buy_wheels_pressed"]

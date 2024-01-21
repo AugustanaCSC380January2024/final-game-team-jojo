@@ -1,6 +1,6 @@
 extends Node2D
 
-var levels = [preload("res://scenes/level_1.tscn"), preload("res://scenes/shop.tscn"), preload("res://scenes/level_2.tscn")]
+var levels = [preload("res://scenes/level_1.tscn"), preload("res://scenes/shop.tscn"), preload("res://scenes/level_2.tscn"), preload("res://scenes/shop.tscn"), preload("res://scenes/level_3.tscn")]
 @onready var game_player = $Player
 @onready var current_index = 0
 @onready var current_level = null

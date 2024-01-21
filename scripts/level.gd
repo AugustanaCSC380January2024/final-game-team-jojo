@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var enemyCoin = preload("res://scenes/coin.tscn")
+@onready var startPos = $start_position
 @export var following_level: PackedScene = null
 @export var level_underwater = false
 @export var level_gravity = 980
@@ -18,6 +19,8 @@ func _ready():
 	GlobalValues.player.camera.limit_right = right_limit
 	GlobalValues.player.camera.limit_top = top_limit
 	GlobalValues.player.camera.limit_bottom = bottom_limit
+	GlobalValues.player.global_position = startPos.global_position
+	
 
 func _physics_process(delta):
 	if GlobalValues.spawnCoinLocation != null:
