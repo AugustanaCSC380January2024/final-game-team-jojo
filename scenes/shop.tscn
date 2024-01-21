@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmai1em5qaiot"]
+[gd_scene load_steps=6 format=3 uid="uid://cmai1em5qaiot"]
 
 [ext_resource type="Script" path="res://scripts/shop.gd" id="1_2o87i"]
 [ext_resource type="Texture2D" uid="uid://ceqgkp6fnp1ya" path="res://assets/SHOP.png" id="1_rwk8n"]
 [ext_resource type="FontFile" uid="uid://duga6k6ga873j" path="res://assets/bones.ttf" id="2_lxum0"]
+[ext_resource type="PackedScene" uid="uid://cd7iphh8pwgyw" path="res://scenes/next_level.tscn" id="4_03kej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oig5c"]
 size = Vector2(1272.79, 10)
@@ -59,6 +60,16 @@ theme_override_fonts/font = ExtResource("2_lxum0")
 action_mode = 0
 text = "Wheelboots-80"
 
+[node name="exit_shop" type="Button" parent="shop_buttons"]
+offset_left = 1112.0
+offset_top = 608.0
+offset_right = 1203.0
+offset_bottom = 639.0
+scale = Vector2(1.64899, 1.8412)
+theme_override_fonts/font = ExtResource("2_lxum0")
+action_mode = 0
+text = "Exit Shop"
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-294.316, 1404.69)
 scale = Vector2(2.09906, 20.8636)
@@ -75,6 +86,10 @@ position = Vector2(641.124, 358.927)
 scale = Vector2(0.658238, 0.636396)
 texture = ExtResource("1_rwk8n")
 
+[node name="next_level" parent="." instance=ExtResource("4_03kej")]
+position = Vector2(2715.73, 668.9)
+
 [connection signal="pressed" from="shop_buttons/buy_rum" to="." method="_on_buy_rum_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_spring" to="." method="_on_buy_spring_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_wheels" to="." method="_on_buy_wheels_pressed"]
+[connection signal="pressed" from="shop_buttons/exit_shop" to="." method="_on_exit_shop_pressed"]
