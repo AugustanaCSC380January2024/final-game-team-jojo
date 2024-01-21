@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfbx861ocaaq"]
+
+[ext_resource type="Script" path="res://scripts/water_background.gd" id="1_hjixg"]
+[ext_resource type="Texture2D" uid="uid://bgbnrdwjuq2es" path="res://assets/Water.png" id="2_k2nse"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ixamh"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ka42"]
+resource_local_to_scene = true
+
+[node name="water_background" type="ParallaxBackground"]
+script = ExtResource("1_hjixg")
+
+[node name="ocean_surface" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ocean_surface"]
+position = Vector2(1008, 76)
+texture = ExtResource("2_k2nse")
+
+[node name="ocean_normal" type="ParallaxLayer" parent="."]
+position = Vector2(5, 685)
+
+[node name="Sprite2D" type="Sprite2D" parent="ocean_normal"]
+modulate = Color(0.67451, 1, 1, 1)
+material = SubResource("CanvasItemMaterial_ixamh")
+position = Vector2(1008, 74)
+texture = ExtResource("2_k2nse")
+
+[node name="ocean_deep" type="ParallaxLayer" parent="."]
+position = Vector2(5, 685)
+
+[node name="Sprite2D" type="Sprite2D" parent="ocean_deep"]
+modulate = Color(0.105882, 0.8, 1, 1)
+material = SubResource("CanvasItemMaterial_3ka42")
+position = Vector2(1018, 785)
+texture = ExtResource("2_k2nse")
+
+[node name="ocean_abyss" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ocean_abyss"]
+modulate = Color(0.105882, 0.360784, 0.658824, 1)
+position = Vector2(1021, 2215)
+texture = ExtResource("2_k2nse")

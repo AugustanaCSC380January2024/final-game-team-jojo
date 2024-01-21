@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c1xyrwyop0qd7" path="res://assets/player pirate/run n gun.png" id="8_dq2tm"]
 [ext_resource type="AudioStream" uid="uid://de5wj5mwqdpy6" path="res://assets/sounds/musket-shot-86526-[AudioTrimmer.com].mp3" id="12_gqbfq"]
 [ext_resource type="AudioStream" uid="uid://dwcifuck14o04" path="res://assets/sounds/musket-explosion-6383.mp3" id="13_uks4w"]
-[ext_resource type="PackedScene" uid="uid://ci073odq1se3j" path="res://scenes/hud.tscn" id="14_ds7s7"]
+[ext_resource type="PackedScene" uid="uid://ci073odq1se3j" path="res://scenes/hud.tscn" id="14_q5l3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ob5rk"]
 atlas = ExtResource("1_tclea")
@@ -655,7 +655,6 @@ shape = SubResource("CapsuleShape2D_elc7d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
-limit_bottom = 500
 position_smoothing_speed = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -671,9 +670,6 @@ stream = ExtResource("13_uks4w")
 
 [node name="shot_container" type="Node" parent="."]
 
-[node name="HUD" parent="." instance=ExtResource("14_ds7s7")]
-z_index = 1000
-offset_left = -439.0
-offset_top = -258.0
-offset_right = -439.0
-offset_bottom = -258.0
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer2" instance=ExtResource("14_q5l3w")]

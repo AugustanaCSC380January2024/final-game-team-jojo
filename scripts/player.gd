@@ -9,9 +9,11 @@ extends CharacterBody2D
 @onready var gunshot_sound = $flintlock_audio
 @onready var cannon_sound = $cannon_audio
 @onready var shots = $shot_container
-@onready var hud = $HUD
+@onready var hud = $CanvasLayer2/HUD
 @onready var camera = $Camera2D
 
+@export var swim_jump_timer = 0
+@export var underwater = false
 @export var hurt_i_frames = 0
 @export var max_lives = 3
 @export var lives = 3
@@ -38,12 +40,14 @@ var cameraCounterX = 0
 var cameraCounterY = 0
 var idleTime = 0
 
-
 func _ready():
 	set_floor_max_angle(PI/3)
 	hud.set_coin_counter(coin_count)
 
 func _physics_process(delta):
+	if underwater:
+		if swim_jump_timer > 0:
+			swim_jump_timer -= delta
 	#if(is_on_floor()):
 		#print("Floor")
 	#if(is_on_wall()):
@@ -68,11 +72,18 @@ func _physics_process(delta):
 			velocity.y = max_fall_speed
 	else:
 		coyote_time = 0.1
-	if Input.is_action_just_pressed("jump") && alive:
+	if Input.is_action_just_pressed("jump") && alive && !underwater:
 		if(is_on_floor() || coyote_time > 0):
 			jump(jump_height)
 			jump_buffer = 0.0
 			coyote_time = 0.0
+		else:
+			jump_buffer = 0.1
+	elif Input.is_action_just_pressed("jump") && alive && underwater:
+		if swim_jump_timer <= 0:
+			jump(jump_height)
+			jump_buffer = 0.0
+			swim_jump_timer = 1
 		else:
 			jump_buffer = 0.1
 	if Input.is_action_just_pressed("move_down") && is_on_floor()==false:
@@ -241,6 +252,8 @@ func add_coin():
 func change_weight():
 	jump_height = original_jump_height - (original_jump_height * (coin_count / 5) * .025)
 	max_speed = original_max_speed - (original_max_speed * (coin_count / 5) * .025)
+	if underwater:
+		gravity_strength = 500 + ((coin_count / 5) * 20)
 
 func changeCamera():
 	var xBounds = 200
