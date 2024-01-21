@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf6q23a14acym"]
+[gd_scene load_steps=3 format=3 uid="uid://bf6q23a14acym"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_wx4x4"]
-[ext_resource type="PackedScene" uid="uid://ci073odq1se3j" path="res://scenes/hud.tscn" id="3_0to7y"]
 [ext_resource type="PackedScene" uid="uid://2jo13kgs0omt" path="res://scenes/player.tscn" id="3_qhoma"]
 
 [node name="Game" type="Node2D"]
@@ -13,10 +12,3 @@ position = Vector2(121, 163)
 wall_min_slide_angle = 0.0
 floor_max_angle = 0.0
 floor_snap_length = 0.0
-
-[node name="HUD" parent="." instance=ExtResource("3_0to7y")]
-z_index = 1000
-offset_left = -439.0
-offset_top = -258.0
-offset_right = -439.0
-offset_bottom = -258.0

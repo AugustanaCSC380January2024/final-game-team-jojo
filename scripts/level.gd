@@ -4,16 +4,20 @@ extends Node2D
 @export var following_level: PackedScene = null
 @export var level_underwater = false
 @export var level_gravity = 980
+@export var left_limit = -10000000
+@export var right_limit = 10000000
+@export var top_limit = -10000000
+@export var bottom_limit = 10000000
 var physics_set = false
 
 func _ready():
 	GlobalValues.next_level = following_level
 	GlobalValues.player.underwater = level_underwater
 	GlobalValues.player.gravity_strength = level_gravity
-	GlobalValues.player.limit_left = left_limit
-	GlobalValues.player.limit_right = right_limit
-	GlobalValues.player.limit_up = up_limit
-	GlobalValues.player.limit_down = down_limit
+	GlobalValues.player.camera.limit_left = left_limit
+	GlobalValues.player.camera.limit_right = right_limit
+	GlobalValues.player.camera.limit_top = top_limit
+	GlobalValues.player.camera.limit_bottom = bottom_limit
 
 func _physics_process(delta):
 	if GlobalValues.spawnCoinLocation != null:
