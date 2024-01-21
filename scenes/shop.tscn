@@ -82,6 +82,7 @@ shape = SubResource("RectangleShape2D_oig5c")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 1
 position = Vector2(641.124, 358.927)
 scale = Vector2(0.658238, 0.636396)
 texture = ExtResource("1_rwk8n")

@@ -1,0 +1,114 @@
+[gd_scene load_steps=25 format=3 uid="uid://byyjd2buwt26m"]
+
+[ext_resource type="Script" path="res://scripts/kraken_lightning.gd" id="1_dirqs"]
+[ext_resource type="Texture2D" uid="uid://dhnanbht45ppx" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_beginning1.png" id="1_luhsv"]
+[ext_resource type="Texture2D" uid="uid://b0mtxy0j7h18r" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_beginning2.png" id="2_0i27y"]
+[ext_resource type="Texture2D" uid="uid://b8p1hdljqifg8" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_beginning3.png" id="3_ybq20"]
+[ext_resource type="Texture2D" uid="uid://b6u1nhdjkeaw8" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_beginning3_part.png" id="4_8fjq0"]
+[ext_resource type="Texture2D" uid="uid://da3jv4cry3nea" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_beginning4.png" id="5_i08ga"]
+[ext_resource type="Texture2D" uid="uid://gucawftvr6vu" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_beginning4_part.png" id="6_2pbk0"]
+[ext_resource type="Texture2D" uid="uid://b13hmad8exofq" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_beginning5.png" id="7_edd26"]
+[ext_resource type="Texture2D" uid="uid://ch0psyr1dnc58" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_beginning5_part.png" id="8_ss1ue"]
+[ext_resource type="Texture2D" uid="uid://d35rt2ojd6cpx" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_cycle1.png" id="9_7h8j2"]
+[ext_resource type="Texture2D" uid="uid://h1hkm5xyyxbc" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_cycle2.png" id="10_rkw3o"]
+[ext_resource type="Texture2D" uid="uid://cnwalwx6rvlmw" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_cycle3.png" id="11_3roex"]
+[ext_resource type="Texture2D" uid="uid://dpwt34f04vdu8" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_cycle4.png" id="12_bykhw"]
+[ext_resource type="Texture2D" uid="uid://b67fuevjn2qwd" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_cycle5.png" id="13_p322r"]
+[ext_resource type="Texture2D" uid="uid://y0upxhpn4t6h" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_cycle6.png" id="14_w2bsn"]
+[ext_resource type="Texture2D" uid="uid://dom1phr45pd7" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_end1.png" id="15_rcqxk"]
+[ext_resource type="Texture2D" uid="uid://dn0tsyypclirq" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_end2.png" id="16_3m4oi"]
+[ext_resource type="Texture2D" uid="uid://d2luk6q02ckme" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_end3.png" id="17_kei47"]
+[ext_resource type="Texture2D" uid="uid://b2a2au6xc8puc" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_spot1.png" id="18_nm5s7"]
+[ext_resource type="Texture2D" uid="uid://0qlh5ygienx4" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_spot2.png" id="19_fom0x"]
+[ext_resource type="Texture2D" uid="uid://c8kamnxsimsam" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_spot3.png" id="20_xqxq7"]
+[ext_resource type="Texture2D" uid="uid://cruq2nuhs4kgn" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_spot4.png" id="21_ief2f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_151ec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_luhsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0i27y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ybq20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8fjq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i08ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2pbk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_edd26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ss1ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7h8j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rkw3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3roex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bykhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_p322r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_w2bsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rcqxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3m4oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kei47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nm5s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fom0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_xqxq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ief2f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbara"]
+size = Vector2(6.54119, 190.847)
+
+[node name="kraken_lightning" type="Area2D"]
+scale = Vector2(0.595429, 0.595429)
+collision_layer = 0
+script = ExtResource("1_dirqs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_151ec")
+autoplay = "default"
+frame_progress = 0.75772
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.89885e-07, -0.576359)
+shape = SubResource("RectangleShape2D_tbara")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

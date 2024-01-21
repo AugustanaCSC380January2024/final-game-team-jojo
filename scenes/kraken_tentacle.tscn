@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://j7jh6yp566ai"]
+
+[ext_resource type="Texture2D" uid="uid://eifbmmq4gtyy" path="res://assets/kraken boss/octopussy.png" id="1_1r2om"]
+[ext_resource type="Script" path="res://scripts/kraken_tentacle.gd" id="1_ygmrc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3yx1"]
+size = Vector2(77, 221)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hqe6"]
+atlas = ExtResource("1_1r2om")
+region = Rect2(0, 0, 155, 231)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeq07"]
+atlas = ExtResource("1_1r2om")
+region = Rect2(155, 0, 155, 231)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kit8t"]
+atlas = ExtResource("1_1r2om")
+region = Rect2(310, 0, 155, 231)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wlve"]
+atlas = ExtResource("1_1r2om")
+region = Rect2(465, 0, 155, 231)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rffuj"]
+atlas = ExtResource("1_1r2om")
+region = Rect2(620, 0, 155, 231)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efv5d"]
+atlas = ExtResource("1_1r2om")
+region = Rect2(775, 0, 155, 231)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y61ti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hqe6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeq07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kit8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wlve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rffuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efv5d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="kraken_tentacle" type="Area2D"]
+scale = Vector2(0.195234, 0.195234)
+collision_layer = 0
+script = ExtResource("1_ygmrc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17.5, -1.5)
+shape = SubResource("RectangleShape2D_v3yx1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y61ti")
+frame_progress = 0.898329
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

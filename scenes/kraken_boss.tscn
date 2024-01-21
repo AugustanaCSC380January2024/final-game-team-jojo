@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://djmdtsqwll2pt"]
+
+[ext_resource type="Script" path="res://scripts/kraken_boss.gd" id="1_tftho"]
+[ext_resource type="Texture2D" uid="uid://h6o8r5x3fotn" path="res://assets/kraken boss/Octopus.png" id="1_wcox2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uex88"]
+atlas = ExtResource("1_wcox2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xns70"]
+atlas = ExtResource("1_wcox2")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcdv2"]
+atlas = ExtResource("1_wcox2")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5jht"]
+atlas = ExtResource("1_wcox2")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uuecb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uex88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xns70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcdv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5jht")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="kraken_boss" type="CharacterBody2D" groups=["boss", "enemy"]]
+scale = Vector2(6, 6)
+collision_layer = 32
+collision_mask = 3
+collision_priority = 100.0
+script = ExtResource("1_tftho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uuecb")
+autoplay = "default"
+frame = 3
+frame_progress = 0.556464
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-24, -8, -16, -32, 8, -40, 24, -32, 24, -16, 16, -8, 32, 16, 16, 24, -40, 24, -40, -8)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-20, -10.6667, -13.3333, -29.3333, 5.33333, -37.3333, 18.6667, -33.3333, 21.3333, -20, 12, -9.33333, 30.6667, 8, 28, 21.3333, 13.3333, 26.6667, -40, 28, -41.3333, 22.6667, -41.3333, 9.33333, -41.3333, -10.6667)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
