@@ -18,13 +18,13 @@ func _ready():
 	GlobalValues.player.global_position = Vector2(400, 200)
 
 func _on_buy_rum_pressed():
-	print("rum pressed")
-	print(GlobalValues.player.coin_count)
 	if GlobalValues.player.coin_count >= 30 && GlobalValues.extra_rum < 3:
 		GlobalValues.extra_rum += 1
 		GlobalValues.player.coin_count -= 30
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
-		print(GlobalValues.player.coin_count)
+		GlobalValues.player.max_lives += 1
+		GlobalValues.player.lives += 1
+		GlobalValues.player.hud.lives_gained(GlobalValues.player.max_lives)
 	elif GlobalValues.extra_rum == 3:
 		rum_button.text = "Out-O-Stock"
 	elif GlobalValues.player.coin_count < 30:
