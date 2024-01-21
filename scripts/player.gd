@@ -28,6 +28,7 @@ extends CharacterBody2D
 @export var friction = 2500
 @export var attack_timer = 0
 @export var melee_attack_timer = 0
+var in_shop = false
 var coyote_time = 0.0
 var jump_buffer = 0.0
 var alive = true
@@ -88,7 +89,7 @@ func _physics_process(delta):
 			jump_buffer = 0.1
 	if Input.is_action_just_pressed("move_down") && is_on_floor()==false:
 		velocity.y += 500
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") && !in_shop:
 		shoot()
 	if Input.is_action_just_pressed("melee"):
 		melee()
@@ -105,7 +106,10 @@ func _physics_process(delta):
 	if facing != 0 and alive:
 		animated_sprite.flip_h = (facing == -1)
 		currently_facing = facing
-		velocity.x += facing * acceleration * delta
+		if GlobalValues.wheelboots:
+			velocity.x += facing * acceleration * delta * 2
+		else:
+			velocity.x += facing * acceleration * delta
 	else:
 		if velocity.x > 0:
 			velocity.x -= friction * delta
@@ -115,17 +119,25 @@ func _physics_process(delta):
 			velocity.x += friction * delta
 			if velocity.x > 0:
 				velocity.x = 0
-		
-	if velocity.x > max_speed:
-		velocity.x = max_speed
-	elif velocity.x < -max_speed:
-		velocity.x = -max_speed
+	if GlobalValues.wheelboots:
+		if velocity.x > max_speed * 2:
+			velocity.x = max_speed * 2
+		elif velocity.x < -max_speed * 2:
+			velocity.x = -max_speed * 2
+	else:
+		if velocity.x > max_speed:
+			velocity.x = max_speed
+		elif velocity.x < -max_speed:
+			velocity.x = -max_speed
 	flip()
 	GlobalValues.playerPosition = global_position
 	move_and_slide()
 
 func jump(jump_height):
-	velocity.y = -jump_height
+	if GlobalValues.spring_leg:
+		velocity.y = -jump_height * 2
+	else:
+		velocity.y = -jump_height
 
 func idle():
 	if alive && !attackMelee && !attackShoot:
@@ -353,7 +365,7 @@ func die():
 	velocity = Vector2.ZERO
 	global_position = Vector2(178, 390)
 	alive = true
-	lives = 3
+	lives = max_lives
 	hud.lives_gained(max_lives)
 
 func respawn():

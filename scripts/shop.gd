@@ -10,8 +10,7 @@ extends Control
 @export var bottom_limit = 10000000
 
 func _ready():
-	GlobalValues.player.gravity_strength = 0
-	GlobalValues.player.alive = false
+	GlobalValues.player.in_shop = true
 	GlobalValues.player.camera.limit_left = left_limit
 	GlobalValues.player.camera.limit_right = right_limit
 	GlobalValues.player.camera.limit_top = top_limit
@@ -24,6 +23,7 @@ func _on_buy_rum_pressed():
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
 		GlobalValues.player.max_lives += 1
 		GlobalValues.player.lives += 1
+		GlobalValues.player.hud.create_lives_hud(GlobalValues.player.max_lives)
 		GlobalValues.player.hud.lives_gained(GlobalValues.player.max_lives)
 	elif GlobalValues.extra_rum == 3:
 		rum_button.text = "Out-O-Stock"
@@ -58,5 +58,5 @@ func _on_buy_wheels_pressed():
 
 
 func _on_exit_shop_pressed():
-	GlobalValues.player.alive = true
+	GlobalValues.player.in_shop = false
 	level_exit.next_level()
