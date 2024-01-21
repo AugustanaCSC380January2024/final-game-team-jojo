@@ -12,6 +12,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 860.0
+offset_bottom = 471.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.597997, 0.597997)
@@ -21,55 +23,57 @@ right_limit = 600
 top_limit = 0
 bottom_limit = 200
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(640, 358)
-scale = Vector2(0.657084, 0.641844)
-texture = ExtResource("1_rwk8n")
-
 [node name="shop_buttons" type="CanvasLayer" parent="."]
 layer = 128
 
 [node name="buy_rum" type="Button" parent="shop_buttons"]
 texture_filter = 1
-offset_left = 196.143
-offset_top = 167.439
-offset_right = 331.143
-offset_bottom = 194.439
-scale = Vector2(2.05753, 1.67356)
+offset_left = 336.0
+offset_top = 288.0
+offset_right = 471.0
+offset_bottom = 315.0
+scale = Vector2(1.2085, 1.19985)
 theme_override_fonts/font = ExtResource("2_lxum0")
 action_mode = 0
 text = "Rum-30-Limit-3"
 
 [node name="buy_spring" type="Button" parent="shop_buttons"]
 texture_filter = 1
-offset_left = 368.366
-offset_top = 167.439
-offset_right = 484.366
-offset_bottom = 194.439
-scale = Vector2(2.05753, 1.67356)
+offset_left = 520.0
+offset_top = 288.0
+offset_right = 636.0
+offset_bottom = 315.0
+scale = Vector2(1.46872, 1.29885)
 theme_override_fonts/font = ExtResource("2_lxum0")
 action_mode = 0
 text = "Springleg-80"
 
 [node name="buy_wheels" type="Button" parent="shop_buttons"]
 texture_filter = 1
-offset_left = 521.453
-offset_top = 167.439
-offset_right = 657.453
-offset_bottom = 194.439
-scale = Vector2(2.05753, 1.67356)
+offset_left = 720.0
+offset_top = 288.0
+offset_right = 856.0
+offset_bottom = 315.0
+scale = Vector2(1.3709, 1.29633)
 theme_override_fonts/font = ExtResource("2_lxum0")
 action_mode = 0
 text = "Wheelboots-80"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-574.306, 931.306)
+position = Vector2(-294.316, 1404.69)
 scale = Vector2(2.09906, 20.8636)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(636.393, -5)
 shape = SubResource("RectangleShape2D_oig5c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(641.124, 358.927)
+scale = Vector2(0.658238, 0.636396)
+texture = ExtResource("1_rwk8n")
 
 [connection signal="pressed" from="shop_buttons/buy_rum" to="." method="_on_buy_rum_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_spring" to="." method="_on_buy_spring_pressed"]

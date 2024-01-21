@@ -1,8 +1,8 @@
 extends Control
 
-@onready var rum_button = $buy_rum
-@onready var spring_button = $buy_spring
-@onready var wheels_button = $buy_wheels
+@onready var rum_button = $shop_buttons/buy_rum
+@onready var spring_button = $shop_buttons/buy_springbuy_spring
+@onready var wheels_button = $shop_buttons/buy_wheels
 @export var left_limit = -10000000
 @export var right_limit = 10000000
 @export var top_limit = -10000000
@@ -18,10 +18,12 @@ func _ready():
 
 func _on_buy_rum_pressed():
 	print("rum pressed")
-	if GlobalValues.player.coin_count >= 30 && GlobalValues.extra_rum <3:
+	print(GlobalValues.player.coin_count)
+	if GlobalValues.player.coin_count >= 30 && GlobalValues.extra_rum < 3:
 		GlobalValues.extra_rum += 1
 		GlobalValues.player.coin_count -= 30
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count - 30)
+		print(GlobalValues.player.coin_count)
 	elif GlobalValues.extra_rum == 3:
 		rum_button.text = "Out-O-Stock"
 	elif GlobalValues.player.coin_count < 30:
