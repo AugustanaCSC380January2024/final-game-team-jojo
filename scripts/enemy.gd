@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @onready var hitbox = preload("res://scenes/hitbox.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
 @export var gravity_strength = 500
@@ -26,12 +27,12 @@ func _physics_process(delta):
 		if global_position.x - player.global_position.x > 30:
 			animated_sprite.play("run")
 			animated_sprite.flip_h = 1
-			velocity.x = -100
+			velocity.x = -150
 			move_and_slide()
 		elif global_position.x - player.global_position.x < -30:
 			animated_sprite.play("run")
 			animated_sprite.flip_h = 0
-			velocity.x = 100
+			velocity.x = 150
 			move_and_slide()
 			#await get_tree().create_timer(.3).timeout
 		if (global_position.x - 30 < player.global_position.x || global_position.x + 30 > player.global_position.x) && attack_timer <= 0: attack()

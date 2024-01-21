@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cg326ocovh7fb" path="res://assets/Sky.jpg" id="1_6bhje"]
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_kltyx"]
-[ext_resource type="Texture2D" uid="uid://bhrmc77k2o27y" path="res://assets/Water.png" id="2_ofb7s"]
-[ext_resource type="Texture2D" uid="uid://cvvwx0hdevod" path="res://assets/Sand.png" id="3_gpp0i"]
+[ext_resource type="Texture2D" uid="uid://bgbnrdwjuq2es" path="res://assets/Water.png" id="2_ofb7s"]
+[ext_resource type="Texture2D" uid="uid://cahs16uxbblhk" path="res://assets/Sand.png" id="3_gpp0i"]
 
 [node name="Background" type="ParallaxBackground"]
 script = ExtResource("1_kltyx")

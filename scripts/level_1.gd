@@ -4,10 +4,12 @@ extends Node2D
 
 func _physics_process(delta):
 	if GlobalValues.spawnCoinLocation != null:
-		var coin = enemyCoin.instantiate()
-		add_child(coin)
-		coin.global_position = GlobalValues.spawnCoinLocation
-		coin.fling_coin()
+		var num = 3
+		for i in range(num):
+			var coin = enemyCoin.instantiate()
+			add_child(coin)
+			coin.global_position = GlobalValues.spawnCoinLocation
+			coin.fling_coin()
 		GlobalValues.spawnCoinLocation = null
 
 func _on_death_zone_body_entered(body):

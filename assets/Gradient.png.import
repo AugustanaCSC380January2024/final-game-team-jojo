@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cahs16uxbblhk"
-path="res://.godot/imported/Sand.png-8d90101aa620ee2f1dd1fba28d4ce086.ctex"
+uid="uid://dueoqxat16l3o"
+path="res://.godot/imported/Gradient.png-1af28b926ebff89d6698fa78a9851f3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sand.png"
-dest_files=["res://.godot/imported/Sand.png-8d90101aa620ee2f1dd1fba28d4ce086.ctex"]
+source_file="res://assets/Gradient.png"
+dest_files=["res://.godot/imported/Gradient.png-1af28b926ebff89d6698fa78a9851f3c.ctex"]
 
 [params]
 

@@ -19,7 +19,7 @@ extends CharacterBody2D
 @export var acceleration = 2000
 @export var original_jump_height = 600
 @export var original_max_speed = 500
-@export var max_speed = 500
+@export var max_speed = 750
 @export var jump_height = 600
 @export var max_fall_speed = 2000
 @export var gravity_strength = 980
