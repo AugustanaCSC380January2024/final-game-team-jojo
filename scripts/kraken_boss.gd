@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var tentacle = preload("res://scenes/kraken_tentacle.tscn")
 @onready var lightning = preload("res://scenes/kraken_lightning.tscn")
 @onready var crewmate = preload("res://scenes/bomb_enemy.tscn")
+var attacking = false
 var attack_timer = 3
 var health = 1
 
@@ -18,6 +19,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func random_attack():
+	if attacking:
 		var rng = RandomNumberGenerator.new()
 		var random_index = rng.randi_range(0, 2)
 		print(random_index)
@@ -78,3 +80,7 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		if body.hurt_i_frames <= 0:
 			body.hurt()
+
+
+func _on_area_2d_2_body_entered(body):
+	attacking = true

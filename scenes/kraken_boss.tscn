@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://djmdtsqwll2pt"]
+[gd_scene load_steps=22 format=3 uid="uid://djmdtsqwll2pt"]
 
 [ext_resource type="Script" path="res://scripts/kraken_boss.gd" id="1_tftho"]
 [ext_resource type="Texture2D" uid="uid://h6o8r5x3fotn" path="res://assets/kraken boss/Octopus.png" id="1_wcox2"]
@@ -87,6 +87,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck6ud"]
+
 [node name="kraken_boss" type="CharacterBody2D" groups=["boss", "enemy"]]
 scale = Vector2(6, 6)
 collision_layer = 32
@@ -120,4 +122,15 @@ stream = ExtResource("14_np0xn")
 position = Vector2(18872, 4248)
 scale = Vector2(69.1161, -7.15358)
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, 12)
+scale = Vector2(0.746166, 0.762102)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-112, -40)
+scale = Vector2(-15.5274, 7.29402)
+shape = SubResource("RectangleShape2D_ck6ud")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

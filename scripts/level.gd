@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var enemyCoin = preload("res://scenes/coin.tscn")
 @onready var startPos = $start_position
+@onready var levelMusic = $Level
+@onready var bossMusic = $Boss
 @export var following_level: PackedScene = null
 @export var level_underwater = false
 @export var level_gravity = 980
@@ -12,6 +14,7 @@ extends Node2D
 var physics_set = false
 
 func _ready():
+	levelMusic.play()
 	GlobalValues.next_level = following_level
 	GlobalValues.player.underwater = level_underwater
 	GlobalValues.player.gravity_strength = level_gravity
@@ -37,3 +40,8 @@ func _on_death_zone_body_entered(body):
 	await get_tree().create_timer(1.5).timeout
 	get_tree().reload_current_scene()
 	body.respawn()
+
+
+func _on_area_2d_body_entered(body):
+	levelMusic.stop()
+	bossMusic.play()

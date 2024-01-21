@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://uxdhhrlf1q0k"
+path="res://.godot/imported/Is This a Sustainable Business Model.mp3-8b4fa39c1f2a81ef4c9d610d23f53166.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Is This a Sustainable Business Model.mp3"
+dest_files=["res://.godot/imported/Is This a Sustainable Business Model.mp3-8b4fa39c1f2a81ef4c9d610d23f53166.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
