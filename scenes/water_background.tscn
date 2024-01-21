@@ -12,6 +12,7 @@ resource_local_to_scene = true
 script = ExtResource("1_hjixg")
 
 [node name="ocean_surface" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(2045, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ocean_surface"]
 position = Vector2(1008, 76)
@@ -19,6 +20,7 @@ texture = ExtResource("2_k2nse")
 
 [node name="ocean_normal" type="ParallaxLayer" parent="."]
 position = Vector2(5, 685)
+motion_mirroring = Vector2(2045, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ocean_normal"]
 modulate = Color(0.67451, 1, 1, 1)
@@ -28,6 +30,7 @@ texture = ExtResource("2_k2nse")
 
 [node name="ocean_deep" type="ParallaxLayer" parent="."]
 position = Vector2(5, 685)
+motion_mirroring = Vector2(2045, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ocean_deep"]
 modulate = Color(0.105882, 0.8, 1, 1)
@@ -36,6 +39,7 @@ position = Vector2(1018, 785)
 texture = ExtResource("2_k2nse")
 
 [node name="ocean_abyss" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(2045, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ocean_abyss"]
 modulate = Color(0.105882, 0.360784, 0.658824, 1)
