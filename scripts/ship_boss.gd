@@ -2,12 +2,14 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var explosion_sfx = $exploded_ship
 @onready var ship_destroyed_sfx = $ship_destroyed
+@onready var change_level = $next_level
 @onready var bomb = preload("res://scenes/bomb.tscn")
 @onready var cannonball = preload("res://scenes/cannonball.tscn")
 @onready var crewmate = preload("res://scenes/melee_enemy.tscn")
 @onready var nuke = preload("res://scenes/nuclear_boss_cannonball.tscn")
 var attack_timer = 3
 var health = 1
+var attacking = false
 
 func _physics_process(delta):
 	if attack_timer > 0:
@@ -17,6 +19,7 @@ func _physics_process(delta):
 		attack_timer = 3
 
 func random_attack():
+	if attacking:
 		var rng = RandomNumberGenerator.new()
 		var random_index = rng.randi_range(0, 3)
 		print(random_index)
@@ -28,6 +31,8 @@ func random_attack():
 			crew_attack()
 		if random_index == 3:
 			nuclear_cannon()
+	else:
+		pass
 
 func cannon_volley():
 	var fired_cannonball = cannonball.instantiate()
@@ -110,4 +115,9 @@ func damage(damage_num):
 		await get_tree().create_timer(1).timeout
 		ship_destroyed_sfx.play()
 		await get_tree().create_timer(4).timeout
+		change_level.next_level()
 		queue_free()
+
+
+func _on_area_2d_body_entered(body):
+	attacking = true

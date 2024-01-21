@@ -1,7 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://djmdtsqwll2pt"]
+[gd_scene load_steps=21 format=3 uid="uid://djmdtsqwll2pt"]
 
 [ext_resource type="Script" path="res://scripts/kraken_boss.gd" id="1_tftho"]
 [ext_resource type="Texture2D" uid="uid://h6o8r5x3fotn" path="res://assets/kraken boss/Octopus.png" id="1_wcox2"]
+[ext_resource type="Texture2D" uid="uid://13fdhwhh4i2i" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion1.png" id="3_6u3m4"]
+[ext_resource type="Texture2D" uid="uid://hx6v5xsd8tmw" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion2.png" id="4_thql5"]
+[ext_resource type="Texture2D" uid="uid://by5m8vpwwojtj" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion3.png" id="5_ht03k"]
+[ext_resource type="Texture2D" uid="uid://c4635rwdwq5u4" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion4.png" id="6_w7r25"]
+[ext_resource type="Texture2D" uid="uid://bdhhjsgmba1k" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion5.png" id="7_oxhvj"]
+[ext_resource type="Texture2D" uid="uid://ce2ojqry6n0ry" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion6.png" id="8_i4i3s"]
+[ext_resource type="Texture2D" uid="uid://c4015wmknne0a" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion7.png" id="9_mjmea"]
+[ext_resource type="Texture2D" uid="uid://csm32w3uw70y5" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion8.png" id="10_12kaq"]
+[ext_resource type="Texture2D" uid="uid://dcdrt2kn818yq" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion9.png" id="11_lv3lj"]
+[ext_resource type="Texture2D" uid="uid://bqmq3mg4xuswu" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion10.png" id="12_3tlbe"]
+[ext_resource type="AudioStream" uid="uid://ffi8pwlushdj" path="res://assets/sounds/explosion-42132.mp3" id="13_dsow4"]
+[ext_resource type="AudioStream" uid="uid://5c311koi5aiq" path="res://assets/sounds/exploding-building-1-185114.mp3" id="14_np0xn"]
+[ext_resource type="PackedScene" uid="uid://cd7iphh8pwgyw" path="res://scenes/next_level.tscn" id="15_o0g2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uex88"]
 atlas = ExtResource("1_wcox2")
@@ -37,6 +50,41 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6u3m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_thql5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ht03k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w7r25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oxhvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i4i3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mjmea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_12kaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lv3lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3tlbe")
+}],
+"loop": false,
+"name": &"died",
+"speed": 5.0
 }]
 
 [node name="kraken_boss" type="CharacterBody2D" groups=["boss", "enemy"]]
@@ -48,9 +96,10 @@ script = ExtResource("1_tftho")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uuecb")
+animation = &"died"
 autoplay = "default"
-frame = 3
-frame_progress = 0.556464
+frame = 9
+frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-24, -8, -16, -32, 8, -40, 24, -32, 24, -16, 16, -8, 32, 16, 16, 24, -40, 24, -40, -8)
@@ -60,5 +109,15 @@ collision_layer = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-20, -10.6667, -13.3333, -29.3333, 5.33333, -37.3333, 18.6667, -33.3333, 21.3333, -20, 12, -9.33333, 30.6667, 8, 28, 21.3333, 13.3333, 26.6667, -40, 28, -41.3333, 22.6667, -41.3333, 9.33333, -41.3333, -10.6667)
+
+[node name="exploded_ship" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_dsow4")
+
+[node name="ship_destroyed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_np0xn")
+
+[node name="next_level" parent="." instance=ExtResource("15_o0g2o")]
+position = Vector2(18872, 4248)
+scale = Vector2(69.1161, -7.15358)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -641,7 +641,6 @@ floor_max_angle = 1.0472
 floor_snap_length = 32.0
 platform_floor_layers = 2
 script = ExtResource("1_fr7ef")
-coin_count = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b8nrj")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwrqpf42egjjd"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_bpxwe"]
+[ext_resource type="Texture2D" uid="uid://ytkornqexhj0" path="res://assets/credits.png" id="2_1osv5"]
+
+[node name="credits" type="Node2D"]
+z_index = 1000
+script = ExtResource("1_bpxwe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(639.38, 357.924)
+scale = Vector2(0.656694, 0.63666)
+texture = ExtResource("2_1osv5")

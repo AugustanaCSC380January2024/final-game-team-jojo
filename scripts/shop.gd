@@ -3,6 +3,7 @@ extends Control
 @onready var rum_button = $shop_buttons/buy_rum
 @onready var spring_button = $shop_buttons/buy_spring
 @onready var wheels_button = $shop_buttons/buy_wheels
+@onready var start = $start_position
 @onready var level_exit = $next_level
 @export var left_limit = -10000000
 @export var right_limit = 10000000
@@ -59,4 +60,5 @@ func _on_buy_wheels_pressed():
 
 func _on_exit_shop_pressed():
 	GlobalValues.player.in_shop = false
+	GlobalValues.playerPosition = start.global_position
 	level_exit.next_level()

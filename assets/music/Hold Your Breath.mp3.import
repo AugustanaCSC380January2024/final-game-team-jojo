@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://betdj0adtf2at"
+path="res://.godot/imported/Hold Your Breath.mp3-8b1b7b08396c58e6a1baea49759f1cd7.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Hold Your Breath.mp3"
+dest_files=["res://.godot/imported/Hold Your Breath.mp3-8b1b7b08396c58e6a1baea49759f1cd7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

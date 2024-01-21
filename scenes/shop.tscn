@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmai1em5qaiot"]
+[gd_scene load_steps=7 format=3 uid="uid://cmai1em5qaiot"]
 
 [ext_resource type="Script" path="res://scripts/shop.gd" id="1_2o87i"]
 [ext_resource type="Texture2D" uid="uid://ceqgkp6fnp1ya" path="res://assets/SHOP.png" id="1_rwk8n"]
 [ext_resource type="FontFile" uid="uid://duga6k6ga873j" path="res://assets/bones.ttf" id="2_lxum0"]
 [ext_resource type="PackedScene" uid="uid://cd7iphh8pwgyw" path="res://scenes/next_level.tscn" id="4_03kej"]
+[ext_resource type="AudioStream" uid="uid://uxdhhrlf1q0k" path="res://assets/music/Is This a Sustainable Business Model .mp3" id="5_kk3qo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oig5c"]
 size = Vector2(1272.79, 10)
@@ -92,6 +93,9 @@ position = Vector2(2715.73, 668.9)
 
 [node name="start_position" type="Marker2D" parent="."]
 position = Vector2(1056.86, 607.026)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kk3qo")
 
 [connection signal="pressed" from="shop_buttons/buy_rum" to="." method="_on_buy_rum_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_spring" to="." method="_on_buy_spring_pressed"]
