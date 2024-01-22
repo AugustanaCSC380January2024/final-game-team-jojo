@@ -93,9 +93,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_py3k7"]
 
-[node name="bomb" type="Area2D"]
-collision_layer = 0
-collision_mask = 3
+[node name="bomb" type="Area2D" groups=["parry_projectile"]]
+collision_layer = 256
+collision_mask = 131
 script = ExtResource("1_oij40")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -151,7 +151,7 @@ func idle():
 
 func melee():
 	if alive && !attackShoot && melee_attack_timer <= 0:
-		melee_attack_timer = .7
+		melee_attack_timer = 1
 		attackMelee = true
 		if is_on_floor():
 			if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):

@@ -5,8 +5,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fy24n"]
 
-[node name="cannonball" type="Area2D"]
-collision_layer = 0
+[node name="cannonball" type="Area2D" groups=["parry_projectile"]]
+collision_layer = 256
+collision_mask = 129
 script = ExtResource("1_ck6f2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
