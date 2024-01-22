@@ -51,3 +51,9 @@ func _on_wall_collision_detector_body_entered(body):
 		animated_sprite.play("jump")
 		await get_tree().create_timer(1).timeout
 		velocity.y = 0
+
+
+func _on_sight_radius_body_exited(body):
+	if body.is_in_group("Player"):
+		attacking = false
+		print("seen")

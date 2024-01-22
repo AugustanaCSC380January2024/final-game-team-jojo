@@ -253,3 +253,4 @@ scale = Vector2(3.59447, 0.636726)
 shape = SubResource("RectangleShape2D_pve0u")
 
 [connection signal="body_entered" from="sight_radius" to="." method="_on_sight_radius_body_entered"]
+[connection signal="body_exited" from="sight_radius" to="." method="_on_sight_radius_body_exited"]
