@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var shots = $shot_container
 @onready var hud = $CanvasLayer2/HUD
 @onready var camera = $Camera2D
+@onready var damage_audio = $damage_audio
 
 @export var swim_jump_timer = 0
 @export var underwater = false
@@ -300,9 +301,9 @@ func changeCamera():
 	elif cameraCounterX < -frames:
 		cameraCounterX = -frames
 	if cameraCounterX >= 0:
-		camera.offset.x = (-cos(cameraCounterX / frames) + 1) * xBounds
+		camera.offset.x = (-cos(cameraCounterX / frames * PI / 2) + 1) * xBounds
 	else:
-		camera.offset.x = -(-cos(cameraCounterX / frames) + 1) * xBounds
+		camera.offset.x = -(-cos(cameraCounterX / frames  * PI / 2) + 1) * xBounds
 	var zoom = cos(cameraCounterX / frames) / 2 + 1
 	camera.zoom = Vector2(zoom, zoom)
 	#print(zoom)
@@ -352,6 +353,7 @@ func changeCamera():
 				#camera.offset.y = 0
 
 func hurt():
+	damage_audio.play()
 	lives -= 1
 	hud.life_lost(lives)
 	hurt_i_frames = 1

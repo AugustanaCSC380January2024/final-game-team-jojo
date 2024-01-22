@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://b0bp1ewjw1sut"]
+[gd_scene load_steps=81 format=3 uid="uid://b0bp1ewjw1sut"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_gnt2q"]
 [ext_resource type="Texture2D" uid="uid://cclr3cs4h52xe" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/7-Attack/1.png" id="2_ygsso"]
@@ -74,6 +74,7 @@
 [ext_resource type="Texture2D" uid="uid://dqngtxdor84ny" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/11.png" id="73_xsevc"]
 [ext_resource type="Texture2D" uid="uid://nobyo2ycnpcf" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/12.png" id="74_xgbk5"]
 [ext_resource type="Texture2D" uid="uid://cus3c05pfoodm" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/13.png" id="75_ug281"]
+[ext_resource type="AudioStream" uid="uid://cfvoqwj5gu3yl" path="res://assets/sounds/enemies dying.wav" id="76_6bfro"]
 [ext_resource type="Texture2D" uid="uid://b5vdwox7yopbs" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/14.png" id="76_8e8id"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mupp2"]
@@ -365,6 +366,9 @@ collision_layer = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
 position = Vector2(9, -44)
 shape = SubResource("RectangleShape2D_20kn2")
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("76_6bfro")
 
 [connection signal="body_entered" from="wall_collision_detector" to="." method="_on_wall_collision_detector_body_entered"]
 [connection signal="body_entered" from="sight_radius" to="." method="_on_sight_radius_body_entered"]

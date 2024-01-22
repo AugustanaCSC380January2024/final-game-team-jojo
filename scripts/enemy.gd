@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @onready var hitbox = preload("res://scenes/hitbox.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var death_sound = $death_sound
 @export var gravity_strength = 500
 @export var health = 1
 var attack_timer = 0
@@ -49,6 +50,7 @@ func attack():
 func damage(damage_num):
 	health -= damage_num
 	if health <= 0:
+		death_sound.play()
 		queue_free()
 		
 func set_following():
