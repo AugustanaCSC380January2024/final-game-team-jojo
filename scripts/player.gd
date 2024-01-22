@@ -262,10 +262,10 @@ func add_coin():
 	change_weight()
 
 func change_weight():
-	jump_height = original_jump_height - (original_jump_height * (coin_count / 5) * .025)
-	max_speed = original_max_speed - (original_max_speed * (coin_count / 5) * .025)
+	jump_height = original_jump_height - (original_jump_height * (coin_count / 10) * .025)
+	max_speed = original_max_speed - (original_max_speed * (coin_count / 10) * .025)
 	if underwater:
-		gravity_strength = 500 + ((coin_count / 5) * 20)
+		gravity_strength = 600 + ((coin_count / 5) * 30)
 
 func changeCamera():
 	var xBounds = 200
