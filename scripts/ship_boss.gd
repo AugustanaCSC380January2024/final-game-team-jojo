@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var crewmate = preload("res://scenes/melee_enemy.tscn")
 @onready var nuke = preload("res://scenes/nuclear_boss_cannonball.tscn")
 var attack_timer = 3
-var health = 1
+var health = 50
 var attacking = false
 
 func _physics_process(delta):

@@ -119,7 +119,7 @@ stream = ExtResource("13_dsow4")
 stream = ExtResource("14_np0xn")
 
 [node name="next_level" parent="." instance=ExtResource("15_o0g2o")]
-position = Vector2(18872, 4248)
+position = Vector2(17917.3, 12290.7)
 scale = Vector2(69.1161, -7.15358)
 
 [node name="Area2D2" type="Area2D" parent="."]
