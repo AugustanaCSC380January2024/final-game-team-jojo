@@ -356,7 +356,7 @@ animation = &"explode"
 texture_filter = 1
 position = Vector2(-0.5, -10)
 sprite_frames = SubResource("SpriteFrames_fkfkp")
-animation = &"none"
+animation = &"nuclear_explosion"
 autoplay = "none"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

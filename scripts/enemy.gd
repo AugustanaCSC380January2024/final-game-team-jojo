@@ -44,9 +44,6 @@ func _physics_process(delta):
 			await get_tree().create_timer(.2).timeout
 			attack_hitbox.queue_free()
 
-#func attack():
-	
-
 func damage(damage_num):
 	health -= damage_num
 	if health <= 0:
