@@ -34,4 +34,5 @@ func _on_body_entered(body):
 			GlobalValues.spawnCoinLocation = body.global_position
 			if rand_rum == 0:
 				GlobalValues.spawnRumLocation = body.global_position
+	set_monitoring(false)
 	explode()

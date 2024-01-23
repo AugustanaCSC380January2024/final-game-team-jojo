@@ -3,7 +3,7 @@ var exploded = false
 
 func _on_body_entered(body):
 	var rand_rum = randi_range(0, 3)
-	if body.is_in_group("enemy"):
+	if body.is_in_group("enemy") && !exploded:
 		var exploded = true
 		if (body.health - 5) == 0:
 			GlobalValues.spawnCoinLocation = body.global_position
