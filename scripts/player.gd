@@ -189,6 +189,7 @@ func shoot():
 			if shot_type == "flintlock":
 				coin_count -= 1
 				hud.set_coin_counter(coin_count)
+				change_weight()
 				gunshot_sound.play()
 				var gunshot = coin_shot.instantiate()
 				shots.add_child(gunshot)
@@ -200,6 +201,7 @@ func shoot():
 				#I will come back and make this code dry, I will do it, yes I will
 				coin_count -= 3
 				hud.set_coin_counter(coin_count)
+				change_weight()
 				gunshot_sound.play()
 				var gunshot = coin_shot.instantiate()
 				var gunshot2 = coin_shot.instantiate()
@@ -238,6 +240,7 @@ func shoot():
 			elif shot_type == "cannon":
 				coin_count -= 5
 				hud.set_coin_counter(coin_count)
+				change_weight()
 				cannon_sound.play()
 				var cannonshot = coin_cannon_shot.instantiate()
 				shots.add_child(cannonshot)
