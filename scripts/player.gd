@@ -171,7 +171,7 @@ func melee():
 		
 func shoot():
 	if alive && !attackMelee && attack_timer <= 0:
-		if (shot_type == "flintlock" && coin_count >= 1) || (shot_type == "blunderbuss" && coin_count >= 2) || (shot_type == "cannon" && coin_count >= 3): #add no ammo indicator
+		if (shot_type == "flintlock" && coin_count >= 1) || (shot_type == "blunderbuss" && coin_count >= 3) || (shot_type == "cannon" && coin_count >= 5): #add no ammo indicator
 			attackShoot = true
 			if is_on_floor():
 				if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
@@ -198,7 +198,7 @@ func shoot():
 				gunshot.global_position.y += 8
 			elif shot_type == "blunderbuss":
 				#I will come back and make this code dry, I will do it, yes I will
-				coin_count -= 2
+				coin_count -= 3
 				hud.set_coin_counter(coin_count)
 				gunshot_sound.play()
 				var gunshot = coin_shot.instantiate()
@@ -236,7 +236,7 @@ func shoot():
 				gunshot4.set_change_y(-4)
 				gunshot5.set_change_y(-2)
 			elif shot_type == "cannon":
-				coin_count -= 3
+				coin_count -= 5
 				hud.set_coin_counter(coin_count)
 				cannon_sound.play()
 				var cannonshot = coin_cannon_shot.instantiate()

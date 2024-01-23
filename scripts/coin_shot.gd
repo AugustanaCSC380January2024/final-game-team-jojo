@@ -19,7 +19,7 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body):
-	var rand_rum = randi_range(0, 4)
+	var rand_rum = randi_range(0, 3)
 	if body.is_in_group("enemy"):
 		if (body.health - 1) == 0:
 			GlobalValues.spawnCoinLocation = body.global_position
