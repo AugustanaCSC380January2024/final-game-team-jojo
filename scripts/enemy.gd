@@ -25,27 +25,27 @@ func _physics_process(delta):
 	else: gravity_strength = 500
 	
 	if following:
-		if global_position.x - player.global_position.x > 30:
+		move_and_slide()
+		if global_position.x - player.global_position.x > 60:
 			animated_sprite.play("run")
 			animated_sprite.flip_h = 1
 			velocity.x = -150
-			move_and_slide()
-		elif global_position.x - player.global_position.x < -30:
+		elif global_position.x - player.global_position.x < -60:
 			animated_sprite.play("run")
 			animated_sprite.flip_h = 0
 			velocity.x = 150
-			move_and_slide()
 			#await get_tree().create_timer(.3).timeout
-		if (global_position.x - 30 < player.global_position.x || global_position.x + 30 > player.global_position.x) && attack_timer <= 0: attack()
+		elif (global_position.x - 60 < player.global_position.x || global_position.x + 60 > player.global_position.x) && attack_timer <= 0:
+			attack_timer = 2
+			animated_sprite.play("attack")
+			await get_tree().create_timer(.5).timeout
+			var attack_hitbox = hitbox.instantiate()
+			add_child(attack_hitbox)
+			await get_tree().create_timer(.2).timeout
+			attack_hitbox.queue_free()
 
-func attack():
-	attack_timer = 2
-	animated_sprite.play("attack")
-	await get_tree().create_timer(.5).timeout
-	var attack_hitbox = hitbox.instantiate()
-	add_child(attack_hitbox)
-	await get_tree().create_timer(.2).timeout
-	attack_hitbox.queue_free()
+#func attack():
+	
 
 func damage(damage_num):
 	health -= damage_num
