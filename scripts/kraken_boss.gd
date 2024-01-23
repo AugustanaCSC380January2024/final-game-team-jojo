@@ -9,7 +9,7 @@ extends CharacterBody2D
 var attacking = false
 var alive = true
 var attack_timer = 3
-var health = 50
+var health = 1
 
 func _physics_process(delta):
 	if attack_timer > 0:
@@ -66,11 +66,12 @@ func crew_attack():
 	
 func damage(damage_num):
 	health -= damage_num
-	if health <= 0:
+	if health <= 0 && alive:
 		attack_timer = 100000
 		animation.play("died")
 		alive = false
 		explosion_sfx.play()
+		print("Next")
 		await get_tree().create_timer(1).timeout
 		ship_destroyed_sfx.play()
 		await get_tree().create_timer(2).timeout

@@ -1933,6 +1933,10 @@ polygon = PackedVector2Array(-152, 432, -32, 432, -16, 416, 296, 416, 312, 432, 
 position = Vector2(10209, 678)
 scale = Vector2(69.1161, -7.15358)
 
+[node name="next_level2" parent="." instance=ExtResource("17_jfdfk")]
+position = Vector2(991, 328)
+scale = Vector2(69.1161, -7.15358)
+
 [node name="Level" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_k543p")
 

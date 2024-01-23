@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ddrf0271rrx3c"]
+[gd_scene load_steps=24 format=3 uid="uid://ddrf0271rrx3c"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_qx07g"]
 [ext_resource type="Texture2D" uid="uid://ce3gahf2twjp" path="res://assets/Dungeon Tile Set.png" id="3_vqw4y"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b0bp1ewjw1sut" path="res://scenes/melee_enemy.tscn" id="8_6ys8m"]
 [ext_resource type="AudioStream" uid="uid://d3s6r3yaah4n7" path="res://assets/music/A Nice Neighborhood.mp3" id="13_5da0e"]
 [ext_resource type="AudioStream" uid="uid://i4wmtxsf403y" path="res://assets/music/Uh Oh! This One Is Stronger.mp3" id="14_8vpsc"]
+[ext_resource type="Texture2D" uid="uid://b1kcdbtm0776v" path="res://assets/Light.png" id="15_4onhn"]
 [ext_resource type="PackedScene" uid="uid://b8qu34o0vohuy" path="res://scenes/background.tscn" id="16_6meuu"]
 [ext_resource type="PackedScene" uid="uid://cd7iphh8pwgyw" path="res://scenes/next_level.tscn" id="17_82ye6"]
 
@@ -1700,13 +1701,11 @@ position = Vector2(2184, -832)
 polygon = PackedVector2Array(1848, 464, 1848, 496, 1864, 512, 2104, 512, 2120, 496, 2120, 464)
 
 [node name="next_level" parent="." instance=ExtResource("17_82ye6")]
-visible = false
 position = Vector2(10209, 678)
 scale = Vector2(69.1161, -7.15358)
 
 [node name="next_level2" parent="." instance=ExtResource("17_82ye6")]
-visible = false
-position = Vector2(1097, 325)
+position = Vector2(-7177, -1203)
 scale = Vector2(69.1161, -7.15358)
 
 [node name="ship_boss" parent="." instance=ExtResource("6_6fdcm")]
@@ -1717,5 +1716,12 @@ stream = ExtResource("13_5da0e")
 
 [node name="Boss" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_8vpsc")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1087, 383)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("15_4onhn")
+texture_scale = 0.2
 
 [connection signal="body_entered" from="Death Zone" to="." method="_on_death_zone_body_entered"]
