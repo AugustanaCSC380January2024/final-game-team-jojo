@@ -5,6 +5,8 @@ func _ready():
 	await get_tree().create_timer(1).timeout
 	set_monitoring(true)
 	await get_tree().create_timer(1).timeout
+	set_monitoring(false)
+	await get_tree().create_timer(1).timeout
 	queue_free()
 	
 

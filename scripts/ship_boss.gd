@@ -82,6 +82,11 @@ func bomb_wave():
 	fired_bomb4.global_position.y = global_position.y + 525
 	fired_bomb5.global_position = global_position
 	fired_bomb5.global_position.y = global_position.y + 550
+	fired_bomb.aim(global_position)
+	fired_bomb2.aim(global_position)
+	fired_bomb3.aim(global_position)
+	fired_bomb4.aim(global_position)
+	fired_bomb5.aim(global_position)
 
 func crew_attack():
 	var attacking_crew = crewmate.instantiate()

@@ -30,6 +30,7 @@ func attack():
 	var thrown_bomb = bomb.instantiate()
 	add_child(thrown_bomb)
 	thrown_bomb.global_position = global_position
+	thrown_bomb.aim(global_position)
 	await get_tree().create_timer(.5).timeout
 	animated_sprite.play("idle")
 

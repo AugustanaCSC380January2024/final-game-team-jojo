@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://byyjd2buwt26m"]
+[gd_scene load_steps=26 format=3 uid="uid://byyjd2buwt26m"]
 
 [ext_resource type="Script" path="res://scripts/kraken_lightning.gd" id="1_dirqs"]
 [ext_resource type="Texture2D" uid="uid://dhnanbht45ppx" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_beginning1.png" id="1_luhsv"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://0qlh5ygienx4" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_spot2.png" id="19_fom0x"]
 [ext_resource type="Texture2D" uid="uid://c8kamnxsimsam" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_spot3.png" id="20_xqxq7"]
 [ext_resource type="Texture2D" uid="uid://cruq2nuhs4kgn" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Lightning/Lightning_spot4.png" id="21_ief2f"]
+[ext_resource type="AudioStream" uid="uid://bucg5klfni6y8" path="res://assets/sounds/thunderstorm-lightning-strike-7180.wav" id="23_p7wko"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_151ec"]
 animations = [{
@@ -110,5 +111,9 @@ frame_progress = 0.75772
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.89885e-07, -0.576359)
 shape = SubResource("RectangleShape2D_tbara")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_p7wko")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var lightning = preload("res://scenes/kraken_lightning.tscn")
 @onready var crewmate = preload("res://scenes/bomb_enemy.tscn")
 var attacking = false
+var alive = true
 var attack_timer = 3
 var health = 50
 
@@ -19,7 +20,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func random_attack():
-	if attacking:
+	if attacking && alive:
 		var rng = RandomNumberGenerator.new()
 		var random_index = rng.randi_range(0, 2)
 		print(random_index)
@@ -68,16 +69,17 @@ func damage(damage_num):
 	if health <= 0:
 		attack_timer = 100000
 		animation.play("died")
+		alive = false
 		explosion_sfx.play()
 		await get_tree().create_timer(1).timeout
 		ship_destroyed_sfx.play()
-		await get_tree().create_timer(4).timeout
+		await get_tree().create_timer(2).timeout
 		change_level.next_level()
 		queue_free()
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") && alive:
 		if body.hurt_i_frames <= 0:
 			body.hurt()
 

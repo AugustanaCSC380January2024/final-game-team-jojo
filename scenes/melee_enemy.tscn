@@ -339,7 +339,7 @@ size = Vector2(362, 152.75)
 
 [node name="melee_enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 32
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_gnt2q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
