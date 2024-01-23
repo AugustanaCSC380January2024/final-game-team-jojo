@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var enemyCoin = preload("res://scenes/coin.tscn")
+@onready var enemyRum = preload("res://scenes/rum_pickup.tscn")
 @onready var startPos = $start_position
 @onready var levelMusic = $Level
 @onready var bossMusic = $Boss
@@ -34,6 +35,14 @@ func _physics_process(delta):
 			coin.global_position = GlobalValues.spawnCoinLocation
 			coin.fling_coin()
 		GlobalValues.spawnCoinLocation = null
+	if GlobalValues.spawnRumLocation != null:
+		var num = 1
+		for i in range(num):
+			var rum = enemyRum.instantiate()
+			add_child(rum)
+			rum.global_position = GlobalValues.spawnRumLocation
+			rum.fling_rum()
+		GlobalValues.spawnRumLocation = null
 
 func _on_death_zone_body_entered(body):
 	body.die()

@@ -261,12 +261,17 @@ func add_coin():
 	coin_count += 1
 	hud.set_coin_counter(coin_count)
 	change_weight()
+	
+func add_rum():
+	if lives < max_lives:
+		lives += 1
+		hud.lives_gained(lives)
 
 func change_weight():
 	jump_height = original_jump_height - (original_jump_height * (coin_count / 10) * .025)
 	max_speed = original_max_speed - (original_max_speed * (coin_count / 10) * .025)
 	if underwater:
-		gravity_strength = 600 + ((coin_count / 5) * 30)
+		gravity_strength = 600 + ((coin_count / 10) * 20)
 
 func changeCamera():
 	var xBounds = 200
