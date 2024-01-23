@@ -20,7 +20,7 @@ boot_splash/minimum_display_time=2000
 [autoload]
 
 GlobalValues="*res://scripts/global_values.gd"
-AudioPlayer="*res://scenes/audio_player.tscn"
+AudioPlayer="*res://scripts/audio_player.gd"
 
 [display]
 

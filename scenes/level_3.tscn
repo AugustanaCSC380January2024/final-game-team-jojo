@@ -1593,6 +1593,7 @@ size = Vector2(1783.71, 38.2181)
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_qx07g")
+levelMusic = "level3"
 left_limit = 0
 right_limit = 6800
 bottom_limit = 1000

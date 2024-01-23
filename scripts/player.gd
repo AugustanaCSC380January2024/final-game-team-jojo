@@ -374,6 +374,7 @@ func die():
 	await get_tree().create_timer(2).timeout
 	velocity = Vector2.ZERO
 	global_position = Vector2(178, 390)
+	AudioPlayer.restart()
 	get_tree().reload_current_scene()
 	alive = true
 	lives = max_lives

@@ -3,8 +3,8 @@ extends Node2D
 @onready var enemyCoin = preload("res://scenes/coin.tscn")
 @onready var enemyRum = preload("res://scenes/rum_pickup.tscn")
 @onready var startPos = $start_position
-@onready var levelMusic = $Level
-@onready var bossMusic = $Boss
+@export var levelMusic = "level1"
+@export var bossMusic = "boss"
 @export var following_level: PackedScene = null
 @export var level_underwater = false
 @export var level_gravity = 980
@@ -15,7 +15,7 @@ extends Node2D
 var physics_set = false
 
 func _ready():
-	levelMusic.play()
+	AudioPlayer.change_music(levelMusic)
 	GlobalValues.next_level = following_level
 	GlobalValues.player.underwater = level_underwater
 	GlobalValues.player.gravity_strength = level_gravity
@@ -52,5 +52,6 @@ func _on_death_zone_body_entered(body):
 
 
 func _on_area_2d_body_entered(body):
-	levelMusic.stop()
-	bossMusic.play()
+	AudioPlayer.stop()
+	AudioPlayer.change_music(bossMusic)
+	AudioPlayer.play()
