@@ -99,6 +99,16 @@ theme_override_fonts/font = ExtResource("2_lxum0")
 action_mode = 0
 text = "JOLLY-ROGER-150"
 
+[node name="buy_sword" type="Button" parent="shop_buttons"]
+offset_left = 808.0
+offset_top = 16.0
+offset_right = 1066.0
+offset_bottom = 43.0
+scale = Vector2(1.32814, 1.25637)
+theme_override_fonts/font = ExtResource("2_lxum0")
+action_mode = 0
+text = "DREAD-PIRATE-BOB'S-SWORD-100"
+
 [node name="exit_shop" type="Button" parent="shop_buttons"]
 offset_left = 984.0
 offset_top = 624.0
@@ -139,4 +149,5 @@ position = Vector2(1056.86, 607.026)
 [connection signal="pressed" from="shop_buttons/buy_extrabarrel" to="." method="_on_buy_extrabarrel_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_loudener" to="." method="_on_buy_loudener_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_jollyroger" to="." method="_on_buy_jollyroger_pressed"]
+[connection signal="pressed" from="shop_buttons/buy_sword" to="." method="_on_buy_sword_pressed"]
 [connection signal="pressed" from="shop_buttons/exit_shop" to="." method="_on_exit_shop_pressed"]

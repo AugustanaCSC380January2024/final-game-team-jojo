@@ -3,9 +3,12 @@ extends Area2D
 @onready var hitbox_shape = $CollisionShape2D
 
 func _on_body_entered(body):
+	var rand_rum = randi_range(0, 4)
 	if body.is_in_group("enemy"):
 		if (body.health - 1) == 0:
-			GlobalValues.spawnCoinLocation = body.global_position
+				GlobalValues.spawnCoinLocation = body.global_position
+				if rand_rum == 0:
+					GlobalValues.spawnRumLocation = body.global_position
 		body.damage(1)
 
 

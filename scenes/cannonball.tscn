@@ -7,7 +7,7 @@
 
 [node name="cannonball" type="Area2D" groups=["parry_projectile"]]
 collision_layer = 256
-collision_mask = 129
+collision_mask = 161
 script = ExtResource("1_ck6f2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

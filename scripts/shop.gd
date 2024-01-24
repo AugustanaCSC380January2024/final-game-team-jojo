@@ -7,6 +7,7 @@ extends Control
 @onready var barrels_button = $shop_buttons/buy_extrabarrel
 @onready var loudener_button = $shop_buttons/buy_loudener
 @onready var flag_button = $shop_buttons/buy_jollyroger
+@onready var sword_button = $shop_buttons/buy_sword
 @onready var start = $start_position
 @onready var level_exit = $next_level
 @export var left_limit = -10000000
@@ -119,3 +120,16 @@ func _on_buy_jollyroger_pressed():
 		flag_button.text = "Not-Enough-Gold"
 		await get_tree().create_timer(.5).timeout
 		flag_button.text = "JOLLY-ROGER-150"
+
+
+func _on_buy_sword_pressed():
+	if GlobalValues.player.coin_count >= 100 && !GlobalValues.sword:
+		GlobalValues.sword = true
+		GlobalValues.player.coin_count -= 100
+		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+	elif GlobalValues.sword:
+		sword_button.text = "Out-O-Stock"
+	elif GlobalValues.player.coin_count < 100:
+		sword_button.text = "Not-Enough-Gold"
+		await get_tree().create_timer(.5).timeout
+		sword_button.text = "DREAD-PIRATE-BOB'S-SWORD-100"
