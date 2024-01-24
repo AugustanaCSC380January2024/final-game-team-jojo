@@ -24,6 +24,7 @@ func _ready():
 	GlobalValues.player.camera.limit_top = top_limit
 	GlobalValues.player.camera.limit_bottom = bottom_limit
 	GlobalValues.player.global_position = startPos.global_position
+	print(GlobalValues.player.max_lives)
 	
 
 func _physics_process(delta):

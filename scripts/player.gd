@@ -45,6 +45,9 @@ var idleTime = 0
 func _ready():
 	set_floor_max_angle(PI/3)
 	hud.set_coin_counter(coin_count)
+	max_lives += GlobalValues.extra_rum
+	lives = max_lives
+	hud.create_lives_hud(max_lives)
 
 func _physics_process(delta):
 	if underwater:
@@ -362,6 +365,8 @@ func changeCamera():
 func hurt():
 	damage_audio.play()
 	lives -= 1
+	print("lives")
+	print(lives)
 	hud.life_lost(lives)
 	hurt_i_frames = 1
 	if lives == 0:
