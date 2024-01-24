@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var explosion_hitbox = preload("res://scenes/normal_explosion_hitbox.tscn")
+@onready var fear = preload("res://scenes/fear_symbol.tscn")
 @onready var explosion_sfx = $explosion_sound
 @onready var animated_sprite = $enemy_animation
 @onready var explosion_sprite = $explosion_animation
@@ -10,6 +11,9 @@ var is_exploding = false
 var alive = true
 var following = false
 var player = null
+var afraid = false
+var afraid_move_mult = 1
+var fear_checked = false
 
 func _physics_process(delta):
 	if !is_on_floor():
@@ -24,13 +28,19 @@ func _physics_process(delta):
 		move_and_slide()
 		if global_position.x - player.global_position.x > 60:
 			animated_sprite.play("run")
-			animated_sprite.flip_h = 1
-			velocity.x = -300
+			if !afraid:
+				animated_sprite.flip_h = 1
+			elif afraid:
+				animated_sprite.flip_h = 0
+			velocity.x = -300 * afraid_move_mult
 		elif global_position.x - player.global_position.x < -60:
 			animated_sprite.play("run")
-			animated_sprite.flip_h = 0
-			velocity.x = 300
-		elif (global_position.x - 60 < player.global_position.x || global_position.x + 60 > player.global_position.x) && (global_position.y - 60 < player.global_position.y || global_position.y + 60 < player.global_position.y) && alive:
+			if !afraid:
+				animated_sprite.flip_h = 0
+			elif afraid:
+				animated_sprite.flip_h = 1
+			velocity.x = 300 * afraid_move_mult
+		elif (global_position.x - 60 < player.global_position.x || global_position.x + 60 > player.global_position.x) && (global_position.y - 60 < player.global_position.y || global_position.y + 60 < player.global_position.y) && alive && !afraid:
 			alive = false
 			await get_tree().create_timer(.5).timeout
 			is_exploding = true
@@ -51,15 +61,23 @@ func damage(damage_num):
 		queue_free()
 
 func _on_sight_radius_body_entered(body):
-	print("entered")
 	if body.is_in_group("Player"):
+		if !fear_checked:
+			var rand_fear = randi_range(1,100)
+			if rand_fear <= (GlobalValues.infamy + GlobalValues.level_infamy)/3:
+				afraid = true
+				afraid_move_mult = -1
+				display_fear()
+			fear_checked = true
 		following = true
 		player = body
-		print("player entered")
 
+func display_fear():
+	var fear_indicator = fear.instantiate()
+	add_child(fear_indicator)
+	fear_indicator.global_position.y -= 50
 
 func _on_wall_collision_detector_body_entered(body):
-	print(body)
 	if !body.is_in_group("enemy") && !body.is_in_group("Player"):
 		velocity.y = -300
 		animated_sprite.play("jump")

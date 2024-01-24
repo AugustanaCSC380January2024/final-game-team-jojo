@@ -2,11 +2,14 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var bomb = preload("res://scenes/bomb.tscn")
+@onready var fear = preload("res://scenes/fear_symbol.tscn")
 @export var gravity_strength = 500
 var health = 1
 var is_exploding = false
 var attacking = false
 var attack_timer = 2
+var afraid = false
+var fear_checked = false
 
 func _physics_process(delta):
 	if attacking && attack_timer > 0:
@@ -18,7 +21,7 @@ func _physics_process(delta):
 		if velocity.y > 3000:
 			velocity.y = 3000
 	else: gravity_strength = 500
-	if attack_timer <= 0:
+	if attack_timer <= 0 && !afraid:
 		attack()
 
 func attack():
@@ -40,11 +43,20 @@ func damage(damage_num):
 
 func _on_sight_radius_body_entered(body):
 	if body.is_in_group("Player"):
+		if !fear_checked:
+			var rand_fear = randi_range(1,100)
+			if rand_fear <= (GlobalValues.infamy + GlobalValues.level_infamy)/3:
+				afraid = true
+				display_fear()
+			fear_checked = true
 		if body.global_position.x < global_position.x:
 			animated_sprite.flip_h = 1
 		attacking = true
-		print("seen")
 
+func display_fear():
+	var fear_indicator = fear.instantiate()
+	add_child(fear_indicator)
+	fear_indicator.global_position.y -= 50
 
 func _on_wall_collision_detector_body_entered(body):
 	if !body.is_in_group("enemy") && !body.is_in_group("Player"):
@@ -57,4 +69,3 @@ func _on_wall_collision_detector_body_entered(body):
 func _on_sight_radius_body_exited(body):
 	if body.is_in_group("Player"):
 		attacking = false
-		print("seen")

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var hitbox = preload("res://scenes/hitbox.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var death_sound = $death_sound
+@onready var fear = preload("res://scenes/fear_symbol.tscn")
 @export var gravity_strength = 500
 @export var health = 1
 var attack_timer = 0
@@ -69,10 +70,15 @@ func _on_sight_radius_body_entered(body):
 			if rand_fear <= (GlobalValues.infamy + GlobalValues.level_infamy)/3:
 				afraid = true
 				afraid_move_mult = -1
+				display_fear()
 			fear_checked = true
 		following = true
 		player = body
 
+func display_fear():
+	var fear_indicator = fear.instantiate()
+	add_child(fear_indicator)
+	fear_indicator.global_position.y -= 50
 
 func _on_wall_collision_detector_body_entered(body):
 	if !body.is_in_group("enemy") && !body.is_in_group("Player"):
