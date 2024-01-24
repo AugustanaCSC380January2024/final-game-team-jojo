@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var hud = $CanvasLayer2/HUD
 @onready var camera = $Camera2D
 @onready var damage_audio = $damage_audio
+@onready var parry_sound = $parry
 
 @export var swim_jump_timer = 0
 @export var underwater = false
@@ -361,6 +362,9 @@ func changeCamera():
 			#camera.offset.y += yPixels
 			#if camera.offset.y > 0:
 				#camera.offset.y = 0
+
+func parry():
+	parry_sound.play()
 
 func hurt():
 	damage_audio.play()

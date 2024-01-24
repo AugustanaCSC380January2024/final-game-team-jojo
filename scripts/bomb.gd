@@ -4,6 +4,7 @@ extends Area2D
 @export var bomb_speed = -300
 var exploded = false
 var direction = 1
+var parried = false
 
 func aim(currentLocation):
 	if GlobalValues.playerPosition.x < currentLocation.x:
@@ -12,8 +13,10 @@ func aim(currentLocation):
 		direction = -1
 
 func _physics_process(delta):
-	global_position.x += bomb_speed*delta * direction
-
+	if !parried:
+		global_position.x += bomb_speed*delta * direction
+	elif parried:
+		global_position.y += -2000 * delta
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") && !exploded:
