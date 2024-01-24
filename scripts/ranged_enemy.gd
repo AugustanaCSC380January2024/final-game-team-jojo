@@ -11,8 +11,6 @@ var attack_timer = 2
 func _physics_process(delta):
 	if attacking && attack_timer > 0:
 		attack_timer -= delta
-	if global_position.y >= 700:
-		queue_free()
 	if !is_on_floor():
 		if velocity.y > 0:
 			gravity_strength = 1000
@@ -37,6 +35,7 @@ func attack():
 func damage(damage_num):
 	health -= damage_num
 	if health <= 0:
+		GlobalValues.level_infamy += 1
 		queue_free()
 
 func _on_sight_radius_body_entered(body):

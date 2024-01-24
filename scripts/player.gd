@@ -375,6 +375,7 @@ func die():
 	velocity = Vector2.ZERO
 	global_position = Vector2(178, 390)
 	AudioPlayer.restart()
+	GlobalValues.level_infamy = 0
 	get_tree().reload_current_scene()
 	alive = true
 	lives = max_lives

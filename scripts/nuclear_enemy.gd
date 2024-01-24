@@ -12,8 +12,6 @@ var following = false
 var player = null
 
 func _physics_process(delta):
-	if global_position.y >= 700:
-		queue_free()
 	if !is_on_floor():
 		if velocity.y > 0:
 			gravity_strength = 1000
@@ -48,6 +46,7 @@ func _physics_process(delta):
 func damage(damage_num):
 	health -= damage_num
 	if health <= 0:
+		GlobalValues.level_infamy += 1
 		queue_free()
 
 func _on_sight_radius_body_entered(body):

@@ -10,3 +10,5 @@ extends Node
 @onready var extra_rum = 0
 @onready var spring_leg = false
 @onready var wheelboots = false
+@onready var infamy = 150
+@onready var level_infamy = 150

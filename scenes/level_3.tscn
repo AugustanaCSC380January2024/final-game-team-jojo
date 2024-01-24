@@ -1612,6 +1612,7 @@ layer_1/tile_data = PackedInt32Array(983079, 524290, 1, 1048615, 524290, 2, 1114
 [node name="Death Zone" type="Area2D" parent="."]
 position = Vector2(2412, 39)
 scale = Vector2(0.434278, 1.34042)
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Death Zone"]
 position = Vector2(736.855, 634.13)

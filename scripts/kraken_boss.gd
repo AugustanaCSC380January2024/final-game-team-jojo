@@ -75,6 +75,7 @@ func damage(damage_num):
 		await get_tree().create_timer(1).timeout
 		ship_destroyed_sfx.play()
 		await get_tree().create_timer(2).timeout
+		GlobalValues.level_infamy += 10
 		change_level.next_level()
 		queue_free()
 

@@ -10,12 +10,13 @@ var attack_timer = 0
 var is_exploding = false
 var following = false
 var player = null
+var afraid = false
+var afraid_move_mult = 1
+var fear_checked = false
 
 func _physics_process(delta):
 	if attack_timer >= 0:
 		attack_timer -= delta
-	if global_position.y >= 700:
-		queue_free()
 	if !is_on_floor():
 		if velocity.y > 0:
 			gravity_strength = 1000
@@ -28,14 +29,20 @@ func _physics_process(delta):
 		move_and_slide()
 		if global_position.x - player.global_position.x > 60:
 			animated_sprite.play("run")
-			animated_sprite.flip_h = 1
-			velocity.x = -150
+			if !afraid:
+				animated_sprite.flip_h = 1
+			elif afraid:
+				animated_sprite.flip_h = 0
+			velocity.x = -150 * afraid_move_mult
 		elif global_position.x - player.global_position.x < -60:
 			animated_sprite.play("run")
-			animated_sprite.flip_h = 0
-			velocity.x = 150
+			if !afraid:
+				animated_sprite.flip_h = 0
+			elif afraid:
+				animated_sprite.flip_h = 1
+			velocity.x = 150 * afraid_move_mult
 			#await get_tree().create_timer(.3).timeout
-		elif (global_position.x - 60 < player.global_position.x || global_position.x + 60 > player.global_position.x) && attack_timer <= 0:
+		elif (global_position.x - 60 < player.global_position.x || global_position.x + 60 > player.global_position.x) && attack_timer <= 0 && !afraid:
 			attack_timer = 2
 			animated_sprite.play("attack")
 			await get_tree().create_timer(.5).timeout
@@ -48,6 +55,7 @@ func damage(damage_num):
 	health -= damage_num
 	if health <= 0:
 		death_sound.play()
+		GlobalValues.level_infamy += 1
 		queue_free()
 		
 func set_following():
@@ -56,6 +64,12 @@ func set_following():
 
 func _on_sight_radius_body_entered(body):
 	if body.is_in_group("Player"):
+		if !fear_checked:
+			var rand_fear = randi_range(1,100)
+			if rand_fear <= (GlobalValues.infamy + GlobalValues.level_infamy)/3:
+				afraid = true
+				afraid_move_mult = -1
+			fear_checked = true
 		following = true
 		player = body
 

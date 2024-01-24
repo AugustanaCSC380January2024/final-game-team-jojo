@@ -45,10 +45,13 @@ func _physics_process(delta):
 		GlobalValues.spawnRumLocation = null
 
 func _on_death_zone_body_entered(body):
-	body.die()
-	await get_tree().create_timer(1.5).timeout
-	get_tree().reload_current_scene()
-	body.respawn()
+	if body.is_in_group("Player"):
+		body.die()
+		await get_tree().create_timer(1.5).timeout
+		get_tree().reload_current_scene()
+		body.respawn()
+	elif body.is_in_group("enemy") && !body.is_in_group("boss"):
+		body.queue_free()
 
 
 func _on_area_2d_body_entered(body):

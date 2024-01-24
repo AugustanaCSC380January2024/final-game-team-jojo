@@ -113,6 +113,7 @@ func nuclear_cannon():
 func damage(damage_num):
 	health -= damage_num
 	if health <= 0:
+		GlobalValues.level_infamy += 10
 		attack_timer = 100000
 		animation.play("explode")
 		explosion_sfx.play()
