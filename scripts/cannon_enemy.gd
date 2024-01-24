@@ -41,7 +41,6 @@ func damage(damage_num):
 func _on_sight_radius_body_entered(body):
 	if body.is_in_group("Player"):
 		attacking = true
-		print("seen")
 
 
 func _on_wall_collision_detector_body_entered(body):
@@ -55,4 +54,3 @@ func _on_wall_collision_detector_body_entered(body):
 func _on_sight_radius_body_exited(body):
 	if body.is_in_group("Player"):
 		attacking = false
-		print("seen")

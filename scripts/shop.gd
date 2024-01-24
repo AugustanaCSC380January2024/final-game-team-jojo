@@ -5,14 +5,13 @@ extends Control
 @onready var wheels_button = $shop_buttons/buy_wheels
 @onready var start = $start_position
 @onready var level_exit = $next_level
-@onready var shopMusic = $Shop
 @export var left_limit = -10000000
 @export var right_limit = 10000000
 @export var top_limit = -10000000
 @export var bottom_limit = 10000000
 
 func _ready():
-	shopMusic.play()
+	AudioPlayer.change_music("shop")
 	GlobalValues.player.in_shop = true
 	GlobalValues.player.camera.limit_left = left_limit
 	GlobalValues.player.camera.limit_right = right_limit
