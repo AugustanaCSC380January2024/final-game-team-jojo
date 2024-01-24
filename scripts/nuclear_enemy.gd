@@ -29,21 +29,21 @@ func _physics_process(delta):
 	
 	if following && alive:
 		move_and_slide()
-		if global_position.x - player.global_position.x > 400:
+		if global_position.x - player.global_position.x > 300:
 			animated_sprite.play("run")
 			if !afraid:
 				animated_sprite.flip_h = 1
 			elif afraid:
 				animated_sprite.flip_h = 0
 			velocity.x = -200 * afraid_move_mult
-		elif global_position.x - player.global_position.x < -400:
+		elif global_position.x - player.global_position.x < -300:
 			animated_sprite.play("run")
 			if !afraid:
 				animated_sprite.flip_h = 1
 			elif afraid:
 				animated_sprite.flip_h = 0
 			velocity.x = 200 * afraid_move_mult
-		elif (global_position.x - 400 < player.global_position.x || global_position.x + 400 > player.global_position.x) && (global_position.y - 300 < player.global_position.y || global_position.y + 300 < player.global_position.y) && alive && !afraid:
+		elif (global_position.x - 300 < player.global_position.x || global_position.x + 300 > player.global_position.x) && (global_position.y - 300 < player.global_position.y || global_position.y + 300 < player.global_position.y) && alive && !afraid:
 			alive = false
 			await get_tree().create_timer(.5).timeout
 			is_exploding = true
