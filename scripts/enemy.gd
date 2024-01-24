@@ -34,14 +34,14 @@ func _physics_process(delta):
 				animated_sprite.flip_h = 1
 			elif afraid:
 				animated_sprite.flip_h = 0
-			velocity.x = -150 * afraid_move_mult
+			velocity.x = -225 * afraid_move_mult
 		elif global_position.x - player.global_position.x < -60:
 			animated_sprite.play("run")
 			if !afraid:
 				animated_sprite.flip_h = 0
 			elif afraid:
 				animated_sprite.flip_h = 1
-			velocity.x = 150 * afraid_move_mult
+			velocity.x = 225 * afraid_move_mult
 			#await get_tree().create_timer(.3).timeout
 		elif (global_position.x - 60 < player.global_position.x || global_position.x + 60 > player.global_position.x) && attack_timer <= 0 && !afraid:
 			attack_timer = 2

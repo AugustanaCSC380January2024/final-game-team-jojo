@@ -24,6 +24,7 @@ func _on_buy_rum_pressed():
 		GlobalValues.player.coin_count -= 30
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
 		GlobalValues.player.max_lives += 1
+		print("GlobalValues.player.max_lives")
 		GlobalValues.player.lives += 1
 		GlobalValues.player.hud.create_lives_hud(GlobalValues.player.max_lives)
 		GlobalValues.player.hud.lives_gained(GlobalValues.player.max_lives)
