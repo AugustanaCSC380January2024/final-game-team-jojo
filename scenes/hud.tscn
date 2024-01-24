@@ -91,3 +91,13 @@ offset_right = 122.0
 offset_bottom = 100.0
 text = "0"
 label_settings = SubResource("LabelSettings_yj7tu")
+
+[node name="timer_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1184.0
+offset_top = 48.0
+offset_right = 1240.0
+offset_bottom = 83.0
+text = "100"
+label_settings = SubResource("LabelSettings_yj7tu")
+horizontal_alignment = 2
