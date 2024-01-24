@@ -72,6 +72,7 @@ frame = 8
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1.752, 1.752)
 scale = Vector2(2.2504, 2.2504)
 shape = SubResource("RectangleShape2D_4jkgb")
@@ -81,6 +82,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_collision_detector"]
+visible = false
 position = Vector2(-0.5, 16.5)
 shape = SubResource("RectangleShape2D_aa6wp")
 
@@ -90,6 +92,7 @@ scale = Vector2(2.83449, 17.4471)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
+visible = false
 position = Vector2(10, -11)
 scale = Vector2(3.59447, 0.636726)
 shape = SubResource("RectangleShape2D_b0bb3")

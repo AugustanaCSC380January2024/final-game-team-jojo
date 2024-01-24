@@ -101,12 +101,14 @@ sprite_frames = SubResource("SpriteFrames_uuecb")
 autoplay = "default"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(13.3333, 20, -22.6667, 18.6667, -36, 18.6667, -38.6667, 8, -33.3333, -9.33333, -21.3333, -10.6667, -12, -29.3333, 5.33333, -36, 17.3333, -33.3333, 20, -21.3333, 8, -10.6667, 14.6667, -8, 22.6667, 12, 26.6667, 13.3333, 25.3333, 17.3333)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 polygon = PackedVector2Array(-21.3333, -9.33333, 12, -9.33333, 22.6667, 9.33333, 26.6667, 17.3333, 13.3333, 20, -36, 20, -40, 10.6667, -38.6667, 4, -34.6667, -9.33333)
 
 [node name="exploded_ship" type="AudioStreamPlayer2D" parent="."]
@@ -125,6 +127,7 @@ scale = Vector2(0.746166, 0.762102)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+visible = false
 position = Vector2(-112, -40)
 scale = Vector2(-15.5274, 7.29402)
 shape = SubResource("RectangleShape2D_ck6ud")

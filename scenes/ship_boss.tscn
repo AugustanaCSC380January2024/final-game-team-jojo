@@ -77,6 +77,7 @@ frame = 9
 frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(-3, 307, 148, 394, 132, 277, 190, 103, 194, 34, 279, -54, 363, 12, 389, 67, 489, 140, 533, 287, 479, 449, 489, 529, 452, 618, 183, 636, -17, 342)
 
 [node name="ship_destroyed" type="AudioStreamPlayer2D" parent="."]
@@ -89,6 +90,7 @@ stream = ExtResource("14_5nhr6")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(-265, 290)
 scale = Vector2(83.8377, 34.5274)
 shape = SubResource("RectangleShape2D_7r8nc")

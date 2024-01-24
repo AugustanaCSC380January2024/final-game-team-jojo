@@ -260,7 +260,7 @@ func flip():
 	if currently_facing == 1:
 		canvas_layer.rotation = 0
 	else:
-		canvas_layer.rotation = 3.14
+		canvas_layer.rotation = PI
 	
 func add_coin():
 	coin_count += 1
@@ -273,8 +273,8 @@ func add_rum():
 		hud.lives_gained(lives)
 
 func change_weight():
-	jump_height = original_jump_height - (original_jump_height * (coin_count / 10) * .025)
-	max_speed = original_max_speed - (original_max_speed * (coin_count / 10) * .025)
+	jump_height = original_jump_height - (original_jump_height * (coin_count / 10.0) * .025)
+	max_speed = original_max_speed - (original_max_speed * (coin_count / 10.0) * .025)
 	if underwater:
 		gravity_strength = 600 + ((coin_count / 10) * 20)
 
@@ -369,8 +369,16 @@ func hurt():
 	print(lives)
 	hud.life_lost(lives)
 	hurt_i_frames = 1
-	if lives == 0:
+	if lives <= 0:
 		die()
+	else:
+		for i in range(10):
+			animated_sprite.visible = false
+			await get_tree().create_timer(0.05).timeout
+			animated_sprite.visible = true
+			await get_tree().create_timer(0.05).timeout
+			
+		
 
 func die():
 	alive = false

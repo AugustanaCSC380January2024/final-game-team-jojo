@@ -230,6 +230,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-4, 9)
 scale = Vector2(2.18937, 2.10912)
 shape = SubResource("CapsuleShape2D_jtvh7")
@@ -239,6 +240,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_collision_detector"]
+visible = false
 position = Vector2(-0.5, 16.5)
 shape = SubResource("RectangleShape2D_7kysr")
 
@@ -248,6 +250,7 @@ scale = Vector2(1.19361, 1.85975)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
+visible = false
 position = Vector2(8, -13)
 scale = Vector2(3.59447, 0.636726)
 shape = SubResource("RectangleShape2D_pve0u")

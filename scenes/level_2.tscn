@@ -1989,6 +1989,7 @@ layer_0/tile_data = PackedInt32Array(11337728, 1441793, 13, 11403264, 1441793, 1
 [node name="Terrain" type="Node2D" parent="."]
 
 [node name="Sand" type="StaticBody2D" parent="Terrain"]
+visible = false
 collision_layer = 2
 collision_mask = 225
 
@@ -2072,6 +2073,7 @@ position = Vector2(504, 193)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(1248, 2400)
 scale = Vector2(-172.027, -12.0732)
 shape = SubResource("RectangleShape2D_ie5b7")
