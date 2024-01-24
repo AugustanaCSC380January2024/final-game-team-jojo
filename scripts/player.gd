@@ -184,7 +184,6 @@ func shoot():
 			var shot = shoot_particles.instantiate()
 			canvas_layer.add_child(shot)
 			attack_timer = 1
-			await get_tree().create_timer(0.216).timeout
 			shot.emitting = true
 			if shot_type == "flintlock":
 				coin_count -= 1
