@@ -67,10 +67,16 @@ func _on_sight_radius_body_entered(body):
 	if body.is_in_group("Player"):
 		if !fear_checked:
 			var rand_fear = randi_range(1,100)
-			if rand_fear <= (GlobalValues.infamy + GlobalValues.level_infamy)/3:
-				afraid = true
-				afraid_move_mult = -1
-				display_fear()
+			if !GlobalValues.jolly_roger:
+				if rand_fear <= (GlobalValues.infamy + GlobalValues.level_infamy)/3:
+					afraid = true
+					afraid_move_mult = -1
+					display_fear()
+			elif GlobalValues.jolly_roger:
+				if rand_fear <= (GlobalValues.infamy + GlobalValues.level_infamy)/2:
+					afraid = true
+					afraid_move_mult = -1
+					display_fear()
 			fear_checked = true
 		following = true
 		player = body
