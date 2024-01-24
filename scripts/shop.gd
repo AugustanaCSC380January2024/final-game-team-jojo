@@ -3,6 +3,10 @@ extends Control
 @onready var rum_button = $shop_buttons/buy_rum
 @onready var spring_button = $shop_buttons/buy_spring
 @onready var wheels_button = $shop_buttons/buy_wheels
+@onready var beans_button = $shop_buttons/buy_beans
+@onready var barrels_button = $shop_buttons/buy_extrabarrel
+@onready var loudener_button = $shop_buttons/buy_loudener
+@onready var flag_button = $shop_buttons/buy_jollyroger
 @onready var start = $start_position
 @onready var level_exit = $next_level
 @export var left_limit = -10000000
@@ -63,3 +67,55 @@ func _on_exit_shop_pressed():
 	GlobalValues.player.in_shop = false
 	GlobalValues.playerPosition = start.global_position
 	level_exit.next_level()
+
+
+func _on_buy_beans_pressed():
+	if GlobalValues.player.coin_count >= 80 && !GlobalValues.beans:
+		GlobalValues.beans = true
+		GlobalValues.player.coin_count -= 80
+		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+	elif GlobalValues.beans:
+		beans_button.text = "Out-O-Stock"
+	elif GlobalValues.player.coin_count < 80:
+		beans_button.text = "Not-Enough-Gold"
+		await get_tree().create_timer(.5).timeout
+		beans_button.text = "JUMPING-BEANS-80"
+
+
+func _on_buy_extrabarrel_pressed():
+	if GlobalValues.player.coin_count >= 80 && !GlobalValues.extra_barrel:
+		GlobalValues.extra_barrel = true
+		GlobalValues.player.coin_count -= 80
+		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+	elif GlobalValues.extra_barrel:
+		barrels_button.text = "Out-O-Stock"
+	elif GlobalValues.player.coin_count < 80:
+		barrels_button.text = "Not-Enough-Gold"
+		await get_tree().create_timer(.5).timeout
+		barrels_button.text = "DOUBLE-BARRELS-80"
+
+
+func _on_buy_loudener_pressed():
+	if GlobalValues.player.coin_count >= 80 && !GlobalValues.loudener:
+		GlobalValues.loudener = true
+		GlobalValues.player.coin_count -= 80
+		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+	elif GlobalValues.loudener:
+		loudener_button.text = "Out-O-Stock"
+	elif GlobalValues.player.coin_count < 80:
+		loudener_button.text = "Not-Enough-Gold"
+		await get_tree().create_timer(.5).timeout
+		loudener_button.text = "LOUDENER-80"
+
+
+func _on_buy_jollyroger_pressed():
+	if GlobalValues.player.coin_count >= 150 && !GlobalValues.jolly_roger:
+		GlobalValues.jolly_roger = true
+		GlobalValues.player.coin_count -= 150
+		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+	elif GlobalValues.jolly_roger:
+		flag_button.text = "Out-O-Stock"
+	elif GlobalValues.player.coin_count < 150:
+		flag_button.text = "Not-Enough-Gold"
+		await get_tree().create_timer(.5).timeout
+		flag_button.text = "JOLLY-ROGER-150"

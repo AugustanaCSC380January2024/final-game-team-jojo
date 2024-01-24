@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cmai1em5qaiot"]
 
 [ext_resource type="Script" path="res://scripts/shop.gd" id="1_2o87i"]
-[ext_resource type="Texture2D" uid="uid://ceqgkp6fnp1ya" path="res://assets/SHOP.png" id="1_rwk8n"]
 [ext_resource type="FontFile" uid="uid://duga6k6ga873j" path="res://assets/bones.ttf" id="2_lxum0"]
+[ext_resource type="Texture2D" uid="uid://t8s466q013h" path="res://assets/SHOP 3 Final.png" id="3_2s36g"]
 [ext_resource type="PackedScene" uid="uid://cd7iphh8pwgyw" path="res://scenes/next_level.tscn" id="4_03kej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oig5c"]
@@ -29,9 +29,9 @@ layer = 128
 
 [node name="buy_rum" type="Button" parent="shop_buttons"]
 texture_filter = 1
-offset_left = 336.0
+offset_left = 328.0
 offset_top = 288.0
-offset_right = 471.0
+offset_right = 463.0
 offset_bottom = 315.0
 scale = Vector2(1.2085, 1.19985)
 theme_override_fonts/font = ExtResource("2_lxum0")
@@ -40,9 +40,9 @@ text = "Rum-30-Limit-3"
 
 [node name="buy_spring" type="Button" parent="shop_buttons"]
 texture_filter = 1
-offset_left = 520.0
+offset_left = 496.0
 offset_top = 288.0
-offset_right = 636.0
+offset_right = 612.0
 offset_bottom = 315.0
 scale = Vector2(1.46872, 1.29885)
 theme_override_fonts/font = ExtResource("2_lxum0")
@@ -51,20 +51,59 @@ text = "Springleg-80"
 
 [node name="buy_wheels" type="Button" parent="shop_buttons"]
 texture_filter = 1
-offset_left = 720.0
+offset_left = 672.0
 offset_top = 288.0
-offset_right = 856.0
+offset_right = 808.0
 offset_bottom = 315.0
 scale = Vector2(1.3709, 1.29633)
 theme_override_fonts/font = ExtResource("2_lxum0")
 action_mode = 0
 text = "Wheelboots-80"
 
+[node name="buy_beans" type="Button" parent="shop_buttons"]
+offset_left = 864.0
+offset_top = 288.0
+offset_right = 1018.0
+offset_bottom = 315.0
+scale = Vector2(1.32616, 1.38595)
+theme_override_fonts/font = ExtResource("2_lxum0")
+action_mode = 0
+text = "JUMPING-BEANS-80"
+
+[node name="buy_extrabarrel" type="Button" parent="shop_buttons"]
+offset_left = 1080.0
+offset_top = 288.0
+offset_right = 1244.0
+offset_bottom = 315.0
+scale = Vector2(1.20206, 1.4539)
+theme_override_fonts/font = ExtResource("2_lxum0")
+action_mode = 0
+text = "DOUBLE-BARRELS-80"
+
+[node name="buy_loudener" type="Button" parent="shop_buttons"]
+offset_left = 1120.0
+offset_top = 400.0
+offset_right = 1230.0
+offset_bottom = 427.0
+scale = Vector2(1.41343, 1.28338)
+theme_override_fonts/font = ExtResource("2_lxum0")
+action_mode = 0
+text = "LOUDENER-80"
+
+[node name="buy_jollyroger" type="Button" parent="shop_buttons"]
+offset_left = 80.0
+offset_right = 221.0
+offset_bottom = 27.0
+scale = Vector2(1.64238, 1.5276)
+theme_override_fonts/font = ExtResource("2_lxum0")
+action_mode = 0
+text = "JOLLY-ROGER-150"
+
 [node name="exit_shop" type="Button" parent="shop_buttons"]
-offset_left = 1112.0
-offset_top = 608.0
-offset_right = 1203.0
-offset_bottom = 639.0
+offset_left = 984.0
+offset_top = 624.0
+offset_right = 1075.0
+offset_bottom = 655.0
 scale = Vector2(1.64899, 1.8412)
 theme_override_fonts/font = ExtResource("2_lxum0")
 action_mode = 0
@@ -85,7 +124,7 @@ shape = SubResource("RectangleShape2D_oig5c")
 texture_filter = 1
 position = Vector2(641.124, 358.927)
 scale = Vector2(0.658238, 0.636396)
-texture = ExtResource("1_rwk8n")
+texture = ExtResource("3_2s36g")
 
 [node name="next_level" parent="." instance=ExtResource("4_03kej")]
 position = Vector2(2715.73, 668.9)
@@ -96,4 +135,8 @@ position = Vector2(1056.86, 607.026)
 [connection signal="pressed" from="shop_buttons/buy_rum" to="." method="_on_buy_rum_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_spring" to="." method="_on_buy_spring_pressed"]
 [connection signal="pressed" from="shop_buttons/buy_wheels" to="." method="_on_buy_wheels_pressed"]
+[connection signal="pressed" from="shop_buttons/buy_beans" to="." method="_on_buy_beans_pressed"]
+[connection signal="pressed" from="shop_buttons/buy_extrabarrel" to="." method="_on_buy_extrabarrel_pressed"]
+[connection signal="pressed" from="shop_buttons/buy_loudener" to="." method="_on_buy_loudener_pressed"]
+[connection signal="pressed" from="shop_buttons/buy_jollyroger" to="." method="_on_buy_jollyroger_pressed"]
 [connection signal="pressed" from="shop_buttons/exit_shop" to="." method="_on_exit_shop_pressed"]
