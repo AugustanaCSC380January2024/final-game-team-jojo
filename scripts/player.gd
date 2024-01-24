@@ -21,15 +21,17 @@ extends CharacterBody2D
 @export var lives = 3
 @export var coin_count = 5
 @export var acceleration = 2000
-@export var original_jump_height = 600
+@export var original_jump_height = 500
 @export var original_max_speed = 500
 @export var max_speed = 750
-@export var jump_height = 600
+@export var jump_height = 500
 @export var max_fall_speed = 2000
 @export var gravity_strength = 980
 @export var friction = 2500
 @export var attack_timer = 0
 @export var melee_attack_timer = 0
+@export var jump_window = 15.0
+var jump_window_counter = 0.0
 var in_shop = false
 var coyote_time = 0.0
 var jump_buffer = 0.0
@@ -42,6 +44,7 @@ var shot_type = "blunderbuss"
 var cameraCounterX = 0
 var cameraCounterY = 0
 var idleTime = 0
+var jumping = false
 var beans_jump = false
 
 func _ready():
@@ -75,7 +78,7 @@ func _physics_process(delta):
 		#print(hurt_i_frames)
 	coyote_time -= delta
 	jump_buffer -= delta
-	if !is_on_floor():
+	if !is_on_floor() && !jumping:
 		if velocity.y > 0:
 			velocity.y += 8
 		velocity.y += gravity_strength * delta
@@ -87,6 +90,8 @@ func _physics_process(delta):
 			beans_jump = true
 	if Input.is_action_just_pressed("jump") && alive && !underwater:
 		if(is_on_floor() || coyote_time > 0 || beans_jump):
+			jumping = true
+			jump_window_counter = 0
 			if(!is_on_floor() && coyote_time <= 0):
 				beans_jump = false
 			jump(jump_height)
@@ -94,8 +99,11 @@ func _physics_process(delta):
 			coyote_time = 0.0
 		else:
 			jump_buffer = 0.1
+		
 	elif Input.is_action_just_pressed("jump") && alive && underwater:
 		if swim_jump_timer <= 0 || beans_jump:
+			jumping = true
+			jump_window_counter = 0
 			if swim_jump_timer > 0 && beans_jump:
 				beans_jump = false
 			jump(jump_height)
@@ -103,7 +111,18 @@ func _physics_process(delta):
 			swim_jump_timer = 1
 		else:
 			jump_buffer = 0.1
-	if Input.is_action_just_pressed("move_down") && is_on_floor()==false:
+	if Input.is_action_pressed("jump") && jumping:
+		jump_window_counter += 1
+		if jump_window_counter >= 10:
+			jump(jump_height)
+			jumping = false
+			jump_window_counter = 0
+	elif Input.is_action_just_released("jump") && jumping:
+		jump(jump_height * ((jump_window_counter / (jump_window)) * 2/3 + 1/3))
+		jumping = false
+		jump_window_counter = 0
+		
+	if Input.is_action_just_pressed("move_down") && !is_on_floor():
 		velocity.y += 500
 	if Input.is_action_just_pressed("shoot") && !in_shop:
 		shoot()
@@ -147,6 +166,7 @@ func _physics_process(delta):
 			velocity.x = -max_speed
 	flip()
 	GlobalValues.playerPosition = global_position
+	print(jump_window_counter)
 	move_and_slide()
 
 func jump(jump_height):
