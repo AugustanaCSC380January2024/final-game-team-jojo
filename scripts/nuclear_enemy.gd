@@ -15,6 +15,9 @@ var afraid = false
 var afraid_move_mult = 1
 var fear_checked = false
 
+func _ready():
+	explosion_sprite.visible = false
+
 func _physics_process(delta):
 	if !is_on_floor():
 		if velocity.y > 0:
@@ -44,6 +47,7 @@ func _physics_process(delta):
 			alive = false
 			await get_tree().create_timer(.5).timeout
 			is_exploding = true
+			explosion_sprite.visible = true
 			explosion_sprite.play("nuclear_explosion")
 			explosion_sfx.play()
 			var attack_hitbox = explosion_hitbox.instantiate()

@@ -373,7 +373,8 @@ position = Vector2(-0.5, 16.5)
 shape = SubResource("RectangleShape2D_6gqtq")
 
 [node name="sight_radius" type="Area2D" parent="."]
-position = Vector2(-9, 5)
+position = Vector2(-12.25, 27.25)
+scale = Vector2(1.29737, 2.23068)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
