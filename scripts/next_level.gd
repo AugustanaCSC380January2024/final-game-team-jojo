@@ -6,6 +6,7 @@ func next_level():
 	GlobalValues.infamy = GlobalValues.infamy + GlobalValues.level_infamy
 	GlobalValues.level_infamy = 0
 	GlobalValues.player.endCombo()
+	GlobalValues.player.stopTimer()
 
 func _on_body_entered(body):
 	if(body.is_in_group("Player")):

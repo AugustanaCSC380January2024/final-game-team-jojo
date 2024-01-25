@@ -360,7 +360,6 @@ animation = &"nuclear_explosion"
 autoplay = "none"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(4.125, 1)
 scale = Vector2(35.6, 1)
 shape = SubResource("RectangleShape2D_mt768")
@@ -370,7 +369,6 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_collision_detector"]
-visible = false
 position = Vector2(-0.5, 16.5)
 shape = SubResource("RectangleShape2D_6gqtq")
 
@@ -380,7 +378,6 @@ scale = Vector2(1.29737, 2.23068)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
-visible = false
 position = Vector2(9, -11.5)
 scale = Vector2(0.327394, 0.504505)
 shape = SubResource("RectangleShape2D_20kn2")

@@ -91,7 +91,7 @@ func _physics_process(delta):
 		velocity.y += gravity_strength * delta
 		if velocity.y > max_fall_speed:
 			velocity.y = max_fall_speed
-	else:
+	elif !jumping:
 		coyote_time = 0.1
 		if GlobalValues.beans:
 			beans_jump = true
@@ -124,7 +124,7 @@ func _physics_process(delta):
 			jump(jump_height)
 			jumping = false
 			jump_window_counter = 0
-	elif Input.is_action_just_released("jump") && jumping:
+	if Input.is_action_just_released("jump") && jumping:
 		jump(jump_height * ((jump_window_counter / (jump_window)) * 2/3 + 1/3))
 		jumping = false
 		jump_window_counter = 0
@@ -459,23 +459,25 @@ func setLevelTimer(time):
 	maxLevelTimer = time
 	level_timer.wait_time = time
 	level_timer.start()
+	hud.set_timer_visibility(true)
 
 func stopTimer():
 	level_timer.stop()
-	coin_count += ceili(level_timer.time_left) / 10
+	coin_count += ceili(level_timer.time_left / 1.5)
+	print(level_timer.time_left)
 	hud.set_coin_counter(coin_count)
 	change_weight()
+	hud.set_timer_visibility(false)
 
 func _on_level_timer_timeout():
-	level_timer.stop()
 	die()
-	level_timer.wait_time = maxLevelTimer
-	level_timer.start()
 
 func die():
 	endCombo()
 	alive = false
 	animated_sprite.play("die")
+	level_timer.stop()
+	print(level_timer.is_stopped())
 	await get_tree().create_timer(2).timeout
 	velocity = Vector2.ZERO
 	global_position = Vector2(178, 390)
@@ -485,6 +487,8 @@ func die():
 	alive = true
 	lives = max_lives
 	hud.lives_gained(max_lives)
+	level_timer.wait_time = maxLevelTimer
+	level_timer.start()
 
 func respawn():
 	alive = true

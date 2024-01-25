@@ -22,14 +22,14 @@ shadow_offset = Vector2(7, 4)
 
 [sub_resource type="LabelSettings" id="LabelSettings_36k02"]
 font = ExtResource("5_6m7st")
-font_size = 128
+font_size = 96
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 0.392157)
 shadow_offset = Vector2(7, 4)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cmfqk"]
 font = ExtResource("5_6m7st")
-font_size = 48
+font_size = 40
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 0.392157)
 shadow_offset = Vector2(7, 4)
@@ -127,7 +127,7 @@ horizontal_alignment = 2
 
 [node name="combo" type="Node2D" parent="."]
 visible = false
-position = Vector2(1088, 128)
+position = Vector2(1136, 104)
 
 [node name="combo_counter" type="Label" parent="combo"]
 anchors_preset = 6
@@ -136,9 +136,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -160.0
-offset_top = -88.0
+offset_top = -72.0
 offset_right = -1.0
-offset_bottom = 56.0
+offset_bottom = 72.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "0"
@@ -151,9 +151,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 16.0
+offset_left = 8.0
 offset_top = -32.0
-offset_right = 175.0
+offset_right = 167.0
 offset_bottom = 56.0
 grow_horizontal = 0
 grow_vertical = 2

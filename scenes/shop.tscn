@@ -91,9 +91,10 @@ action_mode = 0
 text = "LOUDENER-80"
 
 [node name="buy_jollyroger" type="Button" parent="shop_buttons"]
-offset_left = 80.0
-offset_right = 221.0
-offset_bottom = 27.0
+offset_left = 387.0
+offset_top = 18.0
+offset_right = 528.0
+offset_bottom = 45.0
 scale = Vector2(1.64238, 1.5276)
 theme_override_fonts/font = ExtResource("2_lxum0")
 action_mode = 0

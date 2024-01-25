@@ -22,7 +22,7 @@ func _on_body_entered(body):
 	var rand_rum = randi_range(0, 4)
 	if body.is_in_group("enemy"):
 		if !GlobalValues.loudener:
-			if (body.health - 1) == 0:
+			if (body.health - 1) <= 0:
 				GlobalValues.spawnCoinLocation = body.global_position
 				if rand_rum == 0:
 					GlobalValues.spawnRumLocation = body.global_position
