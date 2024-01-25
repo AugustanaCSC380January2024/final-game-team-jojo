@@ -5,6 +5,8 @@ func next_level():
 	GlobalValues.level_index += 1
 	GlobalValues.infamy = GlobalValues.infamy + GlobalValues.level_infamy
 	GlobalValues.level_infamy = 0
+	GlobalValues.player.lives = GlobalValues.player.max_lives
+	GlobalValues.player.hud.lives_gained(GlobalValues.player.max_lives)
 	GlobalValues.player.endCombo()
 	GlobalValues.player.stopTimer()
 
