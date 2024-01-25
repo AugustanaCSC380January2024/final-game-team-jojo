@@ -12,6 +12,7 @@ extends Node2D
 @export var right_limit = 10000000
 @export var top_limit = -10000000
 @export var bottom_limit = 10000000
+@export var level_time = 180
 var physics_set = false
 
 func _ready():
@@ -24,8 +25,7 @@ func _ready():
 	GlobalValues.player.camera.limit_top = top_limit
 	GlobalValues.player.camera.limit_bottom = bottom_limit
 	GlobalValues.player.global_position = startPos.global_position
-	print(GlobalValues.player.max_lives)
-	
+	GlobalValues.player.setLevelTimer(level_time)
 
 func _physics_process(delta):
 	if GlobalValues.spawnCoinLocation != null:

@@ -12,6 +12,7 @@ extends Control
 @onready var combo = $combo
 @onready var comboCounter = $combo/combo_counter
 @onready var comboTimer = $ComboTimer
+@onready var levelTimer = $level_timer
 
 var combo_label_size = 1
 var combo_alpha = 1
@@ -90,3 +91,6 @@ func set_combo_count(num):
 
 func set_combo_visibility(visibility):
 	combo.visible = visibility
+
+func set_level_timer(time):
+	levelTimer.text = "TIME " + str(int(time))

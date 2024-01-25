@@ -14,6 +14,7 @@ extends CharacterBody2D
 @onready var damage_audio = $damage_audio
 @onready var parry_sound = $parry
 @onready var combo_timer = $ComboTimer
+@onready var level_timer = $LevelTimer
 
 @export var swim_jump_timer = 0
 @export var underwater = false
@@ -50,6 +51,7 @@ var jumping = false
 var beans_jump = false
 var combo = false
 var comboNum = 0
+var maxLevelTimer = 180
 
 func _ready():
 	set_floor_max_angle(PI/3)
@@ -61,6 +63,7 @@ func _ready():
 		beans_jump = true
 
 func _physics_process(delta):
+	hud.set_level_timer(level_timer.time_left)
 	if underwater:
 		if swim_jump_timer > 0:
 			swim_jump_timer -= delta
@@ -451,6 +454,23 @@ func endCombo():
 	
 func _on_combo_timer_timeout():
 	endCombo()
+
+func setLevelTimer(time):
+	maxLevelTimer = time
+	level_timer.wait_time = time
+	level_timer.start()
+
+func stopTimer():
+	level_timer.stop()
+	coin_count += ceili(level_timer.time_left) / 10
+	hud.set_coin_counter(coin_count)
+	change_weight()
+
+func _on_level_timer_timeout():
+	level_timer.stop()
+	die()
+	level_timer.wait_time = maxLevelTimer
+	level_timer.start()
 
 func die():
 	endCombo()

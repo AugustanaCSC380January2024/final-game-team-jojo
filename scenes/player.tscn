@@ -662,4 +662,9 @@ volume_db = 10.165
 [node name="ComboTimer" type="Timer" parent="."]
 wait_time = 3.0
 
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 180.0
+one_shot = true
+
 [connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

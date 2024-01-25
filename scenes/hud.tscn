@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci073odq1se3j"]
+[gd_scene load_steps=11 format=3 uid="uid://ci073odq1se3j"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_01bsa"]
 [ext_resource type="Texture2D" uid="uid://bpri2nyxr1d4o" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/07.png" id="2_ikd1g"]
 [ext_resource type="Texture2D" uid="uid://xrf6fb84c8vv" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="3_akkc6"]
 [ext_resource type="FontFile" uid="uid://duga6k6ga873j" path="res://assets/bones.ttf" id="4_udv1y"]
+[ext_resource type="FontFile" uid="uid://wqieiwvwxhep" path="res://assets/Majoris_Italic.ttf" id="5_5t61h"]
 [ext_resource type="FontFile" uid="uid://bpwuwnmt02las" path="res://assets/edosz.ttf" id="5_6m7st"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yj7tu"]
@@ -12,13 +13,26 @@ font_size = 30
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_m3vcr"]
+font = ExtResource("5_5t61h")
+font_size = 32
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.392157)
+shadow_offset = Vector2(7, 4)
+
 [sub_resource type="LabelSettings" id="LabelSettings_36k02"]
 font = ExtResource("5_6m7st")
 font_size = 128
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.392157)
+shadow_offset = Vector2(7, 4)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cmfqk"]
 font = ExtResource("5_6m7st")
 font_size = 48
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.392157)
+shadow_offset = Vector2(7, 4)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -101,19 +115,19 @@ offset_bottom = 100.0
 text = "0"
 label_settings = SubResource("LabelSettings_yj7tu")
 
-[node name="timer_label" type="Label" parent="."]
+[node name="level_timer" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1184.0
-offset_top = 48.0
-offset_right = 1240.0
-offset_bottom = 83.0
-text = "100"
-label_settings = SubResource("LabelSettings_yj7tu")
+offset_left = 1088.0
+offset_top = 8.0
+offset_right = 1264.0
+offset_bottom = 46.0
+text = "TIME 180"
+label_settings = SubResource("LabelSettings_m3vcr")
 horizontal_alignment = 2
 
 [node name="combo" type="Node2D" parent="."]
 visible = false
-position = Vector2(1088, 176)
+position = Vector2(1088, 128)
 
 [node name="combo_counter" type="Label" parent="combo"]
 anchors_preset = 6
