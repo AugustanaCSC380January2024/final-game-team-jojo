@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d3mv6cbjyx0qp"]
+[gd_scene load_steps=25 format=3 uid="uid://d3mv6cbjyx0qp"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_iawpb"]
 [ext_resource type="Texture2D" uid="uid://dj04tkecfi0q0" path="res://assets/underwater tiles/props.png" id="1_ovj67"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://betdj0adtf2at" path="res://assets/music/Hold Your Breath.mp3" id="15_15uhr"]
 [ext_resource type="AudioStream" uid="uid://i4wmtxsf403y" path="res://assets/music/Uh Oh! This One Is Stronger.mp3" id="16_idbsw"]
 [ext_resource type="Texture2D" uid="uid://cexahpbaas0j4" path="res://assets/Light2.png" id="17_0ktex"]
+[ext_resource type="PackedScene" uid="uid://cd7iphh8pwgyw" path="res://scenes/next_level.tscn" id="18_dthd6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2pqy"]
 texture = ExtResource("1_ovj67")
@@ -2090,5 +2091,8 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("17_0ktex")
 texture_scale = 3.0
+
+[node name="dev_exit" parent="." instance=ExtResource("18_dthd6")]
+position = Vector2(936, 321)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

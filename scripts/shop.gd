@@ -22,6 +22,7 @@ func _ready():
 	GlobalValues.player.camera.limit_right = right_limit
 	GlobalValues.player.camera.limit_top = top_limit
 	GlobalValues.player.camera.limit_bottom = bottom_limit
+	GlobalValues.player.hud.levelTimer.visible = false
 
 func _on_buy_rum_pressed():
 	if GlobalValues.player.coin_count >= 30 && GlobalValues.extra_rum < 3:
@@ -62,13 +63,6 @@ func _on_buy_wheels_pressed():
 		wheels_button.text = "Not-Enough-Gold"
 		await get_tree().create_timer(.5).timeout
 		wheels_button.text = "Wheelboots-80"
-
-
-func _on_exit_shop_pressed():
-	GlobalValues.player.in_shop = false
-	GlobalValues.playerPosition = start.global_position
-	level_exit.next_level()
-
 
 func _on_buy_beans_pressed():
 	if GlobalValues.player.coin_count >= 80 && !GlobalValues.beans:
@@ -133,3 +127,9 @@ func _on_buy_sword_pressed():
 		sword_button.text = "Not-Enough-Gold"
 		await get_tree().create_timer(.5).timeout
 		sword_button.text = "DREAD-PIRATE-BOB'S-SWORD-100"
+
+func _on_exit_shop_pressed():
+	GlobalValues.player.in_shop = false
+	GlobalValues.playerPosition = start.global_position
+	GlobalValues.player.hud.levelTimer.visible = true
+	level_exit.next_level()

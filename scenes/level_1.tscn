@@ -2091,8 +2091,7 @@ position = Vector2(10209, 678)
 scale = Vector2(69.1161, -7.15358)
 
 [node name="dev_exit" parent="." instance=ExtResource("17_jfdfk")]
-visible = false
-position = Vector2(-2139, 1174)
+position = Vector2(1205, 337)
 scale = Vector2(69.1161, -7.15358)
 
 [node name="Level" type="AudioStreamPlayer" parent="."]
