@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://fk27dernwktt"]
+
+[ext_resource type="Script" path="res://scripts/story.gd" id="1_g20b2"]
+[ext_resource type="Texture2D" uid="uid://cxtpywdei7u0s" path="res://assets/story/story_end.png" id="2_oiuqk"]
+
+[node name="story_1" type="Node2D"]
+script = ExtResource("1_g20b2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oiuqk")
+expand_mode = 1
