@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var gravity_strength = 500
 @export var health = 1
 var attack_timer = 0
+var alive = true
 var is_exploding = false
 var following = false
 var player = null
@@ -54,7 +55,9 @@ func _physics_process(delta):
 
 func damage(damage_num):
 	health -= damage_num
-	if health <= 0:
+	if health <= 0 && alive:
+		alive = false
+		GlobalValues.player.addCombo()
 		death_sound.play()
 		GlobalValues.level_infamy += 1
 		queue_free()

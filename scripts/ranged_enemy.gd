@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var fear = preload("res://scenes/fear_symbol.tscn")
 @export var gravity_strength = 500
 var health = 1
+var alive = true
 var is_exploding = false
 var attacking = false
 var attack_timer = 2
@@ -37,7 +38,9 @@ func attack():
 
 func damage(damage_num):
 	health -= damage_num
-	if health <= 0:
+	if health <= 0 && alive:
+		alive = false
+		GlobalValues.player.addCombo()
 		GlobalValues.level_infamy += 1
 		queue_free()
 

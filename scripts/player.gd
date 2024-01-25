@@ -13,6 +13,7 @@ extends CharacterBody2D
 @onready var camera = $Camera2D
 @onready var damage_audio = $damage_audio
 @onready var parry_sound = $parry
+@onready var combo_timer = $ComboTimer
 
 @export var swim_jump_timer = 0
 @export var underwater = false
@@ -31,6 +32,7 @@ extends CharacterBody2D
 @export var attack_timer = 0
 @export var melee_attack_timer = 0
 @export var jump_window = 15.0
+@export var max_combo_time = 3
 var jump_window_counter = 0.0
 var in_shop = false
 var coyote_time = 0.0
@@ -46,6 +48,8 @@ var cameraCounterY = 0
 var idleTime = 0
 var jumping = false
 var beans_jump = false
+var combo = false
+var comboNum = 0
 
 func _ready():
 	set_floor_max_angle(PI/3)
@@ -166,7 +170,6 @@ func _physics_process(delta):
 			velocity.x = -max_speed
 	flip()
 	GlobalValues.playerPosition = global_position
-	print(jump_window_counter)
 	move_and_slide()
 
 func jump(jump_height):
@@ -406,8 +409,7 @@ func parry():
 func hurt():
 	damage_audio.play()
 	lives -= 1
-	print("lives")
-	print(lives)
+	endCombo()
 	hud.life_lost(lives)
 	hurt_i_frames = 1
 	if lives <= 0:
@@ -419,9 +421,39 @@ func hurt():
 			animated_sprite.visible = true
 			await get_tree().create_timer(0.05).timeout
 			
-		
+func startCombo():
+	if !combo:
+		combo = true
+		comboNum = 1
+		hud.set_combo_count(comboNum)
+		hud.set_combo_visibility(combo)
+		combo_timer.wait_time = max_combo_time
+		combo_timer.start()
+
+func addCombo():
+	if combo:
+		comboNum += 1
+		hud.set_combo_count(comboNum)
+		combo_timer.wait_time = max_combo_time
+		combo_timer.start()
+	else:
+		startCombo()
+
+func endCombo():
+	if combo:
+		combo = false
+		hud.set_combo_count(0)
+		hud.set_combo_visibility(false)
+		coin_count += ceili(pow(comboNum, 1.5))
+		hud.set_coin_counter(coin_count)
+		change_weight()
+		comboNum = 0
+	
+func _on_combo_timer_timeout():
+	endCombo()
 
 func die():
+	endCombo()
 	alive = false
 	animated_sprite.play("die")
 	await get_tree().create_timer(2).timeout

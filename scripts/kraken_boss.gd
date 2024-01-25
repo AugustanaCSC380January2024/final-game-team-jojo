@@ -17,7 +17,8 @@ func _physics_process(delta):
 	else:
 		random_attack()
 		attack_timer = 3
-	move_and_slide()
+	if alive:
+		move_and_slide()
 
 func random_attack():
 	if attacking && alive:

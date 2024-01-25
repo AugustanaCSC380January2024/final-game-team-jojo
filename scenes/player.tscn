@@ -658,3 +658,8 @@ volume_db = 10.165
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer2" instance=ExtResource("14_q5l3w")]
+
+[node name="ComboTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]
