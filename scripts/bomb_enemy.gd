@@ -41,8 +41,8 @@ func _physics_process(delta):
 				animated_sprite.flip_h = 1
 			velocity.x = 300 * afraid_move_mult
 		elif (global_position.x - 60 < player.global_position.x || global_position.x + 60 > player.global_position.x) && (global_position.y - 60 < player.global_position.y || global_position.y + 60 < player.global_position.y) && alive && !afraid:
-			alive = false
 			await get_tree().create_timer(.5).timeout
+			alive = false
 			is_exploding = true
 			explosion_sprite.play("explosion")
 			explosion_sfx.play()

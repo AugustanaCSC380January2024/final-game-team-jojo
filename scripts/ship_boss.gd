@@ -130,3 +130,6 @@ func damage(damage_num):
 
 func _on_area_2d_body_entered(body):
 	attacking = true
+	AudioPlayer.stop()
+	AudioPlayer.change_music("boss", "level3")
+	AudioPlayer.play()

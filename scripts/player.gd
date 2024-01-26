@@ -33,7 +33,7 @@ extends CharacterBody2D
 @export var attack_timer = 0
 @export var melee_attack_timer = 0
 @export var jump_window = 15.0
-@export var max_combo_time = 3
+@export var max_combo_time = 3.5
 var jump_window_counter = 0.0
 var in_shop = false
 var coyote_time = 0.0
