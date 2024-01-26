@@ -660,7 +660,7 @@ volume_db = 10.165
 [node name="HUD" parent="CanvasLayer2" instance=ExtResource("14_q5l3w")]
 
 [node name="ComboTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 4.0
 
 [node name="LevelTimer" type="Timer" parent="."]
 wait_time = 180.0

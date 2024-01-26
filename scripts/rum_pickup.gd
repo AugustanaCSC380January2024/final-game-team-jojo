@@ -21,9 +21,9 @@ func _physics_process(delta):
 		attraction_timer -= delta
 	if lifespan_timer > 0:
 		lifespan_timer -= delta
-	elif lifespan_timer <= 0:
+	if lifespan_timer <= 0:
 		queue_free()
-	elif attraction_timer <= 0 && GlobalValues.player.lives != GlobalValues.player.max_lives:
+	if attraction_timer <= 0 && GlobalValues.player.lives != GlobalValues.player.max_lives:
 		global_position.x += cos(angle) * rum_speed * delta
 		global_position.y += sin(angle) * rum_speed * delta
 	if gravity_enabled:

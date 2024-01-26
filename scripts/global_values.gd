@@ -15,6 +15,7 @@ extends Node
 @onready var loudener = false
 @onready var jolly_roger = false
 @onready var sword = false
+@onready var current_level_music = null
 @onready var infamy = 0
 @onready var level_infamy = 0
 #add a max infamy if we want, but maybe not lol

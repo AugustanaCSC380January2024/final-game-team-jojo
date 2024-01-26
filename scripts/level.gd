@@ -17,6 +17,7 @@ var physics_set = false
 
 func _ready():
 	AudioPlayer.change_music(levelMusic)
+	GlobalValues.current_level_music = levelMusic
 	GlobalValues.next_level = following_level
 	GlobalValues.player.underwater = level_underwater
 	GlobalValues.player.gravity_strength = level_gravity

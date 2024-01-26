@@ -412,7 +412,6 @@ func parry():
 func hurt():
 	damage_audio.play()
 	lives -= 1
-	endCombo()
 	hud.life_lost(lives)
 	hurt_i_frames = 1
 	if lives <= 0:
@@ -447,8 +446,7 @@ func addCombo():
 func endCombo():
 	if combo:
 		if comboNum >= 5:
-			AudioPlayer.change_music("level_music")
-			print("back to level_music")
+			AudioPlayer.change_music(GlobalValues.current_level_music)
 		combo = false
 		hud.set_combo_count(0)
 		hud.set_combo_visibility(false)
@@ -468,7 +466,7 @@ func setLevelTimer(time):
 
 func stopTimer():
 	level_timer.stop()
-	coin_count += ceili(level_timer.time_left / 1.5)
+	coin_count += ceili(level_timer.time_left * 2)
 	print(level_timer.time_left)
 	hud.set_coin_counter(coin_count)
 	change_weight()
