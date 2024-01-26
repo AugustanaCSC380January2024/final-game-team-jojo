@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://4jcdem4c4t14"]
+[gd_scene load_steps=81 format=3 uid="uid://4jcdem4c4t14"]
 
 [ext_resource type="Script" path="res://scripts/bomb_enemy.gd" id="1_4w1fg"]
 [ext_resource type="Texture2D" uid="uid://dube6ysse1lex" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="2_cprjp"]
@@ -74,6 +74,7 @@
 [ext_resource type="Texture2D" uid="uid://bpw1vnf8mhoph" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Nuclear_explosion/Nuclear_explosion10.png" id="63_3qffy"]
 [ext_resource type="Texture2D" uid="uid://bqmq3mg4xuswu" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion10.png" id="63_duw5q"]
 [ext_resource type="AudioStream" uid="uid://fyid6nw4qsi" path="res://assets/sounds/medium-explosion-40472.mp3" id="64_kkvt5"]
+[ext_resource type="AudioStream" uid="uid://cfvoqwj5gu3yl" path="res://assets/sounds/enemies dying.wav" id="75_j1lx2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mupp2"]
 animations = [{
@@ -385,6 +386,9 @@ shape = SubResource("RectangleShape2D_20kn2")
 
 [node name="explosion_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("64_kkvt5")
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("75_j1lx2")
 
 [connection signal="body_entered" from="wall_collision_detector" to="." method="_on_wall_collision_detector_body_entered"]
 [connection signal="body_entered" from="sight_radius" to="." method="_on_sight_radius_body_entered"]

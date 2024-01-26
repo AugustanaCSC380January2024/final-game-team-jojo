@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var hitbox = preload("res://scenes/hitbox.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var death_sound = $death_sound
+@onready var hurt_sound = $hurt_sound
 @onready var ray1 = $Ray1
 @onready var ray2 = $Ray2
 @onready var ray3 = $Ray3
@@ -60,10 +60,10 @@ func _physics_process(delta):
 
 func damage(damage_num):
 	health -= damage_num
+	hurt_sound.play()
 	if health <= 0 && alive:
 		alive = false
 		GlobalValues.player.addCombo()
-		death_sound.play()
 		GlobalValues.level_infamy += 1
 		queue_free()
 		

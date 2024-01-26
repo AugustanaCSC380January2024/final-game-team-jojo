@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dkt7imecatqvb"]
+[gd_scene load_steps=56 format=3 uid="uid://dkt7imecatqvb"]
 
 [ext_resource type="Script" path="res://scripts/ranged_enemy.gd" id="1_557cv"]
 [ext_resource type="Texture2D" uid="uid://esrltxr0vktx" path="res://assets/Pirate Bomb/Sprites/4-Enemy-Big Guy/1-Idle/1.png" id="2_a6e5k"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://b4gxwhyu8c2cd" path="res://assets/Pirate Bomb/Sprites/4-Enemy-Big Guy/11-Throw (Bomb)/9.png" id="48_5w7c8"]
 [ext_resource type="Texture2D" uid="uid://nsllqrp8mqe2" path="res://assets/Pirate Bomb/Sprites/4-Enemy-Big Guy/11-Throw (Bomb)/10.png" id="49_dymk5"]
 [ext_resource type="Texture2D" uid="uid://tkqeigebgfp1" path="res://assets/Pirate Bomb/Sprites/4-Enemy-Big Guy/11-Throw (Bomb)/11.png" id="50_gwgs6"]
+[ext_resource type="AudioStream" uid="uid://cfvoqwj5gu3yl" path="res://assets/sounds/enemies dying.wav" id="51_h4nla"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3trn"]
 animations = [{
@@ -254,6 +255,9 @@ visible = false
 position = Vector2(8, -13)
 scale = Vector2(3.59447, 0.636726)
 shape = SubResource("RectangleShape2D_pve0u")
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("51_h4nla")
 
 [connection signal="body_entered" from="sight_radius" to="." method="_on_sight_radius_body_entered"]
 [connection signal="body_exited" from="sight_radius" to="." method="_on_sight_radius_body_exited"]

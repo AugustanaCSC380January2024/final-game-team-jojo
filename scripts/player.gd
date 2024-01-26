@@ -30,8 +30,8 @@ extends CharacterBody2D
 @export var max_fall_speed = 2000
 @export var gravity_strength = 980
 @export var friction = 2500
-@export var attack_timer = 0
-@export var melee_attack_timer = 0
+@export var attack_timer = 1
+@export var melee_attack_timer = 1
 @export var jump_window = 15.0
 @export var max_combo_time = 3.5
 var jump_window_counter = 0.0
@@ -52,6 +52,8 @@ var beans_jump = false
 var combo = false
 var comboNum = 0
 var maxLevelTimer = 180
+var canAttack = false
+var canAttackTimer = 1
 
 func _ready():
 	set_floor_max_angle(PI/3)
@@ -63,6 +65,11 @@ func _ready():
 		beans_jump = true
 
 func _physics_process(delta):
+	if canAttackTimer <= 0:
+		canAttack = true
+		canAttackTimer = 0
+	else:
+		canAttackTimer -= delta
 	hud.set_level_timer(level_timer.time_left)
 	if underwater:
 		if swim_jump_timer > 0:
@@ -192,9 +199,10 @@ func idle():
 			animated_sprite.play("jump")
 
 func melee():
-	if alive && !attackShoot && melee_attack_timer <= 0:
+	if alive && !attackShoot && melee_attack_timer <= 0 && canAttack:
 		melee_attack_timer = 1
 		attackMelee = true
+		canAttack = false
 		if is_on_floor():
 			if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right"):
 				animated_sprite.play("run_melee")
@@ -211,7 +219,7 @@ func melee():
 		
 		
 func shoot():
-	if alive && !attackMelee && attack_timer <= 0:
+	if alive && !attackMelee && attack_timer <= 0 && canAttack:
 		if (shot_type == "flintlock" && coin_count >= 1) || (shot_type == "blunderbuss" && coin_count >= 3) || (shot_type == "cannon" && coin_count >= 5): #add no ammo indicator
 			attackShoot = true
 			if is_on_floor():
@@ -222,13 +230,13 @@ func shoot():
 			else:
 				animated_sprite.play("jump_gun")
 				
-			var shot = shoot_particles.instantiate()
-			canvas_layer.add_child(shot)
+			#var shot = shoot_particles.instantiate()
+			#canvas_layer.add_child(shot)
 			if !GlobalValues.extra_barrel:
 				attack_timer = 1
 			elif GlobalValues.extra_barrel:
 				attack_timer = .5
-			shot.emitting = true
+			#shot.emitting = true
 			if shot_type == "flintlock":
 				coin_count -= 1
 				hud.set_coin_counter(coin_count)
@@ -296,8 +304,8 @@ func shoot():
 				elif GlobalValues.extra_barrel:
 					attack_timer = 1
 			await get_tree().create_timer(.5).timeout
-			shot.emitting = false
-			shot.queue_free()
+			#shot.emitting = false
+			#shot.queue_free()
 			attackShoot = false
 		
 func flip():
@@ -408,20 +416,22 @@ func changeCamera():
 
 func parry():
 	parry_sound.play()
+	addCombo()
 
 func hurt():
-	damage_audio.play()
-	lives -= 1
-	hud.life_lost(lives)
-	hurt_i_frames = 1
-	if lives <= 0:
-		die()
-	else:
-		for i in range(10):
-			animated_sprite.visible = false
-			await get_tree().create_timer(0.05).timeout
-			animated_sprite.visible = true
-			await get_tree().create_timer(0.05).timeout
+	if hurt_i_frames <= 0:
+		damage_audio.play()
+		lives -= 1
+		hud.life_lost(lives)
+		hurt_i_frames = 1
+		if lives <= 0:
+			die()
+		else:
+			for i in range(10):
+				animated_sprite.visible = false
+				await get_tree().create_timer(0.05).timeout
+				animated_sprite.visible = true
+				await get_tree().create_timer(0.05).timeout
 			
 func startCombo():
 	if !combo:

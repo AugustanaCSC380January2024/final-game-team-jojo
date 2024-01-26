@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://djmdtsqwll2pt"]
+[gd_scene load_steps=23 format=3 uid="uid://djmdtsqwll2pt"]
 
 [ext_resource type="Script" path="res://scripts/kraken_boss.gd" id="1_tftho"]
 [ext_resource type="Texture2D" uid="uid://h6o8r5x3fotn" path="res://assets/kraken boss/Octopus.png" id="1_wcox2"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://ffi8pwlushdj" path="res://assets/sounds/explosion-42132.mp3" id="13_dsow4"]
 [ext_resource type="AudioStream" uid="uid://5c311koi5aiq" path="res://assets/sounds/exploding-building-1-185114.mp3" id="14_np0xn"]
 [ext_resource type="PackedScene" uid="uid://cd7iphh8pwgyw" path="res://scenes/next_level.tscn" id="15_o0g2o"]
+[ext_resource type="AudioStream" uid="uid://cfvoqwj5gu3yl" path="res://assets/sounds/enemies dying.wav" id="15_ycxmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uex88"]
 atlas = ExtResource("1_wcox2")
@@ -81,10 +82,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_3tlbe")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"died",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck6ud"]
@@ -98,7 +102,10 @@ script = ExtResource("1_tftho")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uuecb")
+animation = &"died"
 autoplay = "default"
+frame = 10
+frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
@@ -116,6 +123,9 @@ stream = ExtResource("13_dsow4")
 
 [node name="ship_destroyed" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_np0xn")
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_ycxmy")
 
 [node name="next_level" parent="." instance=ExtResource("15_o0g2o")]
 position = Vector2(17917.3, 12290.7)

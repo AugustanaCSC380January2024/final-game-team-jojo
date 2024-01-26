@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctjbm82nkg1av"]
+[gd_scene load_steps=16 format=3 uid="uid://ctjbm82nkg1av"]
 
 [ext_resource type="Script" path="res://scripts/cannon_enemy.gd" id="1_0avgj"]
 [ext_resource type="Texture2D" uid="uid://bnbyaodmy7m0" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/1.png" id="1_oq81e"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://4mstit3csflb" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/7.png" id="7_i378b"]
 [ext_resource type="Texture2D" uid="uid://c0ojyrkiyfs3j" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/8.png" id="8_ks4wt"]
 [ext_resource type="Texture2D" uid="uid://bae6daphthj52" path="res://assets/Pirate Bomb/Sprites/7-Objects/16-Enemy-Cannon/2-Attack/9.png" id="9_wvluq"]
+[ext_resource type="AudioStream" uid="uid://cfvoqwj5gu3yl" path="res://assets/sounds/enemies dying.wav" id="11_0vacr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nmke7"]
 animations = [{
@@ -58,7 +59,7 @@ size = Vector2(21.9979, 19.3317)
 size = Vector2(61, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0bb3"]
-size = Vector2(137.878, 152.75)
+size = Vector2(137.878, 114.487)
 
 [node name="cannon_enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 32
@@ -92,10 +93,12 @@ scale = Vector2(2.83449, 17.4471)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight_radius"]
-visible = false
 position = Vector2(10, -11)
 scale = Vector2(3.59447, 0.636726)
 shape = SubResource("RectangleShape2D_b0bb3")
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_0vacr")
 
 [connection signal="body_entered" from="sight_radius" to="." method="_on_sight_radius_body_entered"]
 [connection signal="body_exited" from="sight_radius" to="." method="_on_sight_radius_body_exited"]

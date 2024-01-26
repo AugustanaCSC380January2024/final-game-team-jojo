@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqstlsmurhm3y"]
+[gd_scene load_steps=19 format=3 uid="uid://bqstlsmurhm3y"]
 
 [ext_resource type="Script" path="res://scripts/ship_boss.gd" id="1_sjcb7"]
 [ext_resource type="Texture2D" uid="uid://cx0iq5yfp8ye" path="res://assets/pixel ship.png" id="2_00dw2"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bqmq3mg4xuswu" path="res://assets/craftpix-net-270676-11-free-pixel-art-explosion-sprites/PNG/Explosion/Explosion10.png" id="12_sqbii"]
 [ext_resource type="AudioStream" uid="uid://5c311koi5aiq" path="res://assets/sounds/exploding-building-1-185114.mp3" id="13_pjuev"]
 [ext_resource type="AudioStream" uid="uid://ffi8pwlushdj" path="res://assets/sounds/explosion-42132.mp3" id="14_5nhr6"]
+[ext_resource type="AudioStream" uid="uid://cfvoqwj5gu3yl" path="res://assets/sounds/enemies dying.wav" id="15_fohxp"]
 [ext_resource type="PackedScene" uid="uid://cd7iphh8pwgyw" path="res://scenes/next_level.tscn" id="15_jpi0e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3ykkx"]
@@ -56,10 +57,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_sqbii")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"explode",
-"speed": 4.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r8nc"]
@@ -73,7 +77,7 @@ position = Vector2(266, 301)
 sprite_frames = SubResource("SpriteFrames_3ykkx")
 animation = &"explode"
 autoplay = "default"
-frame = 9
+frame = 10
 frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -85,6 +89,9 @@ stream = ExtResource("13_pjuev")
 
 [node name="exploded_ship" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_5nhr6")
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_fohxp")
 
 [node name="boss_trigger" type="Area2D" parent="."]
 collision_layer = 0

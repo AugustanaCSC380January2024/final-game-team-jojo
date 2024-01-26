@@ -371,7 +371,7 @@ visible = false
 position = Vector2(9, -44)
 shape = SubResource("RectangleShape2D_20kn2")
 
-[node name="death_sound" type="AudioStreamPlayer2D" parent="."]
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("76_6bfro")
 
 [connection signal="body_entered" from="wall_collision_detector" to="." method="_on_wall_collision_detector_body_entered"]

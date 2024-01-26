@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var explosion_sfx = $exploded_ship
 @onready var ship_destroyed_sfx = $ship_destroyed
+@onready var hurt_sound = $hurt_sound
 @onready var change_level = $next_level
 @onready var bomb = preload("res://scenes/bomb.tscn")
 @onready var cannonball = preload("res://scenes/cannonball.tscn")
@@ -115,6 +116,7 @@ func nuclear_cannon():
 	
 func damage(damage_num):
 	health -= damage_num
+	hurt_sound.play()
 	if health <= 0:
 		GlobalValues.level_infamy += 10
 		attack_timer = 100000
@@ -130,6 +132,5 @@ func damage(damage_num):
 
 func _on_area_2d_body_entered(body):
 	attacking = true
-	AudioPlayer.stop()
 	AudioPlayer.change_music("boss", "level3")
-	AudioPlayer.play()
+	GlobalValues.current_level_music = "boss"

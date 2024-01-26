@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var explosion_sfx = $nuclear_explosion_sfx
 @onready var animated_sprite = $enemy_animation
 @onready var explosion_sprite = $nuclear_explosion_animation
+@onready var hurt_sound = $hurt_sound
 @export var gravity_strength = 500
 var health = 6
 var is_exploding = false
@@ -59,6 +60,7 @@ func _physics_process(delta):
 
 func damage(damage_num):
 	health -= damage_num
+	hurt_sound.play()
 	if health <= 0 && alive:
 		alive = false
 		GlobalValues.player.addCombo()

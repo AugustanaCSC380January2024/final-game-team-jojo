@@ -1773,6 +1773,13 @@ shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("15_4onhn")
 texture_scale = 0.2
 
+[node name="PointLight2D15" type="PointLight2D" parent="Light"]
+position = Vector2(1712, 432)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("15_4onhn")
+texture_scale = 0.2
+
 [node name="PointLight2D2" type="PointLight2D" parent="Light"]
 position = Vector2(2000, 432)
 shadow_enabled = true

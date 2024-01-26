@@ -9,10 +9,9 @@ func next_level():
 	GlobalValues.player.hud.lives_gained(GlobalValues.player.max_lives)
 	GlobalValues.player.endCombo()
 	GlobalValues.player.stopTimer()
+	GlobalValues.player.canAttack = false
+	GlobalValues.player.canAttackTimer = 1
 
 func _on_body_entered(body):
 	if(body.is_in_group("Player")):
 		next_level()
-	else:
-		pass
-		#this will be the credits

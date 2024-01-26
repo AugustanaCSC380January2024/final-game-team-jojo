@@ -26,8 +26,8 @@ func _ready():
 	GlobalValues.player.camera.limit_top = top_limit
 	GlobalValues.player.camera.limit_bottom = bottom_limit
 	GlobalValues.player.global_position = startPos.global_position
-	GlobalValues.player.attack_timer = 1
 	GlobalValues.player.setLevelTimer(level_time)
+	GlobalValues.player.hud.visible = true
 
 func _physics_process(delta):
 	if GlobalValues.spawnCoinLocation != null:
@@ -58,6 +58,5 @@ func _on_death_zone_body_entered(body):
 
 
 func _on_area_2d_body_entered(body):
-	AudioPlayer.stop()
 	AudioPlayer.change_music(bossMusic, levelMusic)
-	AudioPlayer.play()
+	GlobalValues.current_level_music = "boss"

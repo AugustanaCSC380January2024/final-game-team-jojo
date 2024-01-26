@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var hurt_sound = $hurt_sound
 @onready var cannonball = preload("res://scenes/cannonball.tscn")
 @export var gravity_strength = 500
 var health = 1
@@ -35,6 +36,7 @@ func attack():
 	
 func damage(damage_num):
 	health -= damage_num
+	hurt_sound.play()
 	if health <= 0 && alive:
 		alive = false
 		GlobalValues.player.addCombo()

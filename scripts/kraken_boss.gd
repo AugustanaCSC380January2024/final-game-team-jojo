@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var explosion_sfx = $exploded_ship
 @onready var ship_destroyed_sfx = $ship_destroyed
+@onready var hurt_sound = $hurt_sound
 @onready var change_level = $next_level
 @onready var tentacle = preload("res://scenes/kraken_tentacle.tscn")
 @onready var lightning = preload("res://scenes/kraken_lightning.tscn")
@@ -67,6 +68,7 @@ func crew_attack():
 	
 func damage(damage_num):
 	health -= damage_num
+	hurt_sound.play()
 	if health <= 0 && alive:
 		attack_timer = 100000
 		animation.play("died")

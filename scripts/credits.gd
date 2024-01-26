@@ -7,6 +7,7 @@ extends Node2D
 func _ready():
 	GlobalValues.player.hud.visible = false
 	GlobalValues.player.attack_timer = 999999
+	AudioPlayer.change_music("None", "level1")
 
 func _on_button_pressed():
 	if image.get_texture() == credits:

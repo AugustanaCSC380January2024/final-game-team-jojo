@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var bomb = preload("res://scenes/bomb.tscn")
 @onready var fear = preload("res://scenes/fear_symbol.tscn")
 @export var gravity_strength = 500
+@onready var hurt_sound = $hurt_sound
 var health = 1
 var alive = true
 var is_exploding = false
@@ -38,6 +39,7 @@ func attack():
 
 func damage(damage_num):
 	health -= damage_num
+	hurt_sound.play()
 	if health <= 0 && alive:
 		alive = false
 		GlobalValues.player.addCombo()

@@ -9,6 +9,8 @@ extends Node
 @onready var shop = preload("res://assets/music/Is This a Sustainable Business Model.mp3")
 @onready var boss = preload("res://assets/music/Uh Oh! This One Is Stronger.mp3")
 @onready var combo = preload("res://assets/music/metal-dark-matter-111451.mp3")
+@onready var music = "None"
+@onready var sfx = "None"
 @onready var ASP = null
 @onready var SFX = null
 
@@ -17,13 +19,6 @@ func _ready():
 	SFX = AudioStreamPlayer.new()
 	add_child(ASP)
 	add_child(SFX)
-
-func play():
-	ASP.play()
-	SFX.play()
-
-func stop():
-	ASP.stop()
 
 func restart():
 	ASP.stop()
@@ -53,14 +48,19 @@ func change_music(music_name, sfx_name):
 	elif sfx_name == "level3":
 		stream2 = level3SFX
 	
-	if stream1 != null:
-		ASP.stream = stream1
-		ASP.play()
-	else:
-		ASP.stop()
-	if SFX.stream != stream2:
+	if music != music_name:
+		if stream1 != null:
+			ASP.stream = stream1
+			ASP.play()
+		else:
+			ASP.stop()
+	if sfx != sfx_name:
 		if stream2 != null:
 			SFX.stream = stream2
 			SFX.play()
 		else:
 			SFX.stop()
+	print(music + ", " + music_name)
+	print(sfx + ", " + sfx_name)
+	music = music_name
+	sfx = sfx_name
