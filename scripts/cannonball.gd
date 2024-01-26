@@ -12,7 +12,6 @@ func _ready():
 	player_location = GlobalValues.playerPosition
 	var deltaDistance = player_location - global_position
 	angle = atan2(deltaDistance.y, deltaDistance.x)
-	print((angle/(2 * PI)) * 360)
 
 func _process(delta):
 	if !parried:

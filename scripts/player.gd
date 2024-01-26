@@ -446,7 +446,9 @@ func addCombo():
 
 func endCombo():
 	if combo:
-		AudioPlayer.change_music("level_music")
+		if comboNum >= 5:
+			AudioPlayer.change_music("level_music")
+			print("back to level_music")
 		combo = false
 		hud.set_combo_count(0)
 		hud.set_combo_visibility(false)

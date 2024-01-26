@@ -28,6 +28,7 @@ func change_music(sfx_name):
 	var stream = null
 	if sfx_name == "level1":
 		stream = level1
+		print("playing level music")
 	elif sfx_name == "level2":
 		stream = level2
 	elif sfx_name == "level3":
