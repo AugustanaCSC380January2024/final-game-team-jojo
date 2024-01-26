@@ -117,11 +117,11 @@ label_settings = SubResource("LabelSettings_yj7tu")
 
 [node name="level_timer" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1088.0
+offset_left = 1072.0
 offset_top = 8.0
-offset_right = 1264.0
+offset_right = 1271.0
 offset_bottom = 46.0
-text = "TIME 180"
+text = "BONUS 180"
 label_settings = SubResource("LabelSettings_m3vcr")
 horizontal_alignment = 2
 

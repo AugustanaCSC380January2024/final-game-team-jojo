@@ -16,7 +16,7 @@ extends Control
 @export var bottom_limit = 10000000
 
 func _ready():
-	AudioPlayer.change_music("shop")
+	AudioPlayer.change_music("shop", "level1")
 	GlobalValues.player.in_shop = true
 	GlobalValues.player.camera.limit_left = left_limit
 	GlobalValues.player.camera.limit_right = right_limit

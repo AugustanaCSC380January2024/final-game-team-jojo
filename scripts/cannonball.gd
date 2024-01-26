@@ -35,3 +35,8 @@ func _on_body_entered(body):
 					GlobalValues.spawnRumLocation = body.global_position
 		body.damage(1)
 		queue_free()
+
+func changeAngle():
+	player_location = GlobalValues.playerPosition
+	var deltaDistance = player_location - global_position
+	angle = atan2(deltaDistance.y, deltaDistance.x)

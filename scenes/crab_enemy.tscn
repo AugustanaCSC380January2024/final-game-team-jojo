@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://d4duknihl2udq"]
 
-[ext_resource type="Script" path="res://scenes/crab_enemy.gd" id="1_bdl5y"]
+[ext_resource type="Script" path="res://scripts/crab_enemy.gd" id="1_e1y0w"]
 [ext_resource type="Texture2D" uid="uid://b1crwo78wqru6" path="res://assets/Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="2_v2ni8"]
 [ext_resource type="Texture2D" uid="uid://baabu2fbps2yd" path="res://assets/Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="3_scmbu"]
 [ext_resource type="Texture2D" uid="uid://c3kfwk2ts56us" path="res://assets/Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="4_hc40s"]
@@ -106,7 +106,7 @@ size = Vector2(362, 152.75)
 [node name="crab_enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 32
 collision_mask = 2
-script = ExtResource("1_bdl5y")
+script = ExtResource("1_e1y0w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)

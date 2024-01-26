@@ -7,8 +7,8 @@ extends CharacterBody2D
 @onready var cannonball = preload("res://scenes/cannonball.tscn")
 @onready var crewmate = preload("res://scenes/melee_enemy.tscn")
 @onready var nuke = preload("res://scenes/nuclear_boss_cannonball.tscn")
-var attack_timer = 3
-var health = 50
+var attack_timer = 0.5
+var health = 100
 var attacking = false
 
 func _physics_process(delta):
@@ -16,20 +16,20 @@ func _physics_process(delta):
 		attack_timer -= delta
 	else:
 		random_attack()
-		attack_timer = 3
+		attack_timer = 1.5
 
 func random_attack():
 	if attacking:
 		var rng = RandomNumberGenerator.new()
-		var random_index = rng.randi_range(0, 3)
+		var random_index = rng.randi_range(0, 9)
 		print(random_index)
-		if random_index == 0:
+		if random_index in range(0, 2):
 			bomb_wave()
-		if random_index == 1:
+		if random_index in range(3, 5):
 			cannon_volley()
-		if random_index == 2:
+		if random_index in range(6, 8):
 			crew_attack()
-		if random_index == 3:
+		if random_index == 9:
 			nuclear_cannon()
 	else:
 		pass
@@ -45,16 +45,19 @@ func cannon_volley():
 	add_child(fired_cannonball3)
 	add_child(fired_cannonball4)
 	add_child(fired_cannonball5)
-	fired_cannonball.cannon_speed = 300
-	fired_cannonball2.cannon_speed = 300
-	fired_cannonball3.cannon_speed = 300
-	fired_cannonball4.cannon_speed = 300
-	fired_cannonball5.cannon_speed = 300
-	fired_cannonball.global_position.x = global_position.x - 0
-	fired_cannonball2.global_position.x = global_position.x - 40
-	fired_cannonball3.global_position.x = global_position.x - 80
-	fired_cannonball4.global_position.x = global_position.x - 120
-	fired_cannonball5.global_position.x = global_position.x - 160
+	#fired_cannonball.cannon_speed = 300
+	#fired_cannonball2.cannon_speed = 300
+	#fired_cannonball3.cannon_speed = 300
+	#fired_cannonball4.cannon_speed = 300
+	#fired_cannonball5.cannon_speed = 300
+	fired_cannonball2.global_position.x = global_position.x - 300
+	fired_cannonball3.global_position.x = global_position.x - 600
+	fired_cannonball4.global_position.x = global_position.x + 300
+	fired_cannonball5.global_position.x = global_position.x + 600
+	fired_cannonball2.changeAngle()
+	fired_cannonball3.changeAngle()
+	fired_cannonball4.changeAngle()
+	fired_cannonball5.changeAngle()
 
 func bomb_wave():
 	var fired_bomb = bomb.instantiate()

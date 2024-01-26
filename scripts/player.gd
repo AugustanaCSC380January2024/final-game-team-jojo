@@ -436,7 +436,7 @@ func addCombo():
 	if combo:
 		comboNum += 1
 		if comboNum == 5:
-			AudioPlayer.change_music("combo_music")
+			AudioPlayer.change_music("combo_music", GlobalValues.current_level_music)
 		hud.set_combo_count(comboNum)
 		combo_timer.wait_time = max_combo_time
 		combo_timer.start()
@@ -446,7 +446,7 @@ func addCombo():
 func endCombo():
 	if combo:
 		if comboNum >= 5:
-			AudioPlayer.change_music(GlobalValues.current_level_music)
+			AudioPlayer.change_music(GlobalValues.current_level_music, GlobalValues.current_level_music)
 		combo = false
 		hud.set_combo_count(0)
 		hud.set_combo_visibility(false)
@@ -465,33 +465,35 @@ func setLevelTimer(time):
 	hud.set_timer_visibility(true)
 
 func stopTimer():
+	print(level_timer.time_left)
+	coin_count += ceili(level_timer.time_left * 3)
 	level_timer.stop()
-	coin_count += ceili(level_timer.time_left * 2)
 	print(level_timer.time_left)
 	hud.set_coin_counter(coin_count)
 	change_weight()
 	hud.set_timer_visibility(false)
 
 func _on_level_timer_timeout():
-	die()
+	hud.set_timer_visibility(false)
 
 func die():
-	endCombo()
-	alive = false
-	animated_sprite.play("die")
-	level_timer.stop()
-	print(level_timer.is_stopped())
-	await get_tree().create_timer(2).timeout
-	velocity = Vector2.ZERO
-	global_position = Vector2(178, 390)
-	AudioPlayer.restart()
-	GlobalValues.level_infamy = 0
-	get_tree().reload_current_scene()
-	alive = true
-	lives = max_lives
-	hud.lives_gained(max_lives)
-	level_timer.wait_time = maxLevelTimer
-	level_timer.start()
+	if alive:
+		endCombo()
+		alive = false
+		animated_sprite.play("die")
+		level_timer.stop()
+		print(level_timer.is_stopped())
+		await get_tree().create_timer(2).timeout
+		velocity = Vector2.ZERO
+		global_position = Vector2(178, 390)
+		AudioPlayer.restart()
+		GlobalValues.level_infamy = 0
+		get_tree().reload_current_scene()
+		alive = true
+		lives = max_lives
+		hud.lives_gained(max_lives)
+		level_timer.wait_time = maxLevelTimer
+		level_timer.start()
 
 func respawn():
 	alive = true

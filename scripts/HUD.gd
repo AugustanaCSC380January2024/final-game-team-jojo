@@ -93,7 +93,7 @@ func set_combo_visibility(visibility):
 	combo.visible = visibility
 
 func set_level_timer(time):
-	levelTimer.text = "TIME " + str(int(time))
+	levelTimer.text = "BONUS " + str(int(time))
 
 func set_timer_visibility(visibility):
 	levelTimer.visible = visibility

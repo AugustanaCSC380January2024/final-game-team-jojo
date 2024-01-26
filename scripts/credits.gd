@@ -5,6 +5,7 @@ extends Node2D
 
 func _ready():
 	GlobalValues.player.hud.visible = false
+	GlobalValues.player.attack_timer = 999999
 
 func _on_button_pressed():
 	image.set_texture(credits)

@@ -9,7 +9,7 @@ extends CharacterBody2D
 var attacking = false
 var alive = true
 var attack_timer = 3
-var health = 1
+var health = 50
 
 func _physics_process(delta):
 	if attack_timer > 0:

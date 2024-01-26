@@ -1945,7 +1945,7 @@ script = ExtResource("1_4c6wx")
 following_level = ExtResource("2_mg3ar")
 left_limit = -230
 bottom_limit = 500
-level_time = 120
+level_time = 45
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-24, -16)

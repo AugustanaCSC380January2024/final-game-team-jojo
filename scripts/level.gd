@@ -12,11 +12,11 @@ extends Node2D
 @export var right_limit = 10000000
 @export var top_limit = -10000000
 @export var bottom_limit = 10000000
-@export var level_time = 180
+@export var level_time = 60
 var physics_set = false
 
 func _ready():
-	AudioPlayer.change_music(levelMusic)
+	AudioPlayer.change_music(levelMusic, levelMusic)
 	GlobalValues.current_level_music = levelMusic
 	GlobalValues.next_level = following_level
 	GlobalValues.player.underwater = level_underwater
@@ -26,6 +26,7 @@ func _ready():
 	GlobalValues.player.camera.limit_top = top_limit
 	GlobalValues.player.camera.limit_bottom = bottom_limit
 	GlobalValues.player.global_position = startPos.global_position
+	GlobalValues.player.attack_timer = 1
 	GlobalValues.player.setLevelTimer(level_time)
 
 func _physics_process(delta):
@@ -58,5 +59,5 @@ func _on_death_zone_body_entered(body):
 
 func _on_area_2d_body_entered(body):
 	AudioPlayer.stop()
-	AudioPlayer.change_music(bossMusic)
+	AudioPlayer.change_music(bossMusic, levelMusic)
 	AudioPlayer.play()

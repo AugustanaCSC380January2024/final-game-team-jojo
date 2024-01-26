@@ -8,6 +8,7 @@ var current_image_index = -1
 func _ready():
 	GlobalValues.player.hud.visible = false
 	GlobalValues.player.attack_timer = 999999
+	AudioPlayer.change_music("None", "level1")
 
 func _on_button_pressed():
 	current_image_index += 1
