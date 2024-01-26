@@ -5,6 +5,7 @@ extends Node
 @onready var level3 = preload("res://assets/music/A Nice Neighborhood.mp3")
 @onready var shop = preload("res://assets/music/Is This a Sustainable Business Model.mp3")
 @onready var boss = preload("res://assets/music/Uh Oh! This One Is Stronger.mp3")
+@onready var combo = preload("res://assets/music/metal-dark-matter-111451.mp3")
 @onready var ASP = null
 
 func _ready():
@@ -35,6 +36,8 @@ func change_music(sfx_name):
 		stream = shop
 	elif sfx_name == "boss":
 		stream = boss
-	
+	elif sfx_name == "combo_music":
+		stream = combo
+
 	ASP.stream = stream
 	ASP.play()

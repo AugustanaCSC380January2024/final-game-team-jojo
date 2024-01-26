@@ -1,18 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://fk27dernwktt"]
+[gd_scene load_steps=5 format=3 uid="uid://fk27dernwktt"]
 
 [ext_resource type="Script" path="res://scripts/story.gd" id="1_g20b2"]
-[ext_resource type="Texture2D" uid="uid://cxtpywdei7u0s" path="res://assets/story/story_end.png" id="2_oiuqk"]
+[ext_resource type="FontFile" uid="uid://duga6k6ga873j" path="res://assets/bones.ttf" id="2_yygkx"]
+[ext_resource type="Texture2D" uid="uid://bysdkfrqv8wn2" path="res://assets/story/story_1.png" id="3_agt1n"]
+[ext_resource type="PackedScene" uid="uid://cd7iphh8pwgyw" path="res://scenes/next_level.tscn" id="4_swwl2"]
 
-[node name="story_1" type="Node2D"]
+[node name="story" type="Node2D"]
 script = ExtResource("1_g20b2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 91
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 1131.0
+offset_top = 662.0
+offset_right = 1209.0
+offset_bottom = 689.0
+scale = Vector2(1.69297, 1.73448)
+theme_override_fonts/font = ExtResource("2_yygkx")
+action_mode = 0
+text = "Continue"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_oiuqk")
+texture = ExtResource("3_agt1n")
 expand_mode = 1
+
+[node name="next_level" parent="." instance=ExtResource("4_swwl2")]
+position = Vector2(-1597, 950)
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

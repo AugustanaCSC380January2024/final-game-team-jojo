@@ -13,7 +13,7 @@ var is_exploding = false
 var following = false
 var player = null
 var afraid = false
-var afraid_move_mult = 1
+var afraid_move_mult = 1.5
 var fear_checked = false
 
 func _physics_process(delta):

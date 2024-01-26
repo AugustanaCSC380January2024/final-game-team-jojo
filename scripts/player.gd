@@ -436,6 +436,8 @@ func startCombo():
 func addCombo():
 	if combo:
 		comboNum += 1
+		if comboNum == 5:
+			AudioPlayer.change_music("combo_music")
 		hud.set_combo_count(comboNum)
 		combo_timer.wait_time = max_combo_time
 		combo_timer.start()
@@ -444,6 +446,7 @@ func addCombo():
 
 func endCombo():
 	if combo:
+		AudioPlayer.change_music("level_music")
 		combo = false
 		hud.set_combo_count(0)
 		hud.set_combo_visibility(false)
