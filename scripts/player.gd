@@ -148,6 +148,8 @@ func _physics_process(delta):
 		shot_type = "blunderbuss"
 	if Input.is_action_just_pressed("select_cannon"):
 		shot_type = "cannon"
+	if Input.is_action_just_pressed("reset"):
+		die()
 	idle()
 	
 	if alive:

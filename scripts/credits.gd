@@ -12,5 +12,6 @@ func _ready():
 func _on_button_pressed():
 	if image.get_texture() == credits:
 		GlobalValues.level_index = 0
+		GlobalValues.player.attack_timer = 0
 		level_change.next_level()
 	image.set_texture(credits)

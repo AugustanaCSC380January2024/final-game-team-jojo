@@ -23,6 +23,22 @@ func _ready():
 	GlobalValues.player.camera.limit_top = top_limit
 	GlobalValues.player.camera.limit_bottom = bottom_limit
 	GlobalValues.player.hud.levelTimer.visible = false
+	if GlobalValues.extra_rum == 3:
+		rum_button.text = "Out-O-Stock"
+	if GlobalValues.spring_leg:
+		spring_button.text = "Out-O-Stock"
+	if GlobalValues.wheelboots:
+		wheels_button.text = "Out-O-Stock"
+	if GlobalValues.beans:
+		beans_button.text = "Out-O-Stock"
+	if GlobalValues.extra_barrel:
+		barrels_button.text = "Out-O-Stock"
+	if GlobalValues.loudener:
+		loudener_button.text = "Out-O-Stock"
+	if GlobalValues.jolly_roger:
+		flag_button.text = "Out-O-Stock"
+	if GlobalValues.sword:
+		sword_button.text = "Out-O-Stock"
 
 func _on_buy_rum_pressed():
 	if GlobalValues.player.coin_count >= 30 && GlobalValues.extra_rum < 3:
@@ -45,6 +61,7 @@ func _on_buy_spring_pressed():
 		GlobalValues.spring_leg = true
 		GlobalValues.player.coin_count -= 80
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+		spring_button.text = "Out-O-Stock"
 	elif GlobalValues.spring_leg:
 		spring_button.text = "Out-O-Stock"
 	elif GlobalValues.player.coin_count < 80:
@@ -57,6 +74,7 @@ func _on_buy_wheels_pressed():
 		GlobalValues.wheelboots = true
 		GlobalValues.player.coin_count -= 80
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+		wheels_button.text = "Out-O-Stock"
 	elif GlobalValues.wheelboots:
 		wheels_button.text = "Out-O-Stock"
 	elif GlobalValues.player.coin_count < 80:
@@ -69,6 +87,7 @@ func _on_buy_beans_pressed():
 		GlobalValues.beans = true
 		GlobalValues.player.coin_count -= 80
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+		beans_button.text = "Out-O-Stock"
 	elif GlobalValues.beans:
 		beans_button.text = "Out-O-Stock"
 	elif GlobalValues.player.coin_count < 80:
@@ -82,6 +101,7 @@ func _on_buy_extrabarrel_pressed():
 		GlobalValues.extra_barrel = true
 		GlobalValues.player.coin_count -= 80
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+		barrels_button.text = "Out-O-Stock"
 	elif GlobalValues.extra_barrel:
 		barrels_button.text = "Out-O-Stock"
 	elif GlobalValues.player.coin_count < 80:
@@ -95,6 +115,7 @@ func _on_buy_loudener_pressed():
 		GlobalValues.loudener = true
 		GlobalValues.player.coin_count -= 80
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+		loudener_button.text = "Out-O-Stock"
 	elif GlobalValues.loudener:
 		loudener_button.text = "Out-O-Stock"
 	elif GlobalValues.player.coin_count < 80:
@@ -108,6 +129,7 @@ func _on_buy_jollyroger_pressed():
 		GlobalValues.jolly_roger = true
 		GlobalValues.player.coin_count -= 150
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+		flag_button.text = "Out-O-Stock"
 	elif GlobalValues.jolly_roger:
 		flag_button.text = "Out-O-Stock"
 	elif GlobalValues.player.coin_count < 150:
@@ -121,6 +143,7 @@ func _on_buy_sword_pressed():
 		GlobalValues.sword = true
 		GlobalValues.player.coin_count -= 100
 		GlobalValues.player.hud.set_coin_counter(GlobalValues.player.coin_count)
+		sword_button.text = "Out-O-Stock"
 	elif GlobalValues.sword:
 		sword_button.text = "Out-O-Stock"
 	elif GlobalValues.player.coin_count < 100:

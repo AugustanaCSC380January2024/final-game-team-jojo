@@ -102,7 +102,8 @@ func _on_wall_collision_detector_body_entered(body):
 		velocity.y = 0
 
 func _on_area_2d_body_entered(body):
-	var attack_hitbox = hitbox.instantiate()
-	add_child(attack_hitbox)
-	await get_tree().create_timer(.2).timeout
-	attack_hitbox.queue_free()
+	if !afraid:
+		var attack_hitbox = hitbox.instantiate()
+		add_child(attack_hitbox)
+		await get_tree().create_timer(.2).timeout
+		attack_hitbox.queue_free()

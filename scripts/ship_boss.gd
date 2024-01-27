@@ -131,6 +131,7 @@ func damage(damage_num):
 
 
 func _on_area_2d_body_entered(body):
-	attacking = true
-	AudioPlayer.change_music("boss", "level3")
-	GlobalValues.current_level_music = "boss"
+	if body.is_in_group("Player"):
+		attacking = true
+		AudioPlayer.change_music("boss", "level3")
+		GlobalValues.current_level_music = "boss"
